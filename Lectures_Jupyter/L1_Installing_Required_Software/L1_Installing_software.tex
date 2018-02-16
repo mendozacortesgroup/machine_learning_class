@@ -1,0 +1,774 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Installing the software needed}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+\tableofcontents
+    
+%    \section{Installing the software
+%needed}\label{installing-the-software-needed}
+%
+%\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+%
+%\subsection{Table of Contents}\label{table-of-contents}
+%
+%\begin{enumerate}
+%\def\labelenumi{\arabic{enumi}.}
+%\tightlist
+%\item
+%  Section \ref{install_matlab}
+%\item
+%  Section \ref{install_octave} \textgreater{} 1.
+%  Section \ref{install_octave_windows}
+%\item
+%  Section \ref{install_octave_linux}
+%\item
+%  Section \ref{install_octave_mac_10}
+%\item
+%  Section \ref{install_octave_mac_earlier}
+%\item
+%  Section \ref{install_python}
+%\item
+%  Section \ref{tutorials_matlab}
+%\item
+%  Section \ref{tutorials_octave}
+%\item
+%  Section \ref{tutorials_python} ***
+%\end{enumerate}
+
+\section{Installing MATLAB}\label{installing-matlab}
+
+MathWorks is providing you access to MATLAB for use in your coursework.
+When planning your activity, please note that access is valid for the
+length of the course (12 weeks).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Enter your email to create a MathWorks account if you do not have one.
+  https://www.mathworks.com/downloads/web\_downloads/
+\item
+  Use this
+  \textbf{\href{https://www.mathworks.com/downloads/web_downloads/}{link}}
+  again to download and install. You may need to log-in to your
+  MathWorks account that you created in Step 1. After starting the
+  installer, accept all defaults and log-in to your MathWorks account
+  when prompted.
+\end{enumerate}
+
+\textbf{Note:} If you can not download it, let me know and I can help
+you.
+
+For additional resources, including an introduction to the MATLAB
+interface, please see "More Octave/MATLAB Resources."
+
+\section{Installing Octave (GUI)}\label{installing-octave-gui}
+
+\subsection{Installing Octave on
+Windows}\label{installing-octave-on-windows}
+
+Use this link to install Octave for windows:
+https://www.gnu.org/software/octave/ and
+http://wiki.octave.org/Octave\_for\_Microsoft\_Windows
+
+Octave on Windows can be used to submit programming assignments in this
+course but will likely need a patch provided in the discussion forum.
+Refer to https://www.gnu.org/software/octave/ for more information about
+the patch for your version.
+
+"Warning: Do not install Octave 4.0.0"; checkout the "Resources" menu's
+section of "Installation Issues".
+
+\subsection{Installing Octave on
+GNU/Linux}\label{installing-octave-on-gnulinux}
+
+We recommend
+\textbf{\href{http://wiki.octave.org/Octave_for_GNU/Linux}{using your
+system package manager to install Octave}}.
+
+On Ubuntu, you can use: -
+\texttt{sudo\ apt-get\ update\ \&\&\ sudo\ apt-get\ install\ octave}
+
+On Fedora, you can use: - \texttt{sudo\ yum\ install\ octave-forge}
+
+Please consult
+\textbf{\href{http://wiki.octave.org/Octave_for_GNU/Linux}{the Octave
+maintainer's instructions}} for other GNU/Linux systems.
+
+"Warning: Do not install Octave 4.0.0"; checkout the "Resources" menu's
+section of "Installation Issues".
+
+\subsection{Installing Octave on Mac OS X (10.10 Yosemite and 10.9
+Mavericks)}\label{installing-octave-on-mac-os-x-10.10-yosemite-and-10.9-mavericks}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Mac OS X \textbf{\href{https://support.apple.com/en-us/HT202491}{has a
+  feature called Gatekeeper}} has a feature called Gatekeeper that may
+  only let you install applications from the Mac App Store. You may need
+  to configure it to allow the Octave installer. Visit your System
+  Preferences, click Security \& Privacy, and check the setting to allow
+  apps downloaded from Anywhere. You may need to enter your password to
+  unlock the settings page.
+\item
+  Download \textbf{\href{https://wiki.octave.org/Octave_for_macOS}{the
+  Octave 3.8.0 installer}} or the latest version that isn't 4.0.0. The
+  file is large so this may take some time.
+\item
+  Open the downloaded image, probably named GNU\_Octave\_3.8.0-6.dmg on
+  your computer, and then open Octave-3.8.0-6.mpkg inside.
+\item
+  Follow the installer's instructions. You may need to enter the
+  administrator password for your computer.
+\item
+  After the installer completes, Octave should be installed on your
+  computer. You can find Octave-cli in your Mac's Applications, which is
+  a text interface for Octave that you can use to complete Machine
+  Learning's programming assignments.
+\end{enumerate}
+
+Octave also includes an experimental graphical interface which is called
+Octave-gui, also in your Mac's Applications, but we recommend using
+Octave-cli because it's more stable.
+
+Note: If you use a package manager (like MacPorts or Homebrew), we
+recommend you follow
+\textbf{\href{http://wiki.octave.org/Octave_for_macOS\#Package_Managers}{the
+package manager installation instructions}}.
+
+"Warning: Do not install Octave 4.0.0"; checkout the "Resources" menu's
+section of "Installation Issues".
+
+\subsection{Installing Octave on Mac OS X (10.8 Mountain Lion and
+Earlier)}\label{installing-octave-on-mac-os-x-10.8-mountain-lion-and-earlier}
+
+Installing Octave on Mac OS X (10.8 Mountain Lion and Earlier) If you
+use Mac OS X 10.9, we recommend following the instructions
+\textbf{Section \ref{install_octave_mac_10}}. For other Mac OS X
+versions, the Octave project doesn't distribute installers. We recommend
+installing Homebrew, a package manager, using
+\textbf{\href{http://wiki.octave.org/Octave_for_macOS\#Homebrew}{their
+instructions}}.
+
+"Warning: Do not install Octave 4.0.0"; checkout the "Resources" menu's
+section of "Installation Issues".
+
+\section{Installing Python 3}\label{installing-python-3}
+
+I recommend to install
+\textbf{\href{https://www.anaconda.com/download/}{Anaconda}}. If you do
+need to install Python and aren't confident about the task you can find
+a few notes on the
+\textbf{\href{https://wiki.python.org/moin/BeginnersGuide/Download}{BeginnersGuide/Download
+wiki}} page, but installation is unremarkable on most platforms.
+
+    \section{Tutorials for Matlab}\label{tutorials-for-matlab}
+
+At the MATLAB command line, typing help followed by a function name
+displays documentation for a built-in function. For example, help plot
+will bring up help information for plotting. Further documentation can
+be found at the MATLAB
+\textbf{\href{http://www.mathworks.com/help/matlab/}{documentation
+pages}}.
+
+\subsection{Introduction to MATLAB}\label{introduction-to-matlab}
+
+MathWorks also has a series of videos about various MATLAB features:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Module}\strut
+\end{minipage} & \begin{minipage}[b]{0.27\columnwidth}\raggedright\strut
+\textbf{Learning Goals}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/rXwTiKGlilE}{What is MATLAB?}}\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright\strut
+Introduce MATLAB\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/iYTzJXXI9vI}{The MATLAB
+Environment}}\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright\strut
+Navigate the command line, workspace, directory, and editor\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/jURDBsIPt5I}{MATLAB Variables}}\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright\strut
+Use the assignment operator to define scalar variables\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/E7KllorEWkA}{MATLAB as a
+Calculator}}\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright\strut
+Perform arithmetic calculations with scalars and functions using MATLAB
+syntax and order of operations.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/R-kBvJ3kVVk}{Mathematical
+Functions}}\strut
+\end{minipage} & \begin{minipage}[t]{0.27\columnwidth}\raggedright\strut
+Use MATLAB variables for input and output to functions. Examples
+include: COS, SIN, EXP, and NTHROOT.\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{Vectors}\label{vectors}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Module}\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Goals}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/2VNFqxmVqw8}{Creating Vectors via
+Concatenation}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Create vectors by entering individual elements\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/GihLWwp8sBw}{Accessing Elements of a
+Vector}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Access specific elements of a vector\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/t9Kla_YFdfs}{Vector Arithmetic}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Perform arithmetic calculations with vectors including element-wise
+operations\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/USehPX2iEa4}{Vector Transpose}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Use the transpose operator to convert between row and column
+vectors\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/L7cERR5J9XY}{Creating Uniformly Spaced
+Vectors (The Colon Operator)}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Use the colon operator syntax to create vectors given the starting and
+ending values and the size of the interval\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/3QM3LRnb4Tw}{Creating Uniformly Spaced
+Vectors (The LINSPACE Function)}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Use the LINSPACE function to create a vector.\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{Visualization}\label{visualization}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+** Learning Module **\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Goals}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/00k9A9W0cl8}{Line Plots}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Create a line plot of a vector and customize plot markers and
+colors\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/ab3XIDdloNI}{Annotating Graphs}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Label axes, add a title, and add a legend to a plot\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{Matrices and Arrays}\label{matrices-and-arrays}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Module}\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Goals}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/5tm6PKaJdI8}{Creating Matrices}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Create matrices by directly entering scalars\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/DDnm7vek6KY}{Array Creation
+Functions}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Create larger matrices and vectors with built in MATLAB functions such
+as ZEROS and EYE\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/qqQnFp5aiuM}{Accessing Elements of an
+Array}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Access elements of an array including entire columns or rows using
+row-column indexing.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/SqvtT_VspKU}{Array Size and Length}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Use built-in functions to determine array dimensions\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/TgopxS-_zl8}{Concatenating Arrays}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Build larger arrays from smaller ones\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/-jgXqAYBhxI}{Matrix Multiplication}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Perform matrix multiplication and interpret error messages related to
+incompatible dimensions.\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{Programming}\label{programming}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Module}\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Goals}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/TZr6GyxnI_w}{Using the MATLAB
+Editor}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Write a script in the MATLAB Editor, break code into sections to
+execute, and find help on functions\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/5gVKJVVmbrM}{Logical Operators}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Use relational and logical operators to create logical variables for
+program control\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/8wxh4LtT--g}{Conditional Data
+Selection}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Access and change elements for a vector the meet a specified
+criteria\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/oaK2-ZT9dls}{If-Else Statements}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Use if-else statements to control which lines of code are
+evaluated\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/1u3RahlWEZA}{For Loops}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Repeat a sequence of commands a specified number of times\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://youtu.be/dofj51Ovdl4}{While Loops}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Repeat a sequence of commands while a specified condition is true\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{Learn to Code in Matlab}\label{learn-to-code-in-matlab}
+
+ https://learntocode.mathworks.com/portal.html
+
+This is a very interactive course with videos, exercises, made by the
+creators of Matlab. This will help you with the fundamentals and steps
+by step process for most of what is needed for the course. It is written
+for a wide audience so the steps are extremely clear, with simple
+language and each lesson have a video with exercises. You do not need an
+account to take the tutorial.
+
+Other sets of videos targetting machine learning building blocks are
+described below.
+
+\section{Tutorials for Octave}\label{tutorials-for-octave}
+
+At the Octave command line, typing \texttt{help} followed by a function
+name displays documentation for a built-in function. For example,
+\texttt{help\ plot} will bring up help information for plotting. Further
+documentation can be found at the Octave
+\textbf{\href{http://www.gnu.org/software/octave/doc/interpreter/}{documentation
+pages}}.
+
+\section{Tutorials for Python}\label{tutorials-for-python}
+
+At the Python console, typing help({[}object{]}) invokes the built-in
+help system. If no argument is given, the interactive help system starts
+on the interpreter console. If the argument is a string, then the string
+is looked up as the name of a module, function, class, method, keyword,
+or documentation topic, and a help page is printed on the console. If
+the argument is any other kind of object, a help page on the object is
+generated. Further documentation can be found at
+\textbf{\href{https://docs.python.org/3/}{documentation for python
+3.6.4.}}.
+
+If you've never programmed before, the tutorials on this
+\textbf{\href{https://wiki.python.org/moin/BeginnersGuide/NonProgrammers}{beginners
+guide}} are recommended for you; they don't assume that you have
+previous experience. When you're learning, small
+\textbf{\href{https://wiki.python.org/moin/BeginnersGuide/Examples}{examples}}
+can be very helpful. If you have programming experience, also check out
+the
+\textbf{\href{https://wiki.python.org/moin/BeginnersGuide/Programmers}{beginnersGuide/programmers}}
+page and the
+\textbf{\href{https://docs.python.org/3/py-modindex.html}{python module
+index}}.
+
+\subsection{Programming in Python}\label{programming-in-python}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Module}\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\raggedright\strut
+\textbf{Learning Goals}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://interactivepython.org/runestone/static/thinkcspy/PythonTurtle/TheforLoop.html}{For
+loop}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Repeat a sequence of commands a specified number of times\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://interactivepython.org/runestone/static/thinkcspy/MoreAboutIteration/ThewhileStatement.html}{While}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Repeat a sequence of commands as far as a condition is satisfied\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://interactivepython.org/runestone/static/thinkcspy/Functions/toctree.html}{Functions}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Use Python variables for input and output to functions.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://interactivepython.org/runestone/static/thinkcspy/Strings/toctree.html}{Strings}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Manipulation of characters\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://interactivepython.org/runestone/static/thinkcspy/Lists/toctree.html}{List}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Sequential collection of Python data values, where each value is
+identified by an index\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://interactivepython.org/runestone/static/thinkcspy/Files/toctree.html}{Files}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+How to work with Files\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+\textbf{\href{http://interactivepython.org/runestone/static/thinkcspy/Dictionaries/toctree.html}{Dictionaries}}\strut
+\end{minipage} & \begin{minipage}[t]{0.29\columnwidth}\raggedright\strut
+Python's built-in mapping type.\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
