@@ -1,9 +1,13 @@
 Write your name on the notebook that you are working on, and once you finish, add a number to explain what has been done:
 
 1 Is the theory correct? 
+
 2 Does the examples use only the tools we showed previously? (this is not a big deal but lets try to keep it ordered).
+
 3 Is the notebook intended for physics, engineering or art?
+
 4 Grammar edition.
+
 5 Style edition.
 
 progress record:
