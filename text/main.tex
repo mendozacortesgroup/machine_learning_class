@@ -115,7 +115,7 @@
 	\chapter{Introduction and Background}
 	
 	\begin{abstract}
-		The following guide is intended for non CS majors that wonder if there will be any use of Machine Learning on their field. It contains applications to Art, Engineering, Physics and Chemistry.
+		The following guide is intended for non CS majors that wonder if there will be any use of Machine Learning on their field. It contains applications to Art, Engineering, Physics, Medicine and Chemistry.
 	\end{abstract}
 	
 	\clearpage
@@ -136,6 +136,89 @@
 	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
+	
+	The problem we are going to focus on, is the following: supposed that you have measured data, for each point you have a label. Can we make reasonable predictions for the labels of  new data values?
+	
+	 A big part of the quality of a machine learning algorithm relies on the data. If we don't have enough data, or if it is biased, the algorithms will reflect that in their classification. For example, we worked with certain 3D-scanners until we realized they don't work with people of color. The community on twitter suggested that it was an illumination issue but deciding that the algorithm is ready after it performs well on white people while not caring about the results on people of color is a choice that makes the algorithm biased. In principle you should never work on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning and preprocessing the data. The  notebook 'L2 First Machine Learning Notebook' is an excellent guide on data analysis followed by 'L4 The Cocktail Party Problem' which requires more math and familiarity with programming.
+	 	
+	\subsection{SVC}
+	Imagine a factory environment; heavy machinery under constant surveillance of some advanced system. The task of the controlling system is to determine when something goes wrong; the products are below quality, the machine produces strange vibrations or something like a temperature that rises. It is relatively easy to gather training data of situations that are OK; it is just the normal production situation. But on the other side, collection example data of a faulty system state can be rather expensive, or just impossible. If a faulty system state could be simulated, there is no way to guarantee that all the faulty states are simulated and thus recognized in a traditional two-class problem. We will se how SVM can solve this problem.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.45\linewidth]{figures/svcl.png}
+		\caption{}
+		\label{fig:lines}
+	\end{figure} 
+	
+	Let's return to the problem of classification of data. We have data with information about in which class do they belong. We want an algorithm to classify new unseen data. In good cases it is possible to use lines to separate classes and then the question becomes, among all possible lines, which one is best to use? as in fig \ref{fig:lines}. Once we have decided how to evaluate quality, we will be able to select a line. A natural requirement is that the algorithm should be robust to new data and minimize the number of miss classifications. In the notebook 'SVM' you can see how the algorithm SVC looks for  the coefficients of such a line.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.45\linewidth]{figures/svc.png}
+	\caption{}
+	\label{fig:kernel}
+\end{figure} 
+	
+ Most real life cases are not linearly separable, but sometimes we can transform the features hoping that the new features can be separated  with hyper planes. On the image \ref{fig:kernel} we add a third coordinate to the data, the distance to the origin. Then in $R^3$ it is easy to find a plane $z=.6$ that classifies our data. SVM perform better if we pre-process the data following the rules on the notebook 'Cleaning data'. 
+ 
+How can we use this algorithm to find anomalies in new products? we can assume that good products have label 1 and products that are outliers have label 0. By training the SVC this way, it will learn to classify products are regular or outliers. It will recognize when a new product is far from the standard as in fig \ref{fig:novelty}. This idea is explained in the notebook 'SVC II'. 
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.45\linewidth]{figures/novelty.png}
+		\caption{}
+		\label{fig:novelty}
+	\end{figure} 
+	
+% Needed:	Brief description of good and bad points of SVM 
+	\subsection{Neural Networks}  
+	
+	What if instead of using lines or hyperplanes, we use non linear functions to classify our data? A neural network is an improvement over SVM, in the sense that the last component (layer) of a Neural Network behaves like a SVM.
+	
+	 A neural network is a combination of  functions of the form:
+	$x\rightarrow \sigma(W_{a,b}x)$ where $x\in R^b,  W_{a,b}$ is a matriz transformation and $\sigma$ stands for a non linear function applied entry wise to the $a$ coordinates of the vector  $W_{a,b}x.$
+	It is standard notation to represent matrices  $W_{a,b}$ as arrows from a column with $b$ neurons to a column with $a$ neurons as in \ref{fig:nn}. Note that in principle some activations could be the identity. If all activations are the identity we can use composition of matrix and reduce the algorithm to SVM. Finding the coefficients of those matrices requires multivariable calculus and relabeling the chain rule. In 'L5 Neural Networks' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
+	
+	An important research question is: What determines the architecture of a Neural Network.  The paper "Why does deep and cheap learning work so well?" targets that question from the Physics point of view.
+	
+    	\begin{figure}[h!]
+    	\centering
+    	\includegraphics[width=0.45\linewidth]{figures/nn.jpg}
+    	\caption{}
+    	\label{fig:nn}
+    \end{figure} 	
+
+	\subsection{CNN}
+	
+	Given a picture of an Warehouse Shelving, a  neural network can immediately identify the objects and add them to the inventory. Chinese government used face recognition to identify fugitives in a music concert. It is possible to train a special Neural Network called Convolutional Neural Network, to transfer the style of a paint into a different paint as we will see in 'L 19 Style Transfer' and 'L 25 Pix2Pix', see fig \ref{fig:botero}. 
+	
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.45\linewidth]{figures/botero.png}
+		\caption{}
+		\label{fig:botero}
+	\end{figure} 	
+	
+	The main problem with images, is that they are represented as vectors that are too large. Go to your favorite browser and look for images with exactly  $500\times500$ pixels. That is $250000\times3$ numbers. Normal Neural Networks will require you to find too many matrix coefficients. Besides that, we are not working any more on the case $R^b\rightarrow_{ M_{a,b}} R^a$ as the pixels are related with the pixels in their neighborhood, including pixels above and below, so we want to use this information, which may be missing if we just think of an image as a very long vector. 
+	 
+	
+	We need to change the vectors input to matrices input,  and the vectors output to matrix output. You can think of a matrix as a vector with vector entries.  So now the matrices are not only operations but the elements we work on.
+	Instead of learning a coefficient of a matrix, we learn a filter. The good thing of image processing is that we have visual help to understand the process. A filter may be geometric information that is present in several parts of the image, as the concept of a curve, or a square, see fig \ref{fig:filter} .  
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.45\linewidth]{figures/filter.png}
+		\caption{}
+		\label{fig:filter}
+	\end{figure} 	
+
+	
+	In 'L6 CNN' we explain in more detail how CNN work. In lecture "L 18" we experiment with Deep Dreams, where we ask the neural network if it recognizes a pattern and then we modify images to show that pattern. In L 19 we work with Style transfer, as in \ref{fig:botero} where we used a picture of our team and we added the style of a paint of Botero. Lecture "L 25" is TBD.
+	
+	
+		
 	Software required:
 	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have an introduction to Python.
 	 We will use Sklearn and Keras for most of the introductory part and Tensorflor, Pytorch for the advanced parts.

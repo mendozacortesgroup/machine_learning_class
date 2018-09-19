@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  19 SEP 2018 13:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  19 SEP 2018 18:43
 entering extended mode
 **./main.tex
 (main.tex
@@ -1096,79 +1096,128 @@ Chapter 1.
 <to be read again> 
                    \relax 
 l.119 	\end{abstract}
-                      [1]pdfTeX warning (ext4): destination with the same ident
-ifier (name{page.1}) has been already used, duplicate ignored
+                      [1]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 144.
+
+<figures/svcl.png, id=115, 375.4025pt x 247.92625pt>
+File: figures/svcl.png Graphic file (type png)
+<use figures/svcl.png>
+Package pdftex.def Info: figures/svcl.png  used on input line 149.
+(pdftex.def)             Requested size: 211.38832pt x 139.60948pt.
+<figures/svc.png, id=118, 376.40625pt x 247.92625pt>
+File: figures/svc.png Graphic file (type png)
+<use figures/svc.png>
+Package pdftex.def Info: figures/svc.png  used on input line 158.
+(pdftex.def)             Requested size: 211.38832pt x 139.23875pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.159 	\chapter
-               {Results} [1
+l.164 
+       [1
 
-]
+ <./figures/svcl.png>]
+<figures/novelty.png, id=128, 393.47pt x 279.0425pt>
+File: figures/novelty.png Graphic file (type png)
+<use figures/novelty.png>
+Package pdftex.def Info: figures/novelty.png  used on input line 169.
+(pdftex.def)             Requested size: 211.38832pt x 149.91003pt.
+ [2 <./figures/svc.png> <./figures/novelty.png>]
+<figures/nn.jpg, id=138, 322.20375pt x 157.58875pt>
+File: figures/nn.jpg Graphic file (type jpg)
+<use figures/nn.jpg>
+Package pdftex.def Info: figures/nn.jpg  used on input line 187.
+(pdftex.def)             Requested size: 211.38832pt x 103.3933pt.
+<figures/botero.png, id=140, 1204.5pt x 803.0pt>
+File: figures/botero.png Graphic file (type png)
+<use figures/botero.png>
+Package pdftex.def Info: figures/botero.png  used on input line 199.
+(pdftex.def)             Requested size: 211.38832pt x 140.91919pt.
+<figures/filter.png, id=142, 490.4724pt x 212.9556pt>
+File: figures/filter.png Graphic file (type png)
+<use figures/filter.png>
+Package pdftex.def Info: figures/filter.png  used on input line 212.
+(pdftex.def)             Requested size: 211.38832pt x 91.78032pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./figures/nn.jpg> <./figures/botero.png (PNG copy)>] [4 <./figures/filter.p
+ng>]
 Chapter 2.
-[2
-
-]
-Chapter 3.
-[3
-
-]
-Appendix A.
-[4
-
-]
-Appendix B.
 [5
 
 ]
-Appendix C.
+Chapter 3.
 [6
 
 ]
+Appendix A.
+[7
+
+]
+Appendix B.
+[8
+
+]
+Appendix C.
+[9
+
+]
 Appendix D.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 206.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 289.
 
 ("C:\Users\FSU\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 206.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 289.
 
-(main.bbl [7
+(main.bbl [10
 
 ]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [8
+) [11
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 306.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 306.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 306.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 306.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 78D9BC43E097158C0133ED837C6E1BE1;552.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
+(rerunfilecheck)             Checksum: F87CABC326DB0B1A2AAEF060BE70B53B;746.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 306.
  ) 
 Here is how much of TeX's memory you used:
- 28135 strings out of 493305
- 548188 string characters out of 3130672
- 609129 words of memory out of 3000000
- 31313 multiletter control sequences out of 15000+200000
- 536718 words of font info for 44 fonts, out of 3000000 for 9000
+ 28202 strings out of 493305
+ 549293 string characters out of 3130672
+ 612327 words of memory out of 3000000
+ 31359 multiletter control sequences out of 15000+200000
+ 537301 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,56p,10348b,356s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,12n,77p,10348b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/FSU/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/FSU/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (14 pages, 99469 bytes).
+ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/FSU/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/FSU/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/FSU/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (17 pages, 2546031 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 23 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

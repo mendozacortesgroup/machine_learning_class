@@ -2,10 +2,13 @@
 \BOOKMARK [0][-]{chapter*.2}{List of Tables}{}% 2
 \BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introduction and Background}{}% 4
-\BOOKMARK [0][-]{chapter.2}{Results}{}% 5
-\BOOKMARK [0][-]{chapter.3}{Conclusions}{}% 6
-\BOOKMARK [0][-]{chapter.3}{Appendix}{}% 7
-\BOOKMARK [0][-]{appendix.A}{Scripts}{}% 8
-\BOOKMARK [0][-]{appendix.B}{Extra plots}{}% 9
-\BOOKMARK [0][-]{appendix.C}{Inputs}{}% 10
-\BOOKMARK [0][-]{appendix.D}{Things to be careful with}{}% 11
+\BOOKMARK [1][-]{subsection.1.0.1}{SVC}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.0.2}{Neural Networks}{subsection.1.0.1}% 6
+\BOOKMARK [2][-]{subsection.1.0.3}{CNN}{subsection.1.0.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Results}{}% 8
+\BOOKMARK [0][-]{chapter.3}{Conclusions}{}% 9
+\BOOKMARK [0][-]{chapter.3}{Appendix}{}% 10
+\BOOKMARK [0][-]{appendix.A}{Scripts}{}% 11
+\BOOKMARK [0][-]{appendix.B}{Extra plots}{}% 12
+\BOOKMARK [0][-]{appendix.C}{Inputs}{}% 13
+\BOOKMARK [0][-]{appendix.D}{Things to be careful with}{}% 14
