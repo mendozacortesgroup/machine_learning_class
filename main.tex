@@ -1,0 +1,223 @@
+\documentclass[11pt,letterpaper]{report}
+
+\author{Mendoza-Cortes Group}
+\title{Machine Learning in Sciences}
+\usepackage{fancyhdr}
+%\lhead{Report}
+\rhead{Mendoza-Cortes Group}
+%\rhead{\today}
+\headheight 35pt 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin Load Packages %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}
+\usepackage{etex}
+\usepackage{graphicx}
+\usepackage{booktabs}
+%\usepackage[flushleft]{threeparttable}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{titlesec}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,  % false: boxed links; true: colored links
+	linkcolor=blue,   % color of internal links
+	urlcolor=magenta, % color of external links
+	citecolor=blue    % color of links to bibliography
+}
+
+% Package for chemistry formulas %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[version=3]{mhchem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End Load Packages %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin Extra Functionality %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Adjust sticky notes
+\usepackage{xargs} 
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\you}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+\newcommandx{\jose}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\both}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End Extra Functionality %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Begin Table of contents extras. This will put the title Page on top of the table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{~\hfill\textbf{\large Page}\par}
+\addtocontents{lof}{~\hfill\textbf{\large Page}\par}
+\addtocontents{lot}{~\hfill\textbf{\large Page}\par}
+%\addcontentsline{toc}{section}{Title}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End Table of contents extras
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin the Actual Document %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+	
+	\setcounter{page}{1}
+	\pagenumbering{roman}
+	\thispagestyle{empty}
+	
+	
+	
+	
+	\maketitle
+	
+	\newpage
+	
+	\tableofcontents
+	\addcontentsline{toc}{chapter}{List of Contents} 
+	
+	\listoftables
+	\addcontentsline{toc}{chapter}{List of Tables}
+	
+	\listoffigures
+	\addcontentsline{toc}{chapter}{List of Figures}
+	
+	
+	\clearpage
+	\newpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	\pagestyle{fancy}
+	
+	%*************************************************************** %
+	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%*************************************************************** %
+	%*************************************************************** %
+	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%*************************************************************** %
+	%*************************************************************** %
+	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%*************************************************************** %
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+	\chapter{Introduction and Background}
+	
+	\begin{abstract}
+		The following guide is intended for non CS majors that wonder if there will be any use of Machine Learning on their field. It contains applications to Art, Engineering, Physics and Chemistry.
+	\end{abstract}
+	
+	\clearpage
+	\newpage
+	
+	
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	Software required:
+	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have an introduction to Python.
+	 We will use Sklearn and Keras for most of the introductory part and Tensorflor, Pytorch for the advanced parts.
+	
+	
+	
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\chapter{Results}
+	
+	
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	%%*************************************************************** %
+	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%%*************************************************************** %
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+	\chapter{Conclusions}
+	Here we will put the most significant results over time
+	
+	
+	%*************************************************************** %
+	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%*************************************************************** %
+	%*************************************************************** %
+	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%*************************************************************** %
+	%*************************************************************** %
+	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	%*************************************************************** %
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Begin Appendix Chapter Document %%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\appendix
+	\addcontentsline{toc}{chapter}{Appendix}
+	
+	\chapter[Scripts]{Scripts}
+	
+	\chapter{Extra plots}
+	
+	\chapter{Inputs}
+	
+	\chapter{Things to be careful with}
+	\begin{itemize}
+		\item Remember to update the path and home in constants when trying to run the create\_MOF script from a folder outside of scratch.
+		
+		\item Remember to change the time step in the in.lammps file from 2 to 1.
+		
+		\item Some of the nets in the database are just named according to shape and not by shape and symmetry. 
+		
+		\item Make sure there is at least one SBU of the correct symmetry for a framework to be created from a net. 
+	\end{itemize}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Begin Appendix Bibliography Document %%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\bibliographystyle{unsrt}
+	\bibliography{../Papers_related/pfmg}
+	
+	
+\end{document}
