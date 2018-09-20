@@ -218,6 +218,24 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	In 'L6 CNN' we explain in more detail how CNN work. In lecture "L 18" we experiment with Deep Dreams, where we ask the neural network if it recognizes a pattern and then we modify images to show that pattern. In L 19 we work with Style transfer, as in \ref{fig:botero} where we used a picture of our team and we added the style of a paint of Botero. Lecture "L 25" is TBD.
 	
 	
+
+Frequently we want to quantify the accuracy of our predictions. A Bayesian approach--one where we consider the values of the parameters as random variables is a popular method.
+
+Recall Bayes' theorem for training parameters
+\begin{equation}
+P(\theta|X_{train}, T_{train}) = \frac{P(T_{train}, \theta|X_{train})}{\int P(T_{train}, \theta|X_{train})\;\mathrm{d}\theta} 
+\end{equation}
+
+The integral on the bottom is generally not analytic. And for higher dimensional problems, infeasible to calculate. By using Monte Carlo Markov Chain algorithm, it is possible to make estimations.  This is also useful to study   the Ising model, which was created to describe Magnetic and ferromagnetic materials. 
+After this notebook,  it is possible to read 'An exact mapping between the Variational Renormalization Group and Deep Learning' where they explain an important relationship between the Renormalization Group and deep learning architectures based on Restricted Boltzmann Machines.
+
+Lecture L9 explains Genetic Algorithms. This algorithms are motivated by evolution, and work very well when it is not reasonable to make a simulation of all possible parameters. Instead we use rules of evolution to search for best ones. We describe the use of Genetic Algorithms to Reactive Force Fields. 	
+		
+
+		%should we include reaction networks??????
+		
+L10 Introduces Decision Trees, 		
+		
 		
 	Software required:
 	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have an introduction to Python.
