@@ -135,12 +135,16 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	What machine learning algorithms should you use? There are several methods that take your data and automatically evaluate algorithms on it. Those methods don't tune the algorithm parameters or don't use the recent improvements. In this notes we aim to give several examples of algorithms and applications to help you identify the one suitable for your problem.
 	
-	
-	The problem we are going to focus on, is the following: supposed that you have measured data, for each point you have a label. Can we make reasonable predictions for the labels of  new data values?
-	
-	 A big part of the quality of a machine learning algorithm relies on the data. If we don't have enough data, or if it is biased, the algorithms will reflect that in their classification. For example, we worked with certain 3D-scanners until we realized they don't work with people of color. The community on twitter suggested that it was an illumination issue but deciding that the algorithm is ready after it performs well on white people while not caring about the results on people of color is a choice that makes the algorithm biased. In principle you should never work on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning and preprocessing the data. The  notebook 'L2 First Machine Learning Notebook' is an excellent guide on data analysis followed by 'L4 The Cocktail Party Problem' which requires more math and familiarity with programming.
-	 	
+	The problem we are going to focus on, is the following: supposed that you have measured data, for each point you have a label. Can we make reasonable predictions for the labels of new data values?
+	\subsection{Data}
+	 A big part of the performance of a machine learning algorithm relies on the data. If we don't have enough data, or if it is biased, the algorithms will reflect that in their classification. For example, we worked with certain 3D-scanners until we realized they don't work with people of color. The community on twitter suggested that it was an illumination issue but deciding that the algorithm is ready after it performs well on white people while not caring about the results on people of color is a choice that makes the algorithm biased.
+	 
+	 With enough data, all algorithms suited for the task have similar performance. 
+	 
+	  In principle you should never work on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning and preprocessing the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by `` The Cocktail Party Problem'' which requires more math and familiarity with programming.
+ 	
 	\subsection{SVC}
 	Imagine a factory environment; heavy machinery under constant surveillance of some advanced system. The task of the controlling system is to determine when something goes wrong; the products are below quality, the machine produces strange vibrations or something like a temperature that rises. It is relatively easy to gather training data of situations that are OK; it is just the normal production situation. But on the other side, collection example data of a faulty system state can be rather expensive, or just impossible. If a faulty system state could be simulated, there is no way to guarantee that all the faulty states are simulated and thus recognized in a traditional two-class problem. We will se how SVM can solve this problem.
 	
@@ -151,7 +155,7 @@
 		\label{fig:lines}
 	\end{figure} 
 	
-	Let's return to the problem of classification of data. We have data with information about in which class do they belong. We want an algorithm to classify new unseen data. In good cases it is possible to use lines to separate classes and then the question becomes, among all possible lines, which one is best to use? as in fig \ref{fig:lines}. Once we have decided how to evaluate quality, we will be able to select a line. A natural requirement is that the algorithm should be robust to new data and minimize the number of miss classifications. In the notebook 'SVM' you can see how the algorithm SVC looks for  the coefficients of such a line.
+	Let's return to the problem of classification of data. We have data with information about in which class do they belong. We want an algorithm to classify new unseen data. In good cases it is possible to use lines to separate classes and then the question becomes, among all possible lines, which one is best to use? as in fig \ref{fig:lines}. Once we have decided how to evaluate quality, we will be able to select a line. A natural requirement is that the algorithm should be robust to new data and minimize the number of miss classifications. In the notebook ``SVM'' you can see how the algorithm SVC looks for  the coefficients of such a line.
 
 \begin{figure}[h!]
 	\centering
@@ -160,9 +164,9 @@
 	\label{fig:kernel}
 \end{figure} 
 	
- Most real life cases are not linearly separable, but sometimes we can transform the features hoping that the new features can be separated  with hyper planes. On the image \ref{fig:kernel} we add a third coordinate to the data, the distance to the origin. Then in $R^3$ it is easy to find a plane $z=.6$ that classifies our data. SVM perform better if we pre-process the data following the rules on the notebook 'Cleaning data'. 
+ Most real life cases are not linearly separable, but sometimes we can transform the features hoping that the new features can be separated  with hyper planes. On the image \ref{fig:kernel} we add a third coordinate to the data, the distance to the origin. Then in $R^3$ it is easy to find a plane $z=.6$ that classifies our data. SVM perform better if we pre-process the data following the rules on the notebook ``Cleaning data''. 
  
-How can we use this algorithm to find anomalies in new products? we can assume that good products have label 1 and products that are outliers have label 0. By training the SVC this way, it will learn to classify products are regular or outliers. It will recognize when a new product is far from the standard as in fig \ref{fig:novelty}. This idea is explained in the notebook 'SVC II'. 
+How can we use this algorithm to find anomalies in new products? we can assume that good products have label 1 and products that are outliers have label 0. By training the SVC this way, it will learn to classify products are regular or outliers. It will recognize when a new product is far from the standard as in fig \ref{fig:novelty}. This idea is explained in the notebook ``SVC II''. 
 	
 	\begin{figure}[h!]
 		\centering
@@ -178,7 +182,7 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	
 	 A neural network is a combination of  functions of the form:
 	$x\rightarrow \sigma(W_{a,b}x)$ where $x\in R^b,  W_{a,b}$ is a matriz transformation and $\sigma$ stands for a non linear function applied entry wise to the $a$ coordinates of the vector  $W_{a,b}x.$
-	It is standard notation to represent matrices  $W_{a,b}$ as arrows from a column with $b$ neurons to a column with $a$ neurons as in \ref{fig:nn}. Note that in principle some activations could be the identity. If all activations are the identity we can use composition of matrix and reduce the algorithm to SVM. Finding the coefficients of those matrices requires multivariable calculus and relabeling the chain rule. In 'L5 Neural Networks' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
+	It is standard notation to represent matrices  $W_{a,b}$ as arrows from a column with $b$ neurons to a column with $a$ neurons as in \ref{fig:nn}. Note that in principle some activations could be the identity. If all activations are the identity we can use composition of matrix and reduce the algorithm to SVM. Finding the coefficients of those matrices requires multivariable calculus and relabeling the chain rule. In ``L5 Neural Networks'' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
 	
 	An important research question is: What determines the architecture of a Neural Network.  The paper "Why does deep and cheap learning work so well?" targets that question from the Physics point of view.
 	
@@ -191,7 +195,7 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 
 	\subsection{CNN}
 	
-	Given a picture of an Warehouse Shelving, a  neural network can immediately identify the objects and add them to the inventory. Chinese government used face recognition to identify fugitives in a music concert. It is possible to train a special Neural Network called Convolutional Neural Network, to transfer the style of a paint into a different paint as we will see in 'L 19 Style Transfer' and 'L 25 Pix2Pix', see fig \ref{fig:botero}. 
+	Given a picture of an Warehouse Shelving, a  neural network can immediately identify the objects and add them to the inventory. Chinese government used face recognition to identify fugitives in a music concert. It is possible to train a special Neural Network called Convolutional Neural Network, to transfer the style of a paint into a different paint as we will see in ``Style Transfer'' and `` Pix2Pix'', see fig \ref{fig:botero}. 
 	
 	
 	\begin{figure}[h!]
@@ -215,10 +219,10 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	\end{figure} 	
 
 	
-	In 'L6 CNN' we explain in more detail how CNN work. In lecture "L 18" we experiment with Deep Dreams, where we ask the neural network if it recognizes a pattern and then we modify images to show that pattern. In L 19 we work with Style transfer, as in \ref{fig:botero} where we used a picture of our team and we added the style of a paint of Botero. Lecture "L 25" is TBD.
+	In ``CNN'' we explain in more detail how CNN work. In lecture ``Deep Dreams" we ask the neural network if it recognizes a pattern and then we modify images to show that pattern. In `` Style transfer'' we learn images styles and impose them to other images, for example  in \ref{fig:botero} we used a picture of our team and we added the style of a paint of Botero. %Lecture "L 25" is TBD.
 	
 	
-
+\subsection{Bayesian methods}
 Frequently we want to quantify the accuracy of our predictions. A Bayesian approach--one where we consider the values of the parameters as random variables is a popular method.
 
 Recall Bayes' theorem for training parameters
@@ -228,13 +232,66 @@ P(\theta|X_{train}, T_{train}) = \frac{P(T_{train}, \theta|X_{train})}{\int P(T_
 
 The integral on the bottom is generally not analytic. And for higher dimensional problems, infeasible to calculate. By using Monte Carlo Markov Chain algorithm, it is possible to make estimations.  This is also useful to study   the Ising model, which was created to describe Magnetic and ferromagnetic materials. 
 After this notebook,  it is possible to read 'An exact mapping between the Variational Renormalization Group and Deep Learning' where they explain an important relationship between the Renormalization Group and deep learning architectures based on Restricted Boltzmann Machines.
+\subsection{Genetic Algorithms}
+A genetic algorithm is a search heuristic  inspired by Charles Darwin’s theory of natural evolution. They reflect the process of natural selection where the fittest individuals are selected for reproduction in order to produce offspring of the next generation.
 
-Lecture L9 explains Genetic Algorithms. This algorithms are motivated by evolution, and work very well when it is not reasonable to make a simulation of all possible parameters. Instead we use rules of evolution to search for best ones. We describe the use of Genetic Algorithms to Reactive Force Fields. 	
+
+
+Genetic Algorithms are most commonly used in optimization problems wherein we have to maximize or minimize a given objective function value under a given set of constraints. GAs are also used to characterize various economic models like the cobweb model, game theory equilibrium resolution, asset pricing, etc. They also have been used to plan the path which a robot arm takes by moving from one point to another. We can find more applications in multimodal optimization in which we have to find multiple optimum solutions.
+
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.45\linewidth]{figures/GAfigure1.png}
+	\caption{}
+	\label{fig:GA}
+\end{figure} 	
+
+
+Given a problem we define a fitness function that measures how good is a proposed solution. The higher the fitness the closer to an ideal solution of my problem.
+The process of natural selection starts with the selection of fittest individuals from a random population, we also select a percentage of the remaining population. This new smaller population produce offspring, mixing genes that seem useful to solve our problem. To explore new genes, we mutate a small percentage of the offspring and add foreigners to obtain the new population.
+
+By doing this process several times, the maximum value obtained by the fitness function on the population cannot  decrease as every new generation has the fittest individuals of the previous generation, while the mutations and foreigners help us avoid fixed points that are not minimums. 
+
+Advantages of Genetic Algorithms. They does not require any derivative information (which may not be available for many real-world problems). They have very good parallel capabilities. They always give an answer to the problem, which gets better over the time.
+Useful when the search space is very large and there are a large number of parameters involved.
+
+Limitations. GAs are not suited for all problems, especially problems which are simple and for which derivative information is available. Probably we don't get the global optimum solution. Fitness value is calculated repeatedly which might be computationally expensive for some problems.
+Being stochastic, there are no guarantees on the optimality or the quality of the solution.
+If not implemented properly, the GA may not converge to the optimal solution.
 		
+For more details see the notebook ``Genetic Algorithm'' and the notebook ``GARFfield'' where an application to reactive force fields is explained.
+ 
+	 \subsection{Decision Trees}
+ We think of a feature as a vertex of a tree, and we think of the possible values of that feature as branches. The order in which we choose the features give us different shapes of trees. Among those trees, we argue that trees with low entropy are better for classification, you can find an algorithm in the notebook ``Decision Trees'' to build your decision tree.
 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.45\linewidth]{figures/Decision-Trees.png}
+	\caption{}
+	\label{fig:Trees}
+\end{figure} 	
+Advantages of decision trees:
+They are simple to understand, they can handle both numerical and categorical data, they are relatively little data preparation needed, the mechanism for the model can be easily extracted and understood, they are robust against co-linearity.
+
+ Disadvantages: Accuracy, they tend to overfit, and the locality of optimization.
+ 
+ 
+ \subsection{KNN}
+ In K-Nearest-Neighbors, we make a prediction or classify an element by  only analyzing  a neighborhood of the element.  Basic Idea:
+ 
+ 1.- Get some example set of cases with known outputs. (Diagnosis of diseases.)
+ 
+ 2.-When you see a new case, assign its output to be the same as the most similar known case. (Your simptomes resemble Mr. T, Mr. T has the flu, Ergo you have the flu).
+
+ 
+ 
+ By working only locally we avoid the need of parameters.  If a new point is added, it only affects the points near it. 
+ 
 		%should we include reaction networks??????
-		
-L10 Introduces Decision Trees, 		
+			
 		
 		
 	Software required:

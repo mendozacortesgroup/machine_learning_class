@@ -2,13 +2,18 @@
 \BOOKMARK [0][-]{chapter*.2}{List of Tables}{}% 2
 \BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introduction and Background}{}% 4
-\BOOKMARK [1][-]{subsection.1.0.1}{SVC}{chapter.1}% 5
-\BOOKMARK [2][-]{subsection.1.0.2}{Neural Networks}{subsection.1.0.1}% 6
-\BOOKMARK [2][-]{subsection.1.0.3}{CNN}{subsection.1.0.1}% 7
-\BOOKMARK [0][-]{chapter.2}{Results}{}% 8
-\BOOKMARK [0][-]{chapter.3}{Conclusions}{}% 9
-\BOOKMARK [0][-]{chapter.3}{Appendix}{}% 10
-\BOOKMARK [0][-]{appendix.A}{Scripts}{}% 11
-\BOOKMARK [0][-]{appendix.B}{Extra plots}{}% 12
-\BOOKMARK [0][-]{appendix.C}{Inputs}{}% 13
-\BOOKMARK [0][-]{appendix.D}{Things to be careful with}{}% 14
+\BOOKMARK [1][-]{subsection.1.0.1}{Data}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.0.2}{SVC}{subsection.1.0.1}% 6
+\BOOKMARK [2][-]{subsection.1.0.3}{Neural Networks}{subsection.1.0.1}% 7
+\BOOKMARK [2][-]{subsection.1.0.4}{CNN}{subsection.1.0.1}% 8
+\BOOKMARK [2][-]{subsection.1.0.5}{Bayesian methods}{subsection.1.0.1}% 9
+\BOOKMARK [2][-]{subsection.1.0.6}{Genetic Algorithms}{subsection.1.0.1}% 10
+\BOOKMARK [2][-]{subsection.1.0.7}{Decision Trees}{subsection.1.0.1}% 11
+\BOOKMARK [2][-]{subsection.1.0.8}{KNN}{subsection.1.0.1}% 12
+\BOOKMARK [0][-]{chapter.2}{Results}{}% 13
+\BOOKMARK [0][-]{chapter.3}{Conclusions}{}% 14
+\BOOKMARK [0][-]{chapter.3}{Appendix}{}% 15
+\BOOKMARK [0][-]{appendix.A}{Scripts}{}% 16
+\BOOKMARK [0][-]{appendix.B}{Extra plots}{}% 17
+\BOOKMARK [0][-]{appendix.C}{Inputs}{}% 18
+\BOOKMARK [0][-]{appendix.D}{Things to be careful with}{}% 19
