@@ -145,6 +145,7 @@
 	 
 	  In principle you should never work on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning and preprocessing the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by `` The Cocktail Party Problem'' which requires more math and familiarity with programming.
  	
+ 	
 	\subsection{SVC}
 	Imagine a factory environment; heavy machinery under constant surveillance of some advanced system. The task of the controlling system is to determine when something goes wrong; the products are below quality, the machine produces strange vibrations or something like a temperature that rises. It is relatively easy to gather training data of situations that are OK; it is just the normal production situation. But on the other side, collection example data of a faulty system state can be rather expensive, or just impossible. If a faulty system state could be simulated, there is no way to guarantee that all the faulty states are simulated and thus recognized in a traditional two-class problem. We will se how SVM can solve this problem.
 	
@@ -305,12 +306,12 @@ They are simple to understand, they can handle both numerical and categorical da
  they are all easy to adapt to new training samples, so there is no need to retrain them. They 
  can handle complex decision boundaries and functions by considering the query instance when deciding how to generalize.
  The cons are that they require retaining all training examples in memory, so it is slow to evaluate a new query and the evaluation time grows with the dataset size.
- 
+  
 Using local polynomial linear regression we will reproduce a typical diagram in phase transition.
  \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.45\linewidth]{figures/image.png}
-	\caption{The 3d mexican hat potential.}
+	\caption{The 3d mexican hat potential.} 
 	\label{fig:face}
 \end{figure} 	
 Let's look at figure \ref{fig:face}. It shows a the ball rolling spontaneously to one side of a 2D W-graph. Let's think of this graph as some sort of potential, which is physics for energy function.
@@ -435,3 +436,5 @@ Non negative matrix factorization is a process to find two matrices with non neg
 	
 	
 \end{document}
+
+
