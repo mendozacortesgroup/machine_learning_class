@@ -223,6 +223,9 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	
 	
 \subsection{Bayesian methods}
+In ``Frequentist vs Bayes''
+ we introduce Bayesian methods and show how do they differ from the frequetist perspective. 
+ 
 Frequently we want to quantify the accuracy of our predictions. A Bayesian approach--one where we consider the values of the parameters as random variables is a popular method.
 
 Recall Bayes' theorem for training parameters
@@ -230,8 +233,9 @@ Recall Bayes' theorem for training parameters
 P(\theta|X_{train}, T_{train}) = \frac{P(T_{train}, \theta|X_{train})}{\int P(T_{train}, \theta|X_{train})\;\mathrm{d}\theta} 
 \end{equation}
 
-The integral on the bottom is generally not analytic. And for higher dimensional problems, infeasible to calculate. By using Monte Carlo Markov Chain algorithm, it is possible to make estimations.  This is also useful to study   the Ising model, which was created to describe Magnetic and ferromagnetic materials. 
-After this notebook,  it is possible to read 'An exact mapping between the Variational Renormalization Group and Deep Learning' where they explain an important relationship between the Renormalization Group and deep learning architectures based on Restricted Boltzmann Machines.
+The integral on the bottom is generally not analytic. And for higher dimensional problems, infeasible to calculate. By using Monte Carlo Markov Chain algorithm, it is possible to make estimations.  This is also useful to study   the Ising model, which was created to describe Magnetic and ferromagnetic materials. We also introduce Simulated Annealing and Uncertainty Quantification.
+
+After this notebook,  we recommend to read ``Why does deep and cheap learning work so well?''.  The authors use physics to train to explain the way neural networks are capable to make classifications. 
 \subsection{Genetic Algorithms}
 A genetic algorithm is a search heuristic  inspired by Charles Darwin’s theory of natural evolution. They reflect the process of natural selection where the fittest individuals are selected for reproduction in order to produce offspring of the next generation.
 
@@ -286,10 +290,27 @@ They are simple to understand, they can handle both numerical and categorical da
  
  2.-When you see a new case, assign its output to be the same as the most similar known case. (Your simptomes resemble Mr. T, Mr. T has the flu, Ergo you have the flu).
 
+ $K$ stands for how many points nearby do you consider to make your choice. Given a new point $x$ and the closest $k$ points to $x$, you can assign to $x$ the average of $x$'s neighbors values. Here the results depend on a good choice of the parameter $K$. This method gives bad approximations on the boundary. If the boundary is a concern,  Kernel Regression assigns different weights to the nearby points so that points that are closer matter most. 
+ 
+ Locally weighted polynomial  regression is a local version of polynomial regression.
+ The possibility to write a model that deals with the local picture is important in applications, for example  used local polynomial linear regression to reproduce a typical diagram in phase transition.
+ 
+ \begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[width=0.45\linewidth]{figures/bokeh_plot.png}
+ 	\caption{}
+ 	\label{fig:knn}
+ \end{figure} 	
+ In this notebook we deal with  memory based algorithms, 
+ they are all easy to adapt to new training samples, so there is no need to retrain them. They 
+ can handle complex decision boundaries and functions by considering the query instance when deciding how to generalize.
+ The cons are that they require retaining all training examples in memory, so it is slow to evaluate a new query and the evaluation time grows with the dataset size.
+ 
+
+\subsection{SOM}
  
  
- By working only locally we avoid the need of parameters.  If a new point is added, it only affects the points near it. 
- 
+
 		%should we include reaction networks??????
 			
 		

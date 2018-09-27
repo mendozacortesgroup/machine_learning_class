@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  27 SEP 2018 10:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  27 SEP 2018 15:20
 entering extended mode
 **./main.tex
 (main.tex
@@ -1101,7 +1101,7 @@ l.119 	\end{abstract}
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 141.
 
-<figures/svcl.png, id=144, 375.4025pt x 247.92625pt>
+<figures/svcl.png, id=151, 375.4025pt x 247.92625pt>
 File: figures/svcl.png Graphic file (type png)
 <use figures/svcl.png>
 Package pdftex.def Info: figures/svcl.png  used on input line 153.
@@ -1114,29 +1114,29 @@ l.159
        [1
 
  <./figures/svcl.png>]
-<figures/svc.png, id=152, 376.40625pt x 247.92625pt>
+<figures/svc.png, id=159, 376.40625pt x 247.92625pt>
 File: figures/svc.png Graphic file (type png)
 <use figures/svc.png>
 Package pdftex.def Info: figures/svc.png  used on input line 162.
 (pdftex.def)             Requested size: 211.38832pt x 139.23875pt.
-<figures/novelty.png, id=155, 393.47pt x 279.0425pt>
+<figures/novelty.png, id=162, 393.47pt x 279.0425pt>
 File: figures/novelty.png Graphic file (type png)
 <use figures/novelty.png>
 Package pdftex.def Info: figures/novelty.png  used on input line 173.
 (pdftex.def)             Requested size: 211.38832pt x 149.91003pt.
  [2 <./figures/svc.png> <./figures/novelty.png>]
-<figures/nn.jpg, id=165, 322.20375pt x 157.58875pt>
+<figures/nn.jpg, id=172, 322.20375pt x 157.58875pt>
 File: figures/nn.jpg Graphic file (type jpg)
 <use figures/nn.jpg>
 Package pdftex.def Info: figures/nn.jpg  used on input line 191.
 (pdftex.def)             Requested size: 211.38832pt x 103.3933pt.
-<figures/botero.png, id=167, 1204.5pt x 803.0pt>
+<figures/botero.png, id=174, 1204.5pt x 803.0pt>
 File: figures/botero.png Graphic file (type png)
 <use figures/botero.png>
 Package pdftex.def Info: figures/botero.png  used on input line 203.
 (pdftex.def)             Requested size: 211.38832pt x 140.91919pt.
 [3 <./figures/nn.jpg> <./figures/botero.png (PNG copy)>]
-<figures/filter.png, id=175, 490.4724pt x 212.9556pt>
+<figures/filter.png, id=182, 490.4724pt x 212.9556pt>
 File: figures/filter.png Graphic file (type png)
 <use figures/filter.png>
 Package pdftex.def Info: figures/filter.png  used on input line 216.
@@ -1145,73 +1145,83 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
  [4 <./figures/filter.png>]
-<figures/GAfigure1.png, id=185, 642.4pt x 481.8pt>
+<figures/GAfigure1.png, id=192, 642.4pt x 481.8pt>
 File: figures/GAfigure1.png Graphic file (type png)
 <use figures/GAfigure1.png>
-Package pdftex.def Info: figures/GAfigure1.png  used on input line 246.
+Package pdftex.def Info: figures/GAfigure1.png  used on input line 250.
 (pdftex.def)             Requested size: 211.38832pt x 158.53868pt.
-<figures/Decision-Trees.png, id=186, 308.65312pt x 192.72pt>
+<figures/Decision-Trees.png, id=193, 308.65312pt x 192.72pt>
 File: figures/Decision-Trees.png Graphic file (type png)
 <use figures/Decision-Trees.png>
-Package pdftex.def Info: figures/Decision-Trees.png  used on input line 272.
+Package pdftex.def Info: figures/Decision-Trees.png  used on input line 276.
 (pdftex.def)             Requested size: 211.38832pt x 131.9918pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5 <./figures/GAfigure1.png (PNG copy)>] [6 <./figures/Decision-Trees.png>]
-Chapter 2.
-[7
+[5 <./figures/GAfigure1.png (PNG copy)>]
+<figures/bokeh_plot.png, id=198, 940.51375pt x 940.51375pt>
+File: figures/bokeh_plot.png Graphic file (type png)
+<use figures/bokeh_plot.png>
+Package pdftex.def Info: figures/bokeh_plot.png  used on input line 300.
+(pdftex.def)             Requested size: 211.38832pt x 211.37685pt.
 
-]
-Chapter 3.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6 <./figures/Decision-Trees.png>] [7 <./figures/bokeh_plot.png>]
+Chapter 2.
 [8
 
 ]
-Appendix A.
+Chapter 3.
 [9
 
 ]
-Appendix B.
+Appendix A.
 [10
 
 ]
-Appendix C.
+Appendix B.
 [11
 
 ]
+Appendix C.
+[12
+
+]
 Appendix D.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 364.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 385.
 
 ("C:\Users\FSU\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 364.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 385.
 
-(main.bbl [12
+(main.bbl [13
 
 ]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [13
+) [14
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 381.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 381.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 402.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 402.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 381.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 381.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 402.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 402.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C40952AE5AE6202671BC26F6E81FED2A;1101.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 381.
+(rerunfilecheck)             Checksum: 4D2D3487BBFABF1DE3CEFBA249957CAC;1164.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 402.
  ) 
 Here is how much of TeX's memory you used:
- 28229 strings out of 493305
- 549801 string characters out of 3130672
- 612395 words of memory out of 3000000
- 31374 multiletter control sequences out of 15000+200000
+ 28239 strings out of 493305
+ 549989 string characters out of 3130672
+ 612429 words of memory out of 3000000
+ 31380 multiletter control sequences out of 15000+200000
  537301 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,77p,10348b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1228,9 +1238,9 @@ ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/FSU
 nts/cm/cmr17.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmr8.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (19 pages, 2588869 bytes).
+Output written on main.pdf (20 pages, 2731411 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 288 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 
