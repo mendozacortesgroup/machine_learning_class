@@ -11,11 +11,13 @@
 \contentsline {subsection}{\numberline {1.0.6}Genetic Algorithms}{4}{subsection.1.0.6}
 \contentsline {subsection}{\numberline {1.0.7}Decision Trees}{5}{subsection.1.0.7}
 \contentsline {subsection}{\numberline {1.0.8}KNN}{6}{subsection.1.0.8}
-\contentsline {subsection}{\numberline {1.0.9}SOM}{6}{subsection.1.0.9}
-\contentsline {chapter}{\numberline {2}Results}{8}{chapter.2}
-\contentsline {chapter}{\numberline {3}Conclusions}{9}{chapter.3}
-\contentsline {chapter}{Appendix}{9}{chapter.3}
-\contentsline {chapter}{\numberline {A}Scripts}{10}{appendix.A}
-\contentsline {chapter}{\numberline {B}Extra plots}{11}{appendix.B}
-\contentsline {chapter}{\numberline {C}Inputs}{12}{appendix.C}
-\contentsline {chapter}{\numberline {D}Things to be careful with}{13}{appendix.D}
+\contentsline {subsection}{\numberline {1.0.9}SOM}{7}{subsection.1.0.9}
+\contentsline {subsection}{\numberline {1.0.10}Cocktail party problem}{7}{subsection.1.0.10}
+\contentsline {subsection}{\numberline {1.0.11}Non Negative Tensor Factorization}{7}{subsection.1.0.11}
+\contentsline {chapter}{\numberline {2}Results}{9}{chapter.2}
+\contentsline {chapter}{\numberline {3}Conclusions}{10}{chapter.3}
+\contentsline {chapter}{Appendix}{10}{chapter.3}
+\contentsline {chapter}{\numberline {A}Scripts}{11}{appendix.A}
+\contentsline {chapter}{\numberline {B}Extra plots}{12}{appendix.B}
+\contentsline {chapter}{\numberline {C}Inputs}{13}{appendix.C}
+\contentsline {chapter}{\numberline {D}Things to be careful with}{14}{appendix.D}

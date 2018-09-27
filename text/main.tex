@@ -226,7 +226,7 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 In ``Frequentist vs Bayes''
  we introduce Bayesian methods and show how do they differ from the frequetist perspective. 
  
-Frequently we want to quantify the accuracy of our predictions. A Bayesian approach--one where we consider the values of the parameters as random variables is a popular method.
+Frequently we want to quantify the accuracy of our predictions. In the ``Markov'' lectures we find a Bayesian approach--one where we consider the values of the parameters as random variables is a popular method.
 
 Recall Bayes' theorem for training parameters
 \begin{equation}
@@ -293,7 +293,7 @@ They are simple to understand, they can handle both numerical and categorical da
  $K$ stands for how many points nearby do you consider to make your choice. Given a new point $x$ and the closest $k$ points to $x$, you can assign to $x$ the average of $x$'s neighbors values. Here the results depend on a good choice of the parameter $K$. This method gives bad approximations on the boundary. If the boundary is a concern,  Kernel Regression assigns different weights to the nearby points so that points that are closer matter most. 
  
  Locally weighted polynomial  regression is a local version of polynomial regression.
- The possibility to write a model that deals with the local picture is important in applications, for example  used local polynomial linear regression to reproduce a typical diagram in phase transition.
+ The possibility to write a model that deals with the local picture is important in applications as we will see at the end of this section.
  
  \begin{figure}[h!]
  	\centering
@@ -306,9 +306,44 @@ They are simple to understand, they can handle both numerical and categorical da
  can handle complex decision boundaries and functions by considering the query instance when deciding how to generalize.
  The cons are that they require retaining all training examples in memory, so it is slow to evaluate a new query and the evaluation time grows with the dataset size.
  
+Using local polynomial linear regression we will reproduce a typical diagram in phase transition.
+ \begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.45\linewidth]{figures/image.png}
+	\caption{The 3d mexican hat potential.}
+	\label{fig:face}
+\end{figure} 	
+Let's look at figure \ref{fig:face}. It shows a the ball rolling spontaneously to one side of a 2D W-graph. Let's think of this graph as some sort of potential, which is physics for energy function.
+
+We can think of the ball settled at the bottom of the parabola as the ground-state of the "high temperature" or "high energy" regime of some system. 
+
+This ground state, the ball at the bottom of the parabola, is a unique ground state. 
+
+By this we mean there is a SINGLE state of the system, where if we were to rotate the system about the Z-axis (axis running through center of parabola), the energy of the system would not change. We call this system $U(1)$ symmetric. 
+
+Now consider the low-energy or low-temperature regime: the ball has settled into either side of the quartic-graph. 
+
+In this regime, there is no longer a unique ground state, the ball being on the left or on the right are configurations that correspond to the same energy values. Therefore, we say there is a DEGENERACY of the ground states, and there is no way to distinguish one configuration from the other simply in terms of energy. We call this parity symmetry. Although our low-energy system has "broken the symmetry" of $U(1)$ by falling into the left or right side. These two sides have the same energy and are thus indistinguishable. This means we can call them parity invariant. This parity invariance is characterized by a group of transformations of the ground state that leave the energy unchanged. It turns out that this group of transformations is the group of rotations of the "phase" of the system. 
+
+
+
 
 \subsection{SOM}
+ \subsection{Cocktail party problem}
+ \subsection{Non Negative Tensor Factorization}
  
+We consider data in form of a matrix. For example, given a vocabulary with  m  words, and  n  documents,  $V_{ik}$ is  the number of times the  $i$ -word in the dictionary appears on the  $k$  document.
+A database of gray-scale images of a fixed size can also be described by a matrix $V$.  We relabel the pixels in an image form $1$ to $ m$, and assume the  database has $n$ images. The value of the $V_{ik}$ is the intensity of the $i$-pixel in the $k$ image. 
+
+Non negative matrix factorization is a process to find two matrices with non negative entries $W,H$ so that $V\sim W\times H$. It turns out that the columns of $H$ can be understood as a basis whose linear combination approximates the columns of $V$. $W$ give us the coefficients so that a juxtaposition of the columns of  $H$ can recover the initial data. Columns of $H$ have been recognized as eigen images. This method is used in topic selection.  
+ 
+ 
+
+ There is a higher dimensional version of this story where we substitute matrix by tensors. A place where this comes natural is medicine. Imagine that for every patient you have a matrix of diagnosis and medications. We can put the column of medications and the rows of diagnosis. So the entries will be mostly zeroes, except when the patient was diagnosed with the $i$-sickness and received the $k$-medication. If we consider a third dimension given by the patient, then we have a 3-dimensional matrix or a vector. The main yoga was that the non negativity constrain allow us to recover the initial object from juxtaposition of it's parts. 
+ We  replaced matrices by tensors, and we substitute the factorization into matrix multiplication by tensor decomposition into rank one tensors. 
+ 
+ 
+ Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure/function, invasive hemodynamics, and outcomes'.
  
 
 		%should we include reaction networks??????

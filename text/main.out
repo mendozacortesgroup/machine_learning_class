@@ -11,10 +11,12 @@
 \BOOKMARK [2][-]{subsection.1.0.7}{Decision Trees}{subsection.1.0.1}% 11
 \BOOKMARK [2][-]{subsection.1.0.8}{KNN}{subsection.1.0.1}% 12
 \BOOKMARK [2][-]{subsection.1.0.9}{SOM}{subsection.1.0.1}% 13
-\BOOKMARK [0][-]{chapter.2}{Results}{}% 14
-\BOOKMARK [0][-]{chapter.3}{Conclusions}{}% 15
-\BOOKMARK [0][-]{chapter.3}{Appendix}{}% 16
-\BOOKMARK [0][-]{appendix.A}{Scripts}{}% 17
-\BOOKMARK [0][-]{appendix.B}{Extra plots}{}% 18
-\BOOKMARK [0][-]{appendix.C}{Inputs}{}% 19
-\BOOKMARK [0][-]{appendix.D}{Things to be careful with}{}% 20
+\BOOKMARK [2][-]{subsection.1.0.10}{Cocktail party problem}{subsection.1.0.1}% 14
+\BOOKMARK [2][-]{subsection.1.0.11}{Non Negative Tensor Factorization}{subsection.1.0.1}% 15
+\BOOKMARK [0][-]{chapter.2}{Results}{}% 16
+\BOOKMARK [0][-]{chapter.3}{Conclusions}{}% 17
+\BOOKMARK [0][-]{chapter.3}{Appendix}{}% 18
+\BOOKMARK [0][-]{appendix.A}{Scripts}{}% 19
+\BOOKMARK [0][-]{appendix.B}{Extra plots}{}% 20
+\BOOKMARK [0][-]{appendix.C}{Inputs}{}% 21
+\BOOKMARK [0][-]{appendix.D}{Things to be careful with}{}% 22
