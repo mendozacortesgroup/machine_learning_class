@@ -20,4 +20,3 @@
 \contentsline {chapter}{\numberline {A}Scripts}{12}{appendix.A}
 \contentsline {chapter}{\numberline {B}Extra plots}{13}{appendix.B}
 \contentsline {chapter}{\numberline {C}Inputs}{14}{appendix.C}
-\contentsline {chapter}{\numberline {D}Things to be careful with}{15}{appendix.D}
