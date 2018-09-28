@@ -115,7 +115,7 @@
 	\chapter{Introduction and Background}
 	
 	\begin{abstract}
-		The following guide is intended for non CS majors that wonder if there will be any use of Machine Learning on their field. It contains applications to Art, Engineering, Physics, Medicine and Chemistry.
+		The following guide is intended for non CS majors that would like to use  Machine Learning on their field. It contains applications to Art, Engineering, Physics, Medicine and Chemistry.
 	\end{abstract}
 	
 	\clearpage
@@ -135,15 +135,20 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	What machine learning algorithms should you use? There are several methods that take your data and automatically evaluate algorithms on it. Those methods don't tune the algorithm parameters or don't use the recent improvements. In this notes we aim to give several examples of algorithms and applications to help you identify the one suitable for your problem.
+	What machine learning algorithms should you use? There are several methods that take your data and automatically evaluate algorithms on it. Those methods don't tune the algorithm parameters or don't use the recent technology. In this notes we aim to give several examples of algorithms and applications to help you identify the one suitable for your problem in deep enough to explaining how to tune them.
 	
-	The problem we are going to focus on, is the following: supposed that you have measured data, for each point you have a label. Can we make reasonable predictions for the labels of new data values?
+		Software required:
+	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have notebooks that serve as an introduction to Python.
+	Half of the lectures use  Sklearn. ``Neural Networks'' contain a lecture on Keras. For the advanced parts we have lecture ``Pytorch Tensorflow'' where we introduce both tools.
+	
 	\subsection{Data}
+	Most of the time we are in the supervised case, so we assume that you have measured data, for each value you have a label. Perhaps you have a list of diagnosis of patients and the label is 1 if they developed Cancer or 0 otherwise, or you have a lot of molecular configuration of materials and the label is the capacity. We wonder if we  can we make reasonable predictions for the labels of new, unseen data values?
+	
 	 A big part of the performance of a machine learning algorithm relies on the data. If we don't have enough data, or if it is biased, the algorithms will reflect that in their classification. For example, we worked with certain 3D-scanners until we realized they don't work with people of color. The community on twitter suggested that it was an illumination issue but deciding that the algorithm is ready after it performs well on white people while not caring about the results on people of color is a choice that makes the algorithm biased.
 	 
 	 With enough data, all algorithms suited for the task have similar performance. 
 	 
-	  In principle you should never work on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning and preprocessing the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by `` The Cocktail Party Problem'' which requires more math and familiarity with programming.
+	  In principle you should never work on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning and preprocessing the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by ``Higher Dimensions'' which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. After some experience, we recommend  the notebooks `` The Cocktail Party Problem'' which requires more math and familiarity with programming. As preprocessing we consider the problem of finding a good representation of our data that helps with the classification process. We will use Taylor series to Build such a map, we know that for a convex function the Hessian is positive definite. So one strategy would be to add any positive definite quadratic form as the non linear part of our map, in ``Information Geometry and Dynamic Entropy'' we review the implications of this process for information theory.
  	
  	
 	\subsection{SVC}
@@ -187,12 +192,20 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	
 	An important research question is: What determines the architecture of a Neural Network.  The paper "Why does deep and cheap learning work so well?" targets that question from the Physics point of view.
 	
+	
+	An application of Neural Networks to chemistry is contained in the note ``Poterntial Energy Surface ANN'' where we describe the work of The Roitberg group in University of Florida, a transferable deep learning potential based on Belher and Parrinello symmetry functions that is applicable to complex and diverse molecular systems well beyond the training data set: ANAKIN-ME (Accurate NeurAl networK engINe for Molecular Energies) or ANI for short.
+	
     	\begin{figure}[h!]
     	\centering
     	\includegraphics[width=0.45\linewidth]{figures/nn.jpg}
     	\caption{}
     	\label{fig:nn}
     \end{figure} 	
+
+    ``Recurrent Neural Networks'' deals with networks designed for modeling time series data.  Mathematically, our data might be written as $w⋅x^i+w̃ ⋅y_{i−1}$ where  $w$  is the vector containing the weights associated wtih the current inputs  $x^i$  and  $w̃$  is the vector containing the weights of the outputs of the previous time steps  $y_{i−1}$. We are a little bit sloppy with the terminology, the outputs don't necessary have to be from the output layer.
+This can be use to make numerical simulations of partial differential equations and ordinary differential equations, and we include an example with pytorch of Character-Level classification of names in ``RNN II''.
+
+    ``Generative Adversarial Networks'' describes a generative method. Suppose that we have a set of examples and we want to generate more images which look like the previous examples. For example, we might have the set of fashion MNIST and we want to generate fake cloths. Or maybe we want to create fake news. Presently known applications are Image denoising, Inpainting, Super-resolution, Structured Prediction, Exploration in Reinforcement Learning and Neural Network Pretraining.
 
 	\subsection{CNN}
 	
@@ -340,20 +353,21 @@ Non negative matrix factorization is a process to find two matrices with non neg
  
  
 
- There is a higher dimensional version of this story where we substitute matrix by tensors. A place where this comes natural is medicine. Imagine that for every patient you have a matrix of diagnosis and medications. We can put the column of medications and the rows of diagnosis. So the entries will be mostly zeroes, except when the patient was diagnosed with the $i$-sickness and received the $k$-medication. If we consider a third dimension given by the patient, then we have a 3-dimensional matrix or a vector. The main yoga was that the non negativity constrain allow us to recover the initial object from juxtaposition of it's parts. 
- We  replaced matrices by tensors, and we substitute the factorization into matrix multiplication by tensor decomposition into rank one tensors. 
+Imagine that for every patient you have a matrix of diagnosis and medications. We can put the column of medications and the rows of diagnosis. So the entries will be mostly zeroes, except when the patient was diagnosed with the $i$-sickness and received the $k$-medication. If we consider a third dimension given by the patient, then we have a 3-dimensional matrix or a vector.
+ There is a higher dimensional version of tensor factorization  where we substitute  matrices by tensors. 
+ The main yoga was that the non negativity constrain allow us to recover the initial object from juxtaposition of it's parts. 
+ When we  replaced matrices by tensors we substitute the factorization into matrix multiplication by tensor decomposition into rank one tensors. 
  
  
- Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure/function, invasive hemodynamics, and outcomes'.
+In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure/function, invasive hemodynamics, and outcomes'.
+ 
  
 
 		%should we include reaction networks??????
 			
 		
 		
-	Software required:
-	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have an introduction to Python.
-	 We will use Sklearn and Keras for most of the introductory part and Tensorflor, Pytorch for the advanced parts.
+
 	
 	
 	
