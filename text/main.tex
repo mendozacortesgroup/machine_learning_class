@@ -112,14 +112,19 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	
-	\chapter{Introduction and Background}
-	
 	\begin{abstract}
 		The following guide is intended for non CS majors that would like to use  Machine Learning on their field. It contains applications to Art, Engineering, Physics, Medicine and Chemistry.
 	\end{abstract}
 	
 	\clearpage
 	\newpage
+	\chapter{Introduction and Background}
+		What machine learning algorithms should you use? There are several methods that take your data and automatically evaluate algorithms on it. Those methods don't tune the algorithm parameters or don't use the recent technology. In this notes we aim to give several examples of algorithms and applications to help you identify the one suitable for your problem in deep enough to explaining how to tune them.
+	
+	Software required:
+	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have notebooks that serve as an introduction to Python.
+	Half of the lectures use  Sklearn. ``Neural Networks'' contain a lecture on Keras. For the advanced parts we have lecture ``Pytorch Tensorflow'' where we introduce both tools.
+	
 	
 	
 	%%*************************************************************** %
@@ -135,13 +140,8 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	What machine learning algorithms should you use? There are several methods that take your data and automatically evaluate algorithms on it. Those methods don't tune the algorithm parameters or don't use the recent technology. In this notes we aim to give several examples of algorithms and applications to help you identify the one suitable for your problem in deep enough to explaining how to tune them.
-	
-		Software required:
-	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have notebooks that serve as an introduction to Python.
-	Half of the lectures use  Sklearn. ``Neural Networks'' contain a lecture on Keras. For the advanced parts we have lecture ``Pytorch Tensorflow'' where we introduce both tools.
-	
-	\subsection{Data}
+
+	\subsection{Preprocessing Data}
 	Most of the time we are in the supervised case, so we assume that you have measured data, for each value you have a label. Perhaps you have a list of diagnosis of patients and the label is 1 if they developed Cancer or 0 otherwise, or you have a lot of molecular configuration of materials and the label is the capacity. We wonder if we  can we make reasonable predictions for the labels of new, unseen data values?
 	
 	 A big part of the performance of a machine learning algorithm relies on the data. If we don't have enough data, or if it is biased, the algorithms will reflect that in their classification. For example, we worked with certain 3D-scanners until we realized they don't work with people of color. The community on twitter suggested that it was an illumination issue but deciding that the algorithm is ready after it performs well on white people while not caring about the results on people of color is a choice that makes the algorithm biased.

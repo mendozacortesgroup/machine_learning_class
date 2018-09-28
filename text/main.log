@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  28 SEP 2018 11:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  28 SEP 2018 11:55
 entering extended mode
 **./main.tex
 (main.tex
@@ -1086,93 +1086,80 @@ l.87 	\listoftables
 
  [3
 
+] [1
+
 ]
 Chapter 1.
-[1
-
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.119 	\end{abstract}
-                      [1]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 144.
-
-<figures/svcl.png, id=163, 375.4025pt x 247.92625pt>
-File: figures/svcl.png Graphic file (type png)
-<use figures/svcl.png>
-Package pdftex.def Info: figures/svcl.png  used on input line 159.
-(pdftex.def)             Requested size: 211.38832pt x 139.60948pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.165 
-       [1
+l.156 	
+        [1
+
 
 ]
-<figures/svc.png, id=170, 376.40625pt x 247.92625pt>
+<figures/svcl.png, id=163, 375.4025pt x 247.92625pt>
+File: figures/svcl.png Graphic file (type png)
+<use figures/svcl.png>
+Package pdftex.def Info: figures/svcl.png  used on input line 159.
+(pdftex.def)             Requested size: 211.38832pt x 139.60948pt.
+<figures/svc.png, id=166, 376.40625pt x 247.92625pt>
 File: figures/svc.png Graphic file (type png)
 <use figures/svc.png>
 Package pdftex.def Info: figures/svc.png  used on input line 168.
 (pdftex.def)             Requested size: 211.38832pt x 139.23875pt.
-<figures/novelty.png, id=173, 393.47pt x 279.0425pt>
+ [2 <./figures/svcl.png> <./figures/svc.png>]
+<figures/novelty.png, id=178, 393.47pt x 279.0425pt>
 File: figures/novelty.png Graphic file (type png)
 <use figures/novelty.png>
 Package pdftex.def Info: figures/novelty.png  used on input line 179.
 (pdftex.def)             Requested size: 211.38832pt x 149.91003pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2 <./figures/svcl.png> <./figures/svc.png>]
-<figures/nn.jpg, id=185, 322.20375pt x 157.58875pt>
+<figures/nn.jpg, id=180, 322.20375pt x 157.58875pt>
 File: figures/nn.jpg Graphic file (type jpg)
 <use figures/nn.jpg>
 Package pdftex.def Info: figures/nn.jpg  used on input line 200.
 (pdftex.def)             Requested size: 211.38832pt x 103.3933pt.
-Missing character: There is no â in font cmr10!
-Missing character: There is no ‹ in font cmr10!
-Missing character: There is no … in font cmr10!
-Missing character: There is no Ì in font cmr10!
-Missing character: There is no ƒ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no ‹ in font cmr10!
-Missing character: There is no … in font cmr10!
-Missing character: There is no â in font cmr8!
-Missing character: There is no ˆ in font cmr8!
-Missing character: There is no ’ in font cmr8!
-Missing character: There is no Ì in font cmr10!
-Missing character: There is no ƒ in font cmr10!
-Missing character: There is no â in font cmr8!
-Missing character: There is no ˆ in font cmr8!
-Missing character: There is no ’ in font cmr8!
- [3 <./figures/novelty.png> <./figures/nn.jpg>]
-<figures/botero.png, id=192, 1204.5pt x 803.0pt>
-File: figures/botero.png Graphic file (type png)
-<use figures/botero.png>
-Package pdftex.def Info: figures/botero.png  used on input line 217.
-(pdftex.def)             Requested size: 211.38832pt x 140.91919pt.
-<figures/filter.png, id=194, 490.4724pt x 212.9556pt>
-File: figures/filter.png Graphic file (type png)
-<use figures/filter.png>
-Package pdftex.def Info: figures/filter.png  used on input line 230.
-(pdftex.def)             Requested size: 211.38832pt x 91.78032pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <./figures/botero.png (PNG copy)>]
+Missing character: There is no â in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no … in font cmr10!
+Missing character: There is no Ì in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no ‹ in font cmr10!
+Missing character: There is no … in font cmr10!
+Missing character: There is no â in font cmr8!
+Missing character: There is no ˆ in font cmr8!
+Missing character: There is no ’ in font cmr8!
+Missing character: There is no Ì in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no â in font cmr8!
+Missing character: There is no ˆ in font cmr8!
+Missing character: There is no ’ in font cmr8!
+[3 <./figures/novelty.png>]
+<figures/botero.png, id=189, 1204.5pt x 803.0pt>
+File: figures/botero.png Graphic file (type png)
+<use figures/botero.png>
+Package pdftex.def Info: figures/botero.png  used on input line 217.
+(pdftex.def)             Requested size: 211.38832pt x 140.91919pt.
+ [4 <./figures/nn.jpg> <./figures/botero.png (PNG copy)>]
+<figures/filter.png, id=196, 490.4724pt x 212.9556pt>
+File: figures/filter.png Graphic file (type png)
+<use figures/filter.png>
+Package pdftex.def Info: figures/filter.png  used on input line 230.
+(pdftex.def)             Requested size: 211.38832pt x 91.78032pt.
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-<figures/GAfigure1.png, id=201, 642.4pt x 481.8pt>
+<figures/GAfigure1.png, id=198, 642.4pt x 481.8pt>
 File: figures/GAfigure1.png Graphic file (type png)
 <use figures/GAfigure1.png>
 Package pdftex.def Info: figures/GAfigure1.png  used on input line 264.
@@ -1182,27 +1169,28 @@ Package pdftex.def Info: figures/GAfigure1.png  used on input line 264.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5 <./figures/filter.png>]
-<figures/Decision-Trees.png, id=209, 308.65312pt x 192.72pt>
+<figures/Decision-Trees.png, id=206, 308.65312pt x 192.72pt>
 File: figures/Decision-Trees.png Graphic file (type png)
 <use figures/Decision-Trees.png>
 Package pdftex.def Info: figures/Decision-Trees.png  used on input line 290.
 (pdftex.def)             Requested size: 211.38832pt x 131.9918pt.
- [6 <./figures/GAfigure1.png (PNG copy)> <./figures/Decision-Trees.png>]
-<figures/bokeh_plot.png, id=215, 940.51375pt x 940.51375pt>
-File: figures/bokeh_plot.png Graphic file (type png)
-<use figures/bokeh_plot.png>
-Package pdftex.def Info: figures/bokeh_plot.png  used on input line 314.
-(pdftex.def)             Requested size: 211.38832pt x 211.37685pt.
-<figures/image.png, id=216, 674.52pt x 215.80624pt>
-File: figures/image.png Graphic file (type png)
-<use figures/image.png>
-Package pdftex.def Info: figures/image.png  used on input line 326.
-(pdftex.def)             Requested size: 211.38832pt x 67.63026pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./figures/bokeh_plot.png>] [8 <./figures/image.png (PNG copy)>] [9]
+[6 <./figures/GAfigure1.png (PNG copy)>]
+<figures/bokeh_plot.png, id=211, 940.51375pt x 940.51375pt>
+File: figures/bokeh_plot.png Graphic file (type png)
+<use figures/bokeh_plot.png>
+Package pdftex.def Info: figures/bokeh_plot.png  used on input line 314.
+(pdftex.def)             Requested size: 211.38832pt x 211.37685pt.
+ [7 <./figures/Decision-Trees.png> <./figures/bokeh_plot.png>]
+<figures/image.png, id=218, 674.52pt x 215.80624pt>
+File: figures/image.png Graphic file (type png)
+<use figures/image.png>
+Package pdftex.def Info: figures/image.png  used on input line 326.
+(pdftex.def)             Requested size: 211.38832pt x 67.63026pt.
+ [8 <./figures/image.png (PNG copy)>] [9]
 Chapter 2.
 [10
 
@@ -1247,7 +1235,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 452.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 452.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 452.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6605F7E50CF3E859A672A57D28DAF203;1341.
+(rerunfilecheck)             Checksum: 65C495C155C9B4E9190EC22BE55B624D;1355.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 452.
  ) 
 Here is how much of TeX's memory you used:
@@ -1271,9 +1259,9 @@ ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/FSU
 nts/cm/cmr17.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmr8.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (22 pages, 2760012 bytes).
+Output written on main.pdf (21 pages, 2759564 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
+ 308 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 500000)
  239 words of extra memory for PDF output out of 10000 (max. 10000000)
 
