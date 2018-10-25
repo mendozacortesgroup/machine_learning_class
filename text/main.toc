@@ -14,9 +14,8 @@
 \contentsline {subsection}{\numberline {1.0.9}SOM}{8}{subsection.1.0.9}
 \contentsline {subsection}{\numberline {1.0.10}Cocktail party problem}{8}{subsection.1.0.10}
 \contentsline {subsection}{\numberline {1.0.11}Non Negative Tensor Factorization}{8}{subsection.1.0.11}
-\contentsline {chapter}{\numberline {2}Results}{10}{chapter.2}
-\contentsline {chapter}{\numberline {3}Conclusions}{11}{chapter.3}
-\contentsline {chapter}{Appendix}{11}{chapter.3}
-\contentsline {chapter}{\numberline {A}Scripts}{12}{appendix.A}
-\contentsline {chapter}{\numberline {B}Extra plots}{13}{appendix.B}
-\contentsline {chapter}{\numberline {C}Inputs}{14}{appendix.C}
+\contentsline {chapter}{\numberline {2}Conclusions}{10}{chapter.2}
+\contentsline {chapter}{Appendix}{10}{chapter.2}
+\contentsline {chapter}{\numberline {A}Scripts}{11}{appendix.A}
+\contentsline {chapter}{\numberline {B}Extra plots}{12}{appendix.B}
+\contentsline {chapter}{\numberline {C}Inputs}{13}{appendix.C}
