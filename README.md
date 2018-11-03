@@ -12,17 +12,17 @@ Write your name on the notebook that you are working on, and once you finish, ad
 
 progress record:
 
-1
+1 Miguel(4,5)
 
-2
+2 Miguel(4,5)
 
-3
+3 Miguel(4,5)
 
-4
+4 Miguel(4,5)
 
-5
+5 Miguel(4,5)
 
-6
+6 Miguel(4,5)
 
 7 
 
