@@ -24,41 +24,41 @@ progress record:
 
 6 Miguel(4,5)
 
-7 
+7 Miguel(4,5)
 
-8
+8 Miguel(4,5)
 
-9
+9 Miguel(4,5)
 
-10 Nathan Crock
+10 Nathan Crock, Miguel(4,5)
 
-11
+11 Miguel(4,5)
 
-12
+12 Miguel(4,5)
 
-13
+13 Miguel(4,5)
 
-14
+14 Miguel(4,5)
 
-15
+15 Miguel(4,5)
 
 16 Nathan Crock
 
-17
+17 Miguel(4,5)
 
-18
+18 Miguel(4,5)
 
-19
+19 Miguel(4,5)
 
-20
+20 Miguel(4,5)
 
-21
+21 Miguel(4,5)
 
-22
+22 Miguel(4,5)
 
-23
+23 Miguel(4,5)
 
-24 Eric
+24 Eric, Miguel(4,5)
 
 
 
