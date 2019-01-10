@@ -2,19 +2,20 @@
 \BOOKMARK [0][-]{chapter*.2}{List of Tables}{}% 2
 \BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introduction and Background}{}% 4
-\BOOKMARK [1][-]{subsection.1.0.1}{Preprocessing Data}{chapter.1}% 5
-\BOOKMARK [2][-]{subsection.1.0.2}{SVC}{subsection.1.0.1}% 6
-\BOOKMARK [2][-]{subsection.1.0.3}{Neural Networks}{subsection.1.0.1}% 7
-\BOOKMARK [2][-]{subsection.1.0.4}{CNN}{subsection.1.0.1}% 8
-\BOOKMARK [2][-]{subsection.1.0.5}{Bayesian methods}{subsection.1.0.1}% 9
-\BOOKMARK [2][-]{subsection.1.0.6}{Genetic Algorithms}{subsection.1.0.1}% 10
-\BOOKMARK [2][-]{subsection.1.0.7}{Decision Trees}{subsection.1.0.1}% 11
-\BOOKMARK [2][-]{subsection.1.0.8}{KNN}{subsection.1.0.1}% 12
-\BOOKMARK [2][-]{subsection.1.0.9}{SOM}{subsection.1.0.1}% 13
-\BOOKMARK [2][-]{subsection.1.0.10}{Cocktail party problem}{subsection.1.0.1}% 14
-\BOOKMARK [2][-]{subsection.1.0.11}{Non Negative Tensor Factorization}{subsection.1.0.1}% 15
-\BOOKMARK [0][-]{chapter.2}{Conclusions}{}% 16
-\BOOKMARK [0][-]{chapter.2}{Appendix}{}% 17
-\BOOKMARK [0][-]{appendix.A}{Scripts}{}% 18
-\BOOKMARK [0][-]{appendix.B}{Extra plots}{}% 19
-\BOOKMARK [0][-]{appendix.C}{Inputs}{}% 20
+\BOOKMARK [1][-]{subsection.1.0.1}{Fairness}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.0.2}{Preprocessing Data}{subsection.1.0.1}% 6
+\BOOKMARK [2][-]{subsection.1.0.3}{SVC}{subsection.1.0.1}% 7
+\BOOKMARK [2][-]{subsection.1.0.4}{Neural Networks}{subsection.1.0.1}% 8
+\BOOKMARK [2][-]{subsection.1.0.5}{CNN}{subsection.1.0.1}% 9
+\BOOKMARK [2][-]{subsection.1.0.6}{Bayesian methods}{subsection.1.0.1}% 10
+\BOOKMARK [2][-]{subsection.1.0.7}{Genetic Algorithms}{subsection.1.0.1}% 11
+\BOOKMARK [2][-]{subsection.1.0.8}{Decision Trees}{subsection.1.0.1}% 12
+\BOOKMARK [2][-]{subsection.1.0.9}{KNN}{subsection.1.0.1}% 13
+\BOOKMARK [2][-]{subsection.1.0.10}{SOM}{subsection.1.0.1}% 14
+\BOOKMARK [2][-]{subsection.1.0.11}{Cocktail party problem}{subsection.1.0.1}% 15
+\BOOKMARK [2][-]{subsection.1.0.12}{Non Negative Tensor Factorization}{subsection.1.0.1}% 16
+\BOOKMARK [0][-]{chapter.2}{Conclusions}{}% 17
+\BOOKMARK [0][-]{chapter.2}{Appendix}{}% 18
+\BOOKMARK [0][-]{appendix.A}{Scripts}{}% 19
+\BOOKMARK [0][-]{appendix.B}{Extra plots}{}% 20
+\BOOKMARK [0][-]{appendix.C}{Inputs}{}% 21

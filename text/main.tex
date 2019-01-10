@@ -119,11 +119,13 @@
 	\clearpage
 	\newpage
 	\chapter{Introduction and Background}
-		What machine learning algorithms should you use? There are several methods that take your data and automatically evaluate algorithms on it. Those methods don't tune the algorithm parameters or don't use the recent technology. In this notes we aim to give several examples of algorithms and applications to help you identify the one suitable for your problem in deep enough to explaining how to tune them.
+		Which machine learning algorithms should you use for your research or project? There are already several automatized programs  that take your data and evaluate machine learning algorithms on it. By design, those methods don't tune the algorithm parameters or don't use the recent technology. In this notes we aim to give several examples of algorithms and applications to help you identify the method most suitable for your problem while understanding how to use the more capabilities of the algorithm. This will be an important difference if you are interested in research, or to optimize a solution to a problem. In case that all you want is a quick solution without worrying if it is optimal or not, you may prefer to use automatized methods instead, we will mention a couple of them in the corresponding section. 
+		
+		Our goal is to make this notes accessible for non CS majors with plenty of examples that will help you identify if your particular problem can be solve with the method.
 	
 	Software required:
 	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have notebooks that serve as an introduction to Python.
-	Half of the lectures use  Sklearn. ``Neural Networks'' contain a lecture on Keras. For the advanced parts we have lecture ``Pytorch Tensorflow'' where we introduce both tools.
+	Half of the lectures use  Sklearn, the section on Neural Networks contains a lecture on ``Keras''. For the advanced parts we have lectures on ``Pytorch'' and `` Tensorflow'' where we introduce those tools.
 	
 	
 	
@@ -140,9 +142,13 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \subsection{Fairness}
+	For motivational purposes assume that you have measured data, and for each value you have a label. Perhaps you have a list of characteristics of breast cancer samples and the label is 1 if the cancer is malignant or 0 if it is benign as in \href{https://scikit-learn.org/stable/datasets/index.html#breast-cancer-dataset}{Breast cancer Wisconsin (diagnostic) dataset}, another example is the data of police misconduct in Chicago and the labels are the officer's race as in \href{https://data.cpdp.co/data/L5rG3q/}{Citizens Police Data Project}. The main task for us is to find if we can we make reasonable predictions for the labels of new, unseen, data values.
+
+    The algorithm will return a class based on the algorithm's design, how we trained the algorithm and what we do with the output are choices made by humans and this will have consequences. We recommend to take the 70 min \href{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture?utm_source=keyword-blog&utm_medium=blog&utm_campaign=mle-outreach&utm_term=&utm_content=mlcc-fairness}{Fairness training} to prevent different types of bias on your project. 
 
 	\subsection{Preprocessing Data}
-	Most of the time we are in the supervised case, so we assume that you have measured data, for each value you have a label. Perhaps you have a list of diagnosis of patients and the label is 1 if they developed Cancer or 0 otherwise, or you have a lot of molecular configuration of materials and the label is the capacity. We wonder if we  can we make reasonable predictions for the labels of new, unseen data values?
+
 	
 	 A big part of the performance of a machine learning algorithm relies on the data. If we don't have enough data, or if it is biased, the algorithms will reflect that in their classification. For example, we worked with certain 3D-scanners until we realized they don't work with people of color. The community on twitter suggested that it was an illumination issue but deciding that the algorithm is ready after it performs well on white people while not caring about the results on people of color is a choice that makes the algorithm biased.
 	 
