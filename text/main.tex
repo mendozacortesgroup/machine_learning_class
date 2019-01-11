@@ -193,11 +193,12 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 % Needed:	Brief description of good and bad points of SVM 
 	\subsection{Neural Networks}  
 	
-	What if instead of using lines or hyperplanes, we use non linear functions to classify our data? A neural network is an improvement over SVM, in the sense that the last component (layer) of a Neural Network behaves like a SVM.
+	We saw that SVM uses  hyperplanes to separate the data, and that sometimes a transformation of the data is needed. In feed forward neural networks we use iterations of non linear functions followed by matrix transformations.
 	
-	 A neural network is a combination of  functions of the form:
-	$x\rightarrow \sigma(W_{a,b}x)$ where $x\in R^b,  W_{a,b}$ is a matriz transformation and $\sigma$ stands for a non linear function applied entry wise to the $a$ coordinates of the vector  $W_{a,b}x.$
-	It is standard notation to represent matrices  $W_{a,b}$ as arrows from a column with $b$ neurons to a column with $a$ neurons as in \ref{fig:nn}. Note that in principle some activations could be the identity. If all activations are the identity we can use composition of matrix and reduce the algorithm to SVM. Finding the coefficients of those matrices requires multivariable calculus and relabeling the chain rule. In ``L5 Neural Networks'' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
+	 A neural network is a composition of  functions of the form:
+	$x\rightarrow \sigma(W\cdot x+b)$ where $x,b,$ are vectors, $W$ is a matrix, and $\sigma$ stands for a non linear function applied entry wise to the coordinates of the vector  $W\cdot x+b$.
+	It is standard notation to represent matrices  $W$ as arrows from the domain of $x$ to the domain of $w\cdot x + b$ as in \ref{fig:nn}. For details see the notebook 'Neural Network'.
+	Note that in principle some activations could be the identity. If all activations are the identity we can use composition of matrix and reduce the algorithm to SVM. Finding the coefficients of those matrices requires multivariable calculus and the chain rule. In ``L5 Neural Networks'' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
 	
 	An important research question is: What determines the architecture of a Neural Network.  The paper "Why does deep and cheap learning work so well?" targets that question from the Physics point of view.
 	
