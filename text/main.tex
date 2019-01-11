@@ -150,16 +150,19 @@
 	\subsection{Preprocessing Data}
 
 	
-	 A big part of the performance of a machine learning algorithm relies on the data. If we don't have enough data, or if it is biased, the algorithms will reflect that in their classification. For example, we worked with certain 3D-scanners until we realized they don't work with people of color. The community on twitter suggested that it was an illumination issue but deciding that the algorithm is ready after it performs well on white people while not caring about the results on people of color is a choice that makes the algorithm biased.
+	 A big part of the performance of a machine learning algorithm relies on preprocessing the data. If we don't have enough data, or if it is biased, the algorithms will reflect those deficiencies in the output. For example, we worked with 3D-scanners until we realized they failed with people of color. The community on twitter suggested that it was an illumination issue, we claim that deciding that the algorithm is ready after testing it only on white people while not caring about the results on people of color is a choice that makes the algorithm biased. After all, that scanner was used on toys and the toy producer was not expecting kids to have special illumination while using the toys.
 	 
-	 With enough data, all algorithms suited for the task have similar performance. 
+	 An important lesson here is that \href{ https://www.quora.com/In-machine-learning-is-more-data-always-better-than-better-algorithms}{data quality} is a priority. 
 	 
-	  In principle you should never work on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning and preprocessing the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by ``Higher Dimensions'' which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. After some experience, we recommend  the notebooks `` The Cocktail Party Problem'' which requires more math and familiarity with programming. As preprocessing we consider the problem of finding a good representation of our data that helps with the classification process. We will use Taylor series to Build such a map, we know that for a convex function the Hessian is positive definite. So one strategy would be to add any positive definite quadratic form as the non linear part of our map, in ``Information Geometry and Dynamic Entropy'' we review the implications of this process for information theory.
- 	
+	  You should avoid working on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by ``Higher Dimensions'' which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. 
+	  
+	  % As preprocessing we consider the problem of finding a good representation of our data that helps with the classification process. We will use Taylor series to Build such a map, we know that for a convex function the Hessian is positive definite. So one strategy would be to add any positive definite quadratic form as the non linear part of our map, in ``Information Geometry and Dynamic Entropy'' we review the implications of this process for information theory.
+	  %
  	
 	\subsection{SVC}
-	Imagine a factory environment; heavy machinery under constant surveillance of some advanced system. The task of the controlling system is to determine when something goes wrong; the products are below quality, the machine produces strange vibrations or something like a temperature that rises. It is relatively easy to gather training data of situations that are OK; it is just the normal production situation. But on the other side, collection example data of a faulty system state can be rather expensive, or just impossible. If a faulty system state could be simulated, there is no way to guarantee that all the faulty states are simulated and thus recognized in a traditional two-class problem. We will se how SVM can solve this problem.
+	Imagine that you are designing a new material. First you create it in vitro, and then you have a team that will materialize those designs. The task is to determine when something goes wrong before investing in the realization of the material;  perhaps the atomic configuration is unstable or the material is below quality. It is relatively easy to gather training data of successful attempts. But on the other side, collection example data of a faulty system  can be expensive, or just impossible. There is no way to describe a priory all the possible defects on the material. SVM can be use to attack this kind of problems as explained in the notebooks ``Support Vector Machine".
 	
+	The general idea is explained as follows:
 	\begin{figure}[h!]
 		\centering
 		\includegraphics[width=0.45\linewidth]{figures/svcl.png}
@@ -167,7 +170,7 @@
 		\label{fig:lines}
 	\end{figure} 
 	
-	Let's return to the problem of classification of data. We have data with information about in which class do they belong. We want an algorithm to classify new unseen data. In good cases it is possible to use lines to separate classes and then the question becomes, among all possible lines, which one is best to use? as in fig \ref{fig:lines}. Once we have decided how to evaluate quality, we will be able to select a line. A natural requirement is that the algorithm should be robust to new data and minimize the number of miss classifications. In the notebook ``SVM'' you can see how the algorithm SVC looks for  the coefficients of such a line.
+	Assume we are dealing with classification of labeled data. We have data with information about in which class do they belong. We want an algorithm to classify new unseen data. In good cases it is possible to use lines to separate classes and then the question becomes, among all possible lines, which one is best to use? as in fig \ref{fig:lines}. Once we have decided how to evaluate quality, we will be able to select a line. A natural requirement is that the algorithm should be robust to new data and minimize the number of miss classifications. In the notebook ``SVM'' you can see how the algorithm SVC looks for  the coefficients of such a line.
 
 \begin{figure}[h!]
 	\centering
@@ -176,7 +179,7 @@
 	\label{fig:kernel}
 \end{figure} 
 	
- Most real life cases are not linearly separable, but sometimes we can transform the features hoping that the new features can be separated  with hyper planes. On the image \ref{fig:kernel} we add a third coordinate to the data, the distance to the origin. Then in $R^3$ it is easy to find a plane $z=.6$ that classifies our data. SVM perform better if we pre-process the data following the rules on the notebook ``Cleaning data''. 
+ Most real life cases are not linearly separable, but sometimes we can transform the features hoping that the new features can be separated  with hyper planes. On the image \ref{fig:kernel} we add a third coordinate to the data, the distance to the origin. Then in $R^3$ it is easy to find a plane $z=.6$ that classifies our data. SVM performs better if we pre-process the data following the rules on the notebook ``Cleaning data''. 
  
 How can we use this algorithm to find anomalies in new products? we can assume that good products have label 1 and products that are outliers have label 0. By training the SVC this way, it will learn to classify products are regular or outliers. It will recognize when a new product is far from the standard as in fig \ref{fig:novelty}. This idea is explained in the notebook ``SVC II''. 
 	
