@@ -193,17 +193,17 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 % Needed:	Brief description of good and bad points of SVM 
 	\subsection{Neural Networks}  
 	
-	We saw that SVM uses  hyperplanes to separate the data, and that sometimes a transformation of the data is needed. In feed forward neural networks we use iterations of non linear functions followed by matrix transformations.
+	We saw that SVM uses  hyperplanes to separate the data, and that sometimes a transformation of the data is needed. In feed forward neural networks we use iterations of non linear functions followed by matrix transformations that transforms the data to create a classification.
 	
 	 A neural network is a composition of  functions of the form:
 	$x\rightarrow \sigma(W\cdot x+b)$ where $x,b,$ are vectors, $W$ is a matrix, and $\sigma$ stands for a non linear function applied entry wise to the coordinates of the vector  $W\cdot x+b$.
 	It is standard notation to represent matrices  $W$ as arrows from the domain of $x$ to the domain of $w\cdot x + b$ as in \ref{fig:nn}. For details see the notebook 'Neural Network'.
-	Note that in principle some activations could be the identity. If all activations are the identity we can use composition of matrix and reduce the algorithm to SVM. Finding the coefficients of those matrices requires multivariable calculus and the chain rule. In ``L5 Neural Networks'' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
+	 Finding the coefficients of those matrices requires multivariable calculus and the chain rule. In ``Neural Networks'' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
 	
-	An important research question is: What determines the architecture of a Neural Network.  The paper "Why does deep and cheap learning work so well?" targets that question from the Physics point of view.
+	An important research question is: What determines the architecture of a Neural Network.  The paper "Why does deep and cheap learning work so well?" \cite{Lin2017} addresses that question from the Physics point of view.
 	
 	
-	An application of Neural Networks to chemistry is contained in the note ``Poterntial Energy Surface ANN'' where we describe the work of The Roitberg group in University of Florida, a transferable deep learning potential based on Belher and Parrinello symmetry functions that is applicable to complex and diverse molecular systems well beyond the training data set: ANAKIN-ME (Accurate NeurAl networK engINe for Molecular Energies) or ANI for short.
+	An application of Neural Networks to chemistry is contained in the note ``Poterntial Energy Surface ANN'' where we describe the work of The Roitberg group in University of Florida, a transferable deep learning potential: ANAKIN-ME (Accurate NeurAl networK engINe for Molecular Energies) or ANI for short.
 	
     	\begin{figure}[h!]
     	\centering
@@ -211,11 +211,15 @@ How can we use this algorithm to find anomalies in new products? we can assume t
     	\caption{}
     	\label{fig:nn}
     \end{figure} 	
+    
+    Supposed that you are given  input in different steps, like if the input are letters of a name and you want to predict the nationality of the name. To deal with this kind of data, we need to modify our algorithms. Using time just as another variable will result in classification based on when did the event/measurement happened. But perhaps we want to find a classification based on classifications previous made on the partial data already registered. The lecture ``Recurrent Neural Networks'' deals with networks designed for modeling this sequential data.  
+    
+    This can be use to make numerical simulations of partial differential equations and ordinary differential equations, and we include an example with pytorch of Character-Level classification of names in ``RNN II''.
 
-    ``Recurrent Neural Networks'' deals with networks designed for modeling time series data.  Mathematically, our data might be written as $w⋅x^i+w̃ ⋅y_{i−1}$ where  $w$  is the vector containing the weights associated wtih the current inputs  $x^i$  and  $w̃$  is the vector containing the weights of the outputs of the previous time steps  $y_{i−1}$. We are a little bit sloppy with the terminology, the outputs don't necessary have to be from the output layer.
-This can be use to make numerical simulations of partial differential equations and ordinary differential equations, and we include an example with pytorch of Character-Level classification of names in ``RNN II''.
-
-    ``Generative Adversarial Networks'' describes a generative method. Suppose that we have a set of examples and we want to generate more images which look like the previous examples. For example, we might have the set of fashion MNIST and we want to generate fake cloths. Or maybe we want to create fake news. Presently known applications are Image denoising, Inpainting, Super-resolution, Structured Prediction, Exploration in Reinforcement Learning and Neural Network Pretraining.
+    ``Generative Adversarial Networks'' describes a generative method. Suppose that we have a set of examples and we want to generate more images which look like the previous examples. For example, we might have the data set of
+    \href{https://github.com/zalandoresearch/fashion-mnist}{fashion-mnist}, a set of  clothes' pictures and we want to generate artificial images as in this \href{https://github.com/spaceLenny/FashionDCGANExample}{ghost wardrobe}. While it is hard to train a GAN, it produces interesting results as in this \href{ https://twitter.com/henddkn/status/1067431379804262400?s=19 } {GAN-paint} or this 
+    \href{    https://towardsdatascience.com/password-cracker-generating-passwords-with-recurrent-neural-networks-lstms-9583714a3310 
+    }{password cracking} tool.
 
 	\subsection{CNN}
 	
@@ -430,7 +434,7 @@ In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosi
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\bibliographystyle{unsrt}
-	\bibliography{../Papers_related/pfmg}
+	\bibliography{ML}
 	
 	
 \end{document}
