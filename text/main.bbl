@@ -1,8 +1,51 @@
 \begin{thebibliography}{1}
 
+\bibitem{Pedregosa2011}
+Fabian Pedregosa and G~Varoquaux.
+\newblock {Scikit-learn: Machine learning in Python}.
+\newblock {\em {\ldots} of Machine Learning {\ldots}}, 12:2825--2830, 2011.
+
+\bibitem{chollet2015keras}
+Fran\c{c}ois Chollet et~al.
+\newblock Keras.
+\newblock \url{https://keras.io}, 2015.
+
+\bibitem{paszke2017automatic}
+Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary
+  DeVito, Zeming Lin, Alban Desmaison, Luca Antiga, and Adam Lerer.
+\newblock Automatic differentiation in pytorch.
+\newblock 2017.
+
+\bibitem{tensorflow2015-whitepaper}
+Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
+  Craig Citro, Greg~S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin,
+  Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard,
+  Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh
+  Levenberg, Dandelion Man\'{e}, Rajat Monga, Sherry Moore, Derek Murray, Chris
+  Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal
+  Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Vi\'{e}gas,
+  Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and
+  Xiaoqiang Zheng.
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems,
+  2015.
+\newblock Software available from tensorflow.org.
+
 \bibitem{Lin2017}
 Henry~W. Lin, Max Tegmark, and David Rolnick.
 \newblock {Why Does Deep and Cheap Learning Work So Well?}
 \newblock {\em Journal of Statistical Physics}, 2017.
+
+\bibitem{Lee1999}
+Daniel~D. Lee and H.~Sebastian Seung.
+\newblock {Learning the parts of objects by non-negative matrix factorization}.
+\newblock {\em Nature}, 401(6755):788--791, 1999.
+
+\bibitem{Shah2015}
+Sanjiv~J. Shah, Daniel~H. Katz, Senthil Selvaraj, Michael~A. Burke, Clyde~W.
+  Yancy, Mihai Gheorghiade, Robert~O. Bonow, Chiang~Ching Huang, and Rahul~C.
+  Deo.
+\newblock {Phenomapping for novel classification of heart failure with
+  preserved ejection fraction}.
+\newblock {\em Circulation}, 131(3):269--279, 2015.
 
 \end{thebibliography}

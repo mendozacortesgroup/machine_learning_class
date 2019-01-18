@@ -9,14 +9,13 @@
 \contentsline {subsection}{\numberline {1.0.4}Neural Networks}{3}{subsection.1.0.4}
 \contentsline {subsection}{\numberline {1.0.5}CNN}{4}{subsection.1.0.5}
 \contentsline {subsection}{\numberline {1.0.6}Bayesian methods}{5}{subsection.1.0.6}
-\contentsline {subsection}{\numberline {1.0.7}Genetic Algorithms}{6}{subsection.1.0.7}
-\contentsline {subsection}{\numberline {1.0.8}Decision Trees}{7}{subsection.1.0.8}
+\contentsline {subsection}{\numberline {1.0.7}Genetic Algorithms}{5}{subsection.1.0.7}
+\contentsline {subsection}{\numberline {1.0.8}Decision Trees}{6}{subsection.1.0.8}
 \contentsline {subsection}{\numberline {1.0.9}KNN}{7}{subsection.1.0.9}
-\contentsline {subsection}{\numberline {1.0.10}SOM}{9}{subsection.1.0.10}
-\contentsline {subsection}{\numberline {1.0.11}Cocktail party problem}{9}{subsection.1.0.11}
-\contentsline {subsection}{\numberline {1.0.12}Non Negative Tensor Factorization}{9}{subsection.1.0.12}
-\contentsline {chapter}{\numberline {2}Conclusions}{10}{chapter.2}
-\contentsline {chapter}{Appendix}{10}{chapter.2}
-\contentsline {chapter}{\numberline {A}Scripts}{11}{appendix.A}
-\contentsline {chapter}{\numberline {B}Extra plots}{12}{appendix.B}
-\contentsline {chapter}{\numberline {C}Inputs}{13}{appendix.C}
+\contentsline {subsection}{\numberline {1.0.10}Non Negative Tensor Factorization}{7}{subsection.1.0.10}
+\contentsline {subsection}{\numberline {1.0.11}Comparisons among methods}{8}{subsection.1.0.11}
+\contentsline {chapter}{\numberline {2}Conclusions}{9}{chapter.2}
+\contentsline {chapter}{Appendix}{9}{chapter.2}
+\contentsline {chapter}{\numberline {A}Scripts}{10}{appendix.A}
+\contentsline {chapter}{\numberline {B}Extra plots}{11}{appendix.B}
+\contentsline {chapter}{\numberline {C}Inputs}{12}{appendix.C}

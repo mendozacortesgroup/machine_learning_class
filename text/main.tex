@@ -79,18 +79,6 @@
 	
 	\maketitle
 	
-	\newpage
-	
-	\tableofcontents
-	\addcontentsline{toc}{chapter}{List of Contents} 
-	
-	\listoftables
-	\addcontentsline{toc}{chapter}{List of Tables}
-	
-	\listoffigures
-	\addcontentsline{toc}{chapter}{List of Figures}
-	
-	
 	\clearpage
 	\newpage
 	\pagenumbering{arabic}
@@ -125,7 +113,7 @@
 	
 	Software required:
 	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have notebooks that serve as an introduction to Python.
-	Half of the lectures use  Sklearn, the section on Neural Networks contains a lecture on ``Keras''. For the advanced parts we have lectures on ``Pytorch'' and `` Tensorflow'' where we introduce those tools.
+	Half of the lectures use  Sklearn \cite{Pedregosa2011}, the section on Neural Networks contains a lecture on Keras\cite{chollet2015keras}. For the advanced parts we have lectures on Pytorch\cite{paszke2017automatic} and  Tensorflow\cite{tensorflow2015-whitepaper} where we introduce those tools.
 	
 	
 	
@@ -153,11 +141,13 @@
 	 A big part of the performance of a machine learning algorithm relies on preprocessing the data. If we don't have enough data, or if it is biased, the algorithms will reflect those deficiencies in the output. For example, we worked with 3D-scanners until we realized they failed with people of color. The community on twitter suggested that it was an illumination issue, we claim that deciding that the algorithm is ready after testing it only on white people while not caring about the results on people of color is a choice that makes the algorithm biased. After all, that scanner was used on toys and the toy producer was not expecting kids to have special illumination while using the toys.
 	 
 	 An important lesson here is that \href{ https://www.quora.com/In-machine-learning-is-more-data-always-better-than-better-algorithms}{data quality} is a priority. 
-	 
-	  You should avoid working on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by ``Higher Dimensions'' which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. 
+	 You should avoid working on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by ``Higher Dimensions'' which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. 
 	  
 	  % As preprocessing we consider the problem of finding a good representation of our data that helps with the classification process. We will use Taylor series to Build such a map, we know that for a convex function the Hessian is positive definite. So one strategy would be to add any positive definite quadratic form as the non linear part of our map, in ``Information Geometry and Dynamic Entropy'' we review the implications of this process for information theory.
 	  %
+ 	\section{Machine Learning algorithms covered}
+ 	
+ 	
  	
 	\subsection{SVC}
 	Imagine that you are designing a new material. First you create it in vitro, and then you have a team that will materialize those designs. The task is to determine when something goes wrong before investing in the realization of the material;  perhaps the atomic configuration is unstable or the material is below quality. It is relatively easy to gather training data of successful attempts. But on the other side, collection example data of a faulty system  can be expensive, or just impossible. There is no way to describe a priory all the possible defects on the material. SVM can be use to attack this kind of problems as explained in the notebooks ``Support Vector Machine".
@@ -200,8 +190,6 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	It is standard notation to represent matrices  $W$ as arrows from the domain of $x$ to the domain of $w\cdot x + b$ as in \ref{fig:nn}. For details see the notebook 'Neural Network'.
 	 Finding the coefficients of those matrices requires multivariable calculus and the chain rule. In ``Neural Networks'' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
 	
-	An important research question is: What determines the architecture of a Neural Network.  The paper "Why does deep and cheap learning work so well?" \cite{Lin2017} addresses that question from the Physics point of view.
-	
 	
 	An application of Neural Networks to chemistry is contained in the note ``Poterntial Energy Surface ANN'' where we describe the work of The Roitberg group in University of Florida, a transferable deep learning potential: ANAKIN-ME (Accurate NeurAl networK engINe for Molecular Energies) or ANI for short.
 	
@@ -216,28 +204,16 @@ How can we use this algorithm to find anomalies in new products? we can assume t
     
     This can be use to make numerical simulations of partial differential equations and ordinary differential equations, and we include an example with pytorch of Character-Level classification of names in ``RNN II''.
 
-    ``Generative Adversarial Networks'' describes a generative method. Suppose that we have a set of examples and we want to generate more images which look like the previous examples. For example, we might have the data set of
-    \href{https://github.com/zalandoresearch/fashion-mnist}{fashion-mnist}, a set of  clothes' pictures and we want to generate artificial images as in this \href{https://github.com/spaceLenny/FashionDCGANExample}{ghost wardrobe}. While it is hard to train a GAN, it produces interesting results as in this \href{ https://twitter.com/henddkn/status/1067431379804262400?s=19 } {GAN-paint} or this 
-    \href{    https://towardsdatascience.com/password-cracker-generating-passwords-with-recurrent-neural-networks-lstms-9583714a3310 
-    }{password cracking} tool.
-
 	\subsection{CNN}
 	
-	Given a picture of an Warehouse Shelving, a  neural network can immediately identify the objects and add them to the inventory. Chinese government used face recognition to identify fugitives in a music concert. It is possible to train a special Neural Network called Convolutional Neural Network, to transfer the style of a paint into a different paint as we will see in ``Style Transfer'' and `` Pix2Pix'', see fig \ref{fig:botero}. 
+	Given a picture of an Warehouse Shelving, a  neural network can immediately 
+	\href{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture?utm_source=keyword-blog&utm_medium=blog&utm_campaign=mle-outreach&utm_term=&utm_content=mlcc-fairness}{identify the objects and restock the items}.
+	Chinese government used face recognition to \href{http://fortune.com/2018/10/28/in-china-facial-recognition-tech-is-watching-you/}{identify fugitives in a music concert}.
 	
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.45\linewidth]{figures/botero.png}
-		\caption{}
-		\label{fig:botero}
-	\end{figure} 	
-	
-	The main problem with images, is that they are represented as vectors that are too large. Go to your favorite browser and look for images with exactly  $500\times500$ pixels. That is $250000\times3$ numbers. Normal Neural Networks will require you to find too many matrix coefficients. Besides that, we are not working any more on the case $R^b\rightarrow_{ M_{a,b}} R^a$ as the pixels are related with the pixels in their neighborhood, including pixels above and below, so we want to use this information, which may be missing if we just think of an image as a very long vector. 
-	 
+	In order to work with images, we need to solve a problem, images are represented by pixels and a small image has too many pixels. Go to your favorite browser and look for images with exactly  $500\times500$ pixels. That is $250000\times3$ numbers and Feed Forward Neural Networks will require you to find multiples of that many coefficients. Besides that, we are not working any more on the case $R^b\rightarrow_{ M_{a,b}} R^a$ as the pixels are related with the pixels in their neighborhood.
 	
 	We need to change the vectors input to matrices input,  and the vectors output to matrix output. You can think of a matrix as a vector with vector entries.  So now the matrices are not only operations but the elements we work on.
-	Instead of learning a coefficient of a matrix, we learn a filter. The good thing of image processing is that we have visual help to understand the process. A filter may be geometric information that is present in several parts of the image, as the concept of a curve, or a square, see fig \ref{fig:filter} .  
+	The good thing of image processing is that we have visual help to understand the process. We are going to learn smaller matrices called filters, they may learn geometric concepts as a curve, or a square, see fig \ref{fig:filter}.  
 	
 	\begin{figure}[h!]
 		\centering
@@ -247,9 +223,25 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	\end{figure} 	
 
 	
-	In ``CNN'' we explain in more detail how CNN work. In lecture ``Deep Dreams" we ask the neural network if it recognizes a pattern and then we modify images to show that pattern. In `` Style transfer'' we learn images styles and impose them to other images, for example  in \ref{fig:botero} we used a picture of our team and we added the style of a paint of Botero. %Lecture "L 25" is TBD.
+	In the guest post ``CNN'' we explain in more detail how CNN work. In lecture ``Deep Dreams" we ask the neural network if it recognizes a pattern and then we modify images to show that pattern. In `` Style transfer'' we learn images styles and impose them to other images, for example  in \ref{fig:botero} we used a picture of our team and we added the style of a paint of Botero. %Lecture "L 25" is TBD.
 	
 	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.45\linewidth]{figures/botero.png}
+		\caption{}
+		\label{fig:botero}
+	\end{figure} 	
+	
+	
+	``Generative Adversarial Networks'' describes a generative method. Suppose that we have a set of examples and we want to generate more images which look like the previous examples. For example, we might have the data set of
+	\href{https://github.com/zalandoresearch/fashion-mnist}{fashion-mnist}, a set of  clothes' pictures and we want to generate artificial images as in this \href{https://github.com/spaceLenny/FashionDCGANExample}{ghost wardrobe}. While it is hard to train a GAN, it produces interesting results as in this \href{ https://twitter.com/henddkn/status/1067431379804262400?s=19 } {GAN-paint} or this 
+	\href{    https://towardsdatascience.com/password-cracker-generating-passwords-with-recurrent-neural-networks-lstms-9583714a3310 
+	}{password cracking} tool.
+	
+	
+	We recommend to read 	\href{    https://arxiv.org/abs/1608.08225 
+	}{Why does deep and cheap learning work so well?}.  The authors use physics to train to explain the way neural networks are capable to make classifications. 
 \subsection{Bayesian methods}
 In ``Frequentist vs Bayes''
  we introduce Bayesian methods and show how do they differ from the frequetist perspective. 
@@ -262,10 +254,20 @@ P(\theta|X_{train}, T_{train}) = \frac{P(T_{train}, \theta|X_{train})}{\int P(T_
 \end{equation}
 
 The integral on the bottom is generally not analytic. And for higher dimensional problems, infeasible to calculate. By using Monte Carlo Markov Chain algorithm, it is possible to make estimations.  This is also useful to study   the Ising model, which was created to describe Magnetic and ferromagnetic materials. We also introduce Simulated Annealing and Uncertainty Quantification.
+\subsection{SOM}
+Self Organizing Maps is a method that allow us to do dimensional reduction. The main idea is to place randomly points and let those points get attracted to the data points, in such a way that clusters will pull the points harder. We expect the points to end up placed in the center of the clusters. We will make this precise on the lecture ``SOM". 
+In the following picture we can see an \href{https://github.com/ANNetGPGPU/ANNetGPGPU}{ image
+	generated using Self Organizing Maps}.
 
-After this notebook,  we recommend to read ``Why does deep and cheap learning work so well?''.  The authors use physics to train to explain the way neural networks are capable to make classifications. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.45\linewidth]{figures/ex.jpg}
+	\caption{SOM image generated.} 
+	\label{fig:som}
+\end{figure} 	
+
 \subsection{Genetic Algorithms}
-A genetic algorithm is a search heuristic  inspired by Charles Darwin’s theory of natural evolution. They reflect the process of natural selection where the fittest individuals are selected for reproduction in order to produce offspring of the next generation.
+A genetic algorithm is a search heuristic  inspired by Charles Darwin’s theory of natural evolution. They reflect the process of natural selection where the fittest individuals are selected for reproduction in order to produce the next generation.
 
 
 
@@ -286,84 +288,53 @@ The process of natural selection starts with the selection of fittest individual
 
 By doing this process several times, the maximum value obtained by the fitness function on the population cannot  decrease as every new generation has the fittest individuals of the previous generation, while the mutations and foreigners help us avoid fixed points that are not minimums. 
 
-Advantages of Genetic Algorithms. They does not require any derivative information (which may not be available for many real-world problems). They have very good parallel capabilities. They always give an answer to the problem, which gets better over the time.
-Useful when the search space is very large and there are a large number of parameters involved.
-
-Limitations. GAs are not suited for all problems, especially problems which are simple and for which derivative information is available. Probably we don't get the global optimum solution. Fitness value is calculated repeatedly which might be computationally expensive for some problems.
-Being stochastic, there are no guarantees on the optimality or the quality of the solution.
-If not implemented properly, the GA may not converge to the optimal solution.
 		
 For more details see the notebook ``Genetic Algorithm'' and the notebook ``GARFfield'' where an application to reactive force fields is explained.
  
 	 \subsection{Decision Trees}
- We think of a feature as a vertex of a tree, and we think of the possible values of that feature as branches. The order in which we choose the features give us different shapes of trees. Among those trees, we argue that trees with low entropy are better for classification, you can find an algorithm in the notebook ``Decision Trees'' to build your decision tree.
-
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.45\linewidth]{figures/Decision-Trees.png}
-	\caption{}
-	\label{fig:Trees}
-\end{figure} 	
-Advantages of decision trees:
-They are simple to understand, they can handle both numerical and categorical data, they are relatively little data preparation needed, the mechanism for the model can be easily extracted and understood, they are robust against co-linearity.
-
- Disadvantages: Accuracy, they tend to overfit, and the locality of optimization.
  
+Look at the following example: 
+ \begin{figure}[h!]
+ 	\centering
+ 	\includegraphics[width=0.45\linewidth]{figures/Decision-Trees.png}
+ 	\caption{}
+ 	\label{fig:Trees}
+ \end{figure} 	
  
+ we asked several questions to determine an algorithm that will tell us if a person is fit or not based on their replies. The questions are not necessarily the optimal ones, but this illustrates the general methods:  we split data points into subsets based on the values on certain features. The order in which we choose the features give us different algorithms. You can find an algorithm in the notebook ``Decision Trees'' where we aim to find the best features to consider in the decision.
+
+
  \subsection{KNN}
- In K-Nearest-Neighbors, we make a prediction or classify an element by  only analyzing  a neighborhood of the element.  Basic Idea:
- 
- 1.- Get some example set of cases with known outputs. (Diagnosis of diseases.)
- 
- 2.-When you see a new case, assign its output to be the same as the most similar known case. (Your simptomes resemble Mr. T, Mr. T has the flu, Ergo you have the flu).
-
- $K$ stands for how many points nearby do you consider to make your choice. Given a new point $x$ and the closest $k$ points to $x$, you can assign to $x$ the average of $x$'s neighbors values. Here the results depend on a good choice of the parameter $K$. This method gives bad approximations on the boundary. If the boundary is a concern,  Kernel Regression assigns different weights to the nearby points so that points that are closer matter most. 
- 
- Locally weighted polynomial  regression is a local version of polynomial regression.
- The possibility to write a model that deals with the local picture is important in applications as we will see at the end of this section.
+ In K-Nearest-Neighbors, we make a prediction or classify an element by  only analyzing  a neighborhood of the element an assigning to it a function of this neighborhood values, for example  given a new point $x$ and the closest $k$ points to $x$, you can assign to $x$ the average of $x$'s neighbors values.
+ $K$ stands for how many points nearby do you consider to make your choice. The results depend on a good selection of the parameter $K$.  If the boundary is a concern,  Kernel Regression assigns different weights to the nearby points so that points that are closer matter most. Locally weighted polynomial  regression is a local version of polynomial regression where we find the best line or curve that approximate the local nbh.
+  The possibility to write a model that deals with the local picture is important in applications, in fig:\ref{fig:knn} we see examples locally weighted polynomial regression.
  
  \begin{figure}[h!]
  	\centering
- 	\includegraphics[width=0.45\linewidth]{figures/bokeh_plot.png}
+ 	\includegraphics[width=0.25\linewidth]{figures/bokeh_plot0.png}
+ 	\includegraphics[width=0.25\linewidth]{figures/bokeh_plot.png}
+ 	\includegraphics[width=0.25\linewidth]{figures/bokeh_plot1.png}
  	\caption{}
  	\label{fig:knn}
  \end{figure} 	
- In this notebook we deal with  memory based algorithms, 
- they are all easy to adapt to new training samples, so there is no need to retrain them. They 
- can handle complex decision boundaries and functions by considering the query instance when deciding how to generalize.
- The cons are that they require retaining all training examples in memory, so it is slow to evaluate a new query and the evaluation time grows with the dataset size.
   
-Using local polynomial linear regression we will reproduce a typical diagram in phase transition.
+This should remind us of  typical diagrams in phase transition as the Mexican hat \ref{fig:face}.
  \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.45\linewidth]{figures/image.png}
 	\caption{The 3d mexican hat potential.} 
 	\label{fig:face}
 \end{figure} 	
-Let's look at figure \ref{fig:face}. It shows a the ball rolling spontaneously to one side of a 2D W-graph. Let's think of this graph as some sort of potential, which is physics for energy function.
-
-We can think of the ball settled at the bottom of the parabola as the ground-state of the "high temperature" or "high energy" regime of some system. 
-
-This ground state, the ball at the bottom of the parabola, is a unique ground state. 
-
-By this we mean there is a SINGLE state of the system, where if we were to rotate the system about the Z-axis (axis running through center of parabola), the energy of the system would not change. We call this system $U(1)$ symmetric. 
-
-Now consider the low-energy or low-temperature regime: the ball has settled into either side of the quartic-graph. 
-
-In this regime, there is no longer a unique ground state, the ball being on the left or on the right are configurations that correspond to the same energy values. Therefore, we say there is a DEGENERACY of the ground states, and there is no way to distinguish one configuration from the other simply in terms of energy. We call this parity symmetry. Although our low-energy system has "broken the symmetry" of $U(1)$ by falling into the left or right side. These two sides have the same energy and are thus indistinguishable. This means we can call them parity invariant. This parity invariance is characterized by a group of transformations of the ground state that leave the energy unchanged. It turns out that this group of transformations is the group of rotations of the "phase" of the system. 
 
 
 
 
-\subsection{SOM}
- \subsection{Cocktail party problem}
  \subsection{Non Negative Tensor Factorization}
  
 We consider data in form of a matrix. For example, given a vocabulary with  m  words, and  n  documents,  $V_{ik}$ is  the number of times the  $i$ -word in the dictionary appears on the  $k$  document.
 A database of gray-scale images of a fixed size can also be described by a matrix $V$.  We relabel the pixels in an image form $1$ to $ m$, and assume the  database has $n$ images. The value of the $V_{ik}$ is the intensity of the $i$-pixel in the $k$ image. 
 
-Non negative matrix factorization is a process to find two matrices with non negative entries $W,H$ so that $V\sim W\times H$. It turns out that the columns of $H$ can be understood as a basis whose linear combination approximates the columns of $V$. $W$ give us the coefficients so that a juxtaposition of the columns of  $H$ can recover the initial data. Columns of $H$ have been recognized as eigen images. This method is used in topic selection.  
+Non negative matrix factorization is a process to find two matrices with non negative entries $W,H$ so that $V\sim W\times H$. It turns out that the columns of $H$ can be understood as a basis whose linear combination approximates the columns of $V$. $W$ give us the coefficients so that a juxtaposition of the columns of  $H$ can recover the initial data. Columns of $H$ have been recognized as eigen images \cite{Lee1999}.  
  
  
 
@@ -373,61 +344,16 @@ Imagine that for every patient you have a matrix of diagnosis and medications. W
  When we  replaced matrices by tensors we substitute the factorization into matrix multiplication by tensor decomposition into rank one tensors. 
  
  
-In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure/function, invasive hemodynamics, and outcomes'.
+In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure / function, invasive hemodynamics, and outcomes' \cite{Shah2015}.
  
  
 
 		%should we include reaction networks??????
 			
 		
-		
 
-	
-	
-	
-	
-	%%*************************************************************** %
-	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-	%%*************************************************************** %
-	%%*************************************************************** %
-	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-	%%*************************************************************** %
-	%%*************************************************************** %
-	%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-	%%*************************************************************** %
-	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	
-	\chapter{Conclusions}
-	Here is a guideline of which method to use according to the data.
-	
-	
-	%*************************************************************** %
-	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-	%*************************************************************** %
-	%*************************************************************** %
-	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-	%*************************************************************** %
-	%*************************************************************** %
-	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-	%*************************************************************** %
-	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% Begin Appendix Chapter Document %%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	\appendix
-	\addcontentsline{toc}{chapter}{Appendix}
-	
-	\chapter[Scripts]{Scripts}
-	
-	\chapter{Extra plots}
-	
-	\chapter{Inputs}
-	
+\section{Comparisons among methods}	
+HERE WE CAN ADD A DIAGRAM THAT EXPLAINS WHEN TO USE WHICH METHOD WITH WHICH DATA
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Begin Appendix Bibliography Document %%%%%%%%%%%%%%%%%%%%%
@@ -438,5 +364,26 @@ In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosi
 	
 	
 \end{document}
+
+
+	
+Advantages of Genetic Algorithms. They does not require any derivative information (which may not be available for many real-world problems). They have very good parallel capabilities. They always give an answer to the problem, which gets better over the time.
+Useful when the search space is very large and there are a large number of parameters involved.
+
+Limitations. GAs are not suited for all problems, especially problems which are simple and for which derivative information is available. Probably we don't get the global optimum solution. Fitness value is calculated repeatedly which might be computationally expensive for some problems.
+Being stochastic, there are no guarantees on the optimality or the quality of the solution.
+If not implemented properly, the GA may not converge to the optimal solution.
+
+
+Advantages of decision trees:
+They are simple to understand, they can handle both numerical and categorical data, they are relatively little data preparation needed, the mechanism for the model can be easily extracted and understood, they are robust against co-linearity.
+
+Disadvantages: Accuracy, they tend to overfit, and the locality of optimization.
+
+In this notebook we deal with  memory based algorithms, 
+they are all easy to adapt to new training samples, so there is no need to retrain them. They 
+can handle complex decision boundaries and functions by considering the query instance when deciding how to generalize.
+The cons are that they require retaining all training examples in memory, so it is slow to evaluate a new query and the evaluation time grows with the dataset size.
+
 
 
