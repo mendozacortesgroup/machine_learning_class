@@ -43,7 +43,7 @@ Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
 \bibitem{wfair}
 {Google Fairness training}.
 \newblock
-  \url{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture?utm_source=keyword-blog&utm_medium=blog&utm_campaign=mle-outreach&utm_term=&utm_content=mlcc-fairness}.
+  \url{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture}.
 \newblock [Online; accessed 21-January-2019].
 
 \bibitem{wadaptation}
@@ -52,7 +52,7 @@ Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
 \newblock [Online; accessed 21-January-2019].
 
 \bibitem{wexhibition}
-{SCIART MAGAZINE, STRAIGHT TALK with Justus Harris}.
+{Sciart Magazine, Straight Talk with Justus Harris}.
 \newblock
   \url{https://www.sciartmagazine.com/straight-talk-justus-harris.html}.
 \newblock [Online; accessed 21-January-2019].
@@ -65,7 +65,7 @@ Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
 
 \bibitem{wai}
 {AI Academy}.
-\newblock \url{https://aiacademy.tw}{AI Academy}.
+\newblock \url{https://aiacademy.tw}.
 \newblock [Online; accessed 21-January-2019].
 
 \bibitem{wfashion}
@@ -85,8 +85,7 @@ Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
 
 \bibitem{wpassword}
 {Password Cracking Tool}.
-\newblock
-  \url{https://towardsdatascience.com/password-cracker-generating-passwords-with-recurrent-neural-networks-lstms-9583714a3310}.
+\newblock \url{https://tinyurl.com/PasswordCrackerRNN}.
 \newblock [Online; accessed 21-January-2019].
 
 \bibitem{Lin2017}
@@ -119,5 +118,16 @@ Sanjiv~J. Shah, Daniel~H. Katz, Senthil Selvaraj, Michael~A. Burke, Clyde~W.
 \newblock {Phenomapping for novel classification of heart failure with
   preserved ejection fraction}.
 \newblock {\em Circulation}, 131(3):269--279, 2015.
+
+\bibitem{Gron}
+Aurlien Gron.
+\newblock {\em Hands-On Machine Learning with Scikit-Learn and TensorFlow:
+  Concepts, Tools, and Techniques to Build Intelligent Systems}.
+\newblock O'Reilly Media, Inc., 1st edition, 2017.
+
+\bibitem{DRN}
+Fisher Yu, Vladlen Koltun, and Thomas Funkhouser.
+\newblock Dilated residual networks.
+\newblock 05 2017.
 
 \end{thebibliography}

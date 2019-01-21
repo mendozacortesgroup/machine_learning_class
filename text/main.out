@@ -1,14 +1,15 @@
-\BOOKMARK [0][-]{chapter.1}{Introduction and Background}{}% 1
-\BOOKMARK [1][-]{subsection.1.0.1}{Fairness}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.0.2}{Preprocessing Data}{subsection.1.0.1}% 3
-\BOOKMARK [1][-]{section.1.1}{Machine Learning algorithms covered}{chapter.1}% 4
-\BOOKMARK [2][-]{subsection.1.1.1}{SVC}{section.1.1}% 5
-\BOOKMARK [2][-]{subsection.1.1.2}{Neural Networks}{section.1.1}% 6
-\BOOKMARK [2][-]{subsection.1.1.3}{CNN}{section.1.1}% 7
-\BOOKMARK [2][-]{subsection.1.1.4}{Bayesian methods}{section.1.1}% 8
-\BOOKMARK [2][-]{subsection.1.1.5}{SOM}{section.1.1}% 9
-\BOOKMARK [2][-]{subsection.1.1.6}{Genetic Algorithms}{section.1.1}% 10
-\BOOKMARK [2][-]{subsection.1.1.7}{Decision Trees}{section.1.1}% 11
-\BOOKMARK [2][-]{subsection.1.1.8}{KNN}{section.1.1}% 12
-\BOOKMARK [2][-]{subsection.1.1.9}{Non Negative Tensor Factorization}{section.1.1}% 13
-\BOOKMARK [1][-]{section.1.2}{Experimental topics}{chapter.1}% 14
+\BOOKMARK [1][-]{section.0.1}{Motivation}{}% 1
+\BOOKMARK [2][-]{subsection.0.1.1}{Fairness}{section.0.1}% 2
+\BOOKMARK [2][-]{subsection.0.1.2}{Preprocessing Data}{section.0.1}% 3
+\BOOKMARK [1][-]{section.0.2}{Machine Learning algorithms covered}{}% 4
+\BOOKMARK [2][-]{subsection.0.2.1}{SVC}{section.0.2}% 5
+\BOOKMARK [2][-]{subsection.0.2.2}{Neural Networks}{section.0.2}% 6
+\BOOKMARK [2][-]{subsection.0.2.3}{CNN}{section.0.2}% 7
+\BOOKMARK [2][-]{subsection.0.2.4}{Bayesian methods}{section.0.2}% 8
+\BOOKMARK [2][-]{subsection.0.2.5}{SOM}{section.0.2}% 9
+\BOOKMARK [2][-]{subsection.0.2.6}{Genetic Algorithms}{section.0.2}% 10
+\BOOKMARK [2][-]{subsection.0.2.7}{Decision Trees}{section.0.2}% 11
+\BOOKMARK [2][-]{subsection.0.2.8}{KNN}{section.0.2}% 12
+\BOOKMARK [2][-]{subsection.0.2.9}{Non Negative Tensor Factorization}{section.0.2}% 13
+\BOOKMARK [2][-]{subsection.0.2.10}{Which method to use?}{section.0.2}% 14
+\BOOKMARK [1][-]{section.0.3}{Experimental topics}{}% 15

@@ -107,7 +107,7 @@
 	
 	\clearpage
 	\newpage
-	\chapter{Introduction and Background}
+	\section{Motivation}
 		Which machine learning algorithms should you use for your research or project? There are already several automatized programs  that take your data and evaluate machine learning algorithms on it. By design, those methods won't use the optimal parameters or don't use the recent technology. In this notes we aim to give several examples of algorithms and applications to help you identify the method most suitable for your problem while understanding how to use the more capabilities of the algorithm. This will be an important difference if you are interested in research, or to optimize a solution to a problem. In case that all you want is a quick solution without worrying if it is optimal or not, you may prefer to use automatized methods instead, we will mention a couple of them in the corresponding section. 
 		
 		Our goal is to make this notes accessible for non CS majors with plenty of examples that will help you identify if your particular problem can be solve with the method.
@@ -353,9 +353,39 @@ In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosi
 		%should we include reaction networks??????
 			
 		
+\subsection{Which method to use?}
+Classification Trees are used when you have Discrete output. It's a Supervised Learning algorithm (ID3, C4.5). We use it when we have a finite number of classification categories and the data can be represented as vectors.
+It has the advantage that we can understand how the classifier makes its choices.
 
-\section{Experimental topics}
-	We also have an introduction to quantum computing with DWave, IBM Q and qiskit as well as reaction networks.
+
+Genetic Algorithms are used for discrete parameter optimization. It's good for combinatorial problems.
+They are slow and  challenging to code as it is not trivial to  find the right representations, the fitness function, etc.
+
+
+
+
+Nearest Neighbor, KNN, Kernel regression, and Locally weighted (linear) regression
+
+The algorithms are easy to understand, and are Local in nature, training data that is localized around the query contribute more to the prediction value.
+They require retaining all training examples in memory, they are slow to evaluate a new query. Evaluation time grows with the dataset size.
+
+Self Organizing Maps are unsupervised learning algorithm used for clustering and dimension reduction.
+
+
+Support Vector Machines are used for Classification.
+They scale well to hight dimensional data.
+By designing carefully the kernels it can be used on data not on vector form as graphs, sequences, relational data, etc. It needs the parameters kernel, and how much 'slack' is allowed.
+
+
+Artificial Neural Networks are a hierachical (or deep) method. While it is very popular, most problems can be solved with simpler machine learning methods\cite{Gron}. Neural networks can represent logic functions (and, or, nand) and therefore are generalizable to any complicated computer function (given enough blocks). We use CNN to work with images. It's recommended to do data-augmentation.
+
+It is still not clear what architecture\cite{Lin2017} to use for a particular problem,   the deepness of the ANN, etc. In that direction the suggested architecture to try when dealing with images will be dilated residual networks\cite{DRN}. As for other data types, the current status of the theory says to find on research papers the architectures that other people have tried for similar problems.
+
+
+Bayes methods. In this methods parameters and data are random variables. It learns the full distribution, everything about the data. With a well chosen prior, bias and over fitting is often of little concern. In practice it is computationally intractable. Must use approximation methods such as variational inference and Monte Carlo techniques.
+
+Monte-Carlo Markov Chain.
+\section{Experimental topics}We also described topics whose application to science may take some time but are definitely promising: an introduction to quantum computing with DWave, IBM Q and qiskit as well a notebook on reaction networks.
 %Perhaps to add a diagram that helps with the classification
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
