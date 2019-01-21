@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Pedregosa2011}
 Fabian Pedregosa and G~Varoquaux.
@@ -30,10 +30,74 @@ Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
   2015.
 \newblock Software available from tensorflow.org.
 
+\bibitem{wcancer}
+{{Breast cancer Wisconsin (diagnostic) dataset}}, howpublished =
+  "\url{hhttps://scikit-learn.org/stable/datasets/index.html#breast-cancer-dataset}",
+  note = "[online; accessed 21-january-2019]".
+
+\bibitem{wpolice}
+{Citizens Police Data Project}.
+\newblock \url{https://data.cpdp.co/data/L5rG3q/citizens-police-data-project}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wfair}
+{Google Fairness training}.
+\newblock
+  \url{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture?utm_source=keyword-blog&utm_medium=blog&utm_campaign=mle-outreach&utm_term=&utm_content=mlcc-fairness}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wadaptation}
+{Art event Adaptation}.
+\newblock \url{http://agile-iot.eu/adaptation/}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wexhibition}
+{SCIART MAGAZINE, STRAIGHT TALK with Justus Harris}.
+\newblock
+  \url{https://www.sciartmagazine.com/straight-talk-justus-harris.html}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wdata}
+{Quora: In machine learning is more data always better than better algorithms?}
+\newblock
+  \url{hhttps://www.quora.com/In-machine-learning-is-more-data-always-better-than-better-algorithms}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wai}
+{AI Academy}.
+\newblock \url{https://aiacademy.tw}{AI Academy}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wfashion}
+{Fashion-mnist data set}.
+\newblock \url{https://github.com/zalandoresearch/fashion-mnist}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wghost}
+{Github: Ghost wardrobe}.
+\newblock \url{https://github.com/spaceLenny/FashionDCGANExample}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wtwitter}
+{Twitter: GAN-paint}.
+\newblock \url{https://twitter.com/henddkn/status/1067431379804262400?s=19 }.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wpassword}
+{Password Cracking Tool}.
+\newblock
+  \url{https://towardsdatascience.com/password-cracker-generating-passwords-with-recurrent-neural-networks-lstms-9583714a3310}.
+\newblock [Online; accessed 21-January-2019].
+
 \bibitem{Lin2017}
 Henry~W. Lin, Max Tegmark, and David Rolnick.
-\newblock {Why Does Deep and Cheap Learning Work So Well?}
-\newblock {\em Journal of Statistical Physics}, 2017.
+\newblock Why does deep and cheap learning work so well?
+\newblock {\em Journal of Statistical Physics}, 168(6):1223--1247, Sep 2017.
+
+\bibitem{wsom}
+{A GPU (CUDA) based Artificial Neural Network library}.
+\newblock \url{https://github.com/ANNetGPGPU/ANNetGPGPU}.
+\newblock [Online; accessed 21-January-2019].
 
 \bibitem{Lee1999}
 Daniel~D. Lee and H.~Sebastian Seung.

@@ -22,6 +22,7 @@
 \usepackage{subcaption}
 %\usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{url}
 \hypersetup{colorlinks=true,  % false: boxed links; true: colored links
 	linkcolor=blue,   % color of internal links
 	urlcolor=magenta, % color of external links
@@ -107,13 +108,13 @@
 	\clearpage
 	\newpage
 	\chapter{Introduction and Background}
-		Which machine learning algorithms should you use for your research or project? There are already several automatized programs  that take your data and evaluate machine learning algorithms on it. By design, those methods don't tune the algorithm parameters or don't use the recent technology. In this notes we aim to give several examples of algorithms and applications to help you identify the method most suitable for your problem while understanding how to use the more capabilities of the algorithm. This will be an important difference if you are interested in research, or to optimize a solution to a problem. In case that all you want is a quick solution without worrying if it is optimal or not, you may prefer to use automatized methods instead, we will mention a couple of them in the corresponding section. 
+		Which machine learning algorithms should you use for your research or project? There are already several automatized programs  that take your data and evaluate machine learning algorithms on it. By design, those methods won't use the optimal parameters or don't use the recent technology. In this notes we aim to give several examples of algorithms and applications to help you identify the method most suitable for your problem while understanding how to use the more capabilities of the algorithm. This will be an important difference if you are interested in research, or to optimize a solution to a problem. In case that all you want is a quick solution without worrying if it is optimal or not, you may prefer to use automatized methods instead, we will mention a couple of them in the corresponding section. 
 		
 		Our goal is to make this notes accessible for non CS majors with plenty of examples that will help you identify if your particular problem can be solve with the method.
 	
 	Software required:
 	This guide will require a basic knowledge of python 3, we recommend to install it with Anaconda. We also have notebooks that serve as an introduction to Python.
-	Half of the lectures use  Sklearn \cite{Pedregosa2011}, the section on Neural Networks contains a lecture on Keras\cite{chollet2015keras}. For the advanced parts we have lectures on Pytorch\cite{paszke2017automatic} and  Tensorflow\cite{tensorflow2015-whitepaper} where we introduce those tools.
+	Half of the lectures use  Sklearn \cite{Pedregosa2011}, the section on Neural Networks contains a lecture on Keras\cite{chollet2015keras}. For the advanced parts we have lectures on Pytorch\cite{paszke2017automatic} and  Tensorflow\cite{tensorflow2015-whitepaper}.
 	
 	
 	
@@ -131,17 +132,19 @@
 	%% Begin Chapter Document %%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \subsection{Fairness}
-	For motivational purposes assume that you have measured data, and for each value you have a label. Perhaps you have a list of characteristics of breast cancer samples and the label is 1 if the cancer is malignant or 0 if it is benign as in \href{https://scikit-learn.org/stable/datasets/index.html#breast-cancer-dataset}{Breast cancer Wisconsin (diagnostic) dataset}, another example is the data of police misconduct in Chicago and the labels are the officer's race as in \href{https://data.cpdp.co/data/L5rG3q/}{Citizens Police Data Project}. The main task for us is to find if we can we make reasonable predictions for the labels of new, unseen, data values.
+	For motivational purposes assume that you have measured data, and for each value you have a label. Perhaps you have a list of characteristics of breast cancer samples and the label is 1 if the cancer is malignant or 0 if it is benign as in \href{https://scikit-learn.org/stable/datasets/index.html#breast-cancer-dataset}{Breast cancer Wisconsin (diagnostic) dataset}\cite{wcancer}, another example is the data of police misconduct in Chicago and the labels are the officer's race as in \href{https://data.cpdp.co/data/L5rG3q/}{Citizens Police Data Project}\cite{wpolice}. The main task for us is to find if we can we make reasonable predictions for the labels of new, unseen, data values.
 
-    The algorithm will return a class based on the algorithm's design, how we trained the algorithm and what we do with the output are choices made by humans and this will have consequences. We recommend to take the 70 min \href{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture?utm_source=keyword-blog&utm_medium=blog&utm_campaign=mle-outreach&utm_term=&utm_content=mlcc-fairness}{Fairness training} to prevent different types of bias on your project. 
+    The algorithm will return a class based on the algorithm's design and training. Which data do we use for training it and what we do with the output are choices made by humans and this will have consequences. We recommend to take the 70 min \href{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture?utm_source=keyword-blog&utm_medium=blog&utm_campaign=mle-outreach&utm_term=&utm_content=mlcc-fairness}{Fairness training}\cite{wfair} to prevent different types of bias on your project. 
 
 	\subsection{Preprocessing Data}
 
 	
-	 A big part of the performance of a machine learning algorithm relies on preprocessing the data. If we don't have enough data, or if it is biased, the algorithms will reflect those deficiencies in the output. For example, we worked with 3D-scanners until we realized they failed with people of color. The community on twitter suggested that it was an illumination issue, we claim that deciding that the algorithm is ready after testing it only on white people while not caring about the results on people of color is a choice that makes the algorithm biased. After all, that scanner was used on toys and the toy producer was not expecting kids to have special illumination while using the toys.
+	 A big part of the performance of a machine learning algorithm relies on preprocessing the data. If we don't have enough data, or if it is biased, the algorithms will reflect those deficiencies in the output. For example, for the contest and 	 \href{	  http://agile-iot.eu/adaptation/}{art event Adaptation}\cite{wadaptation} we 
+	 \href{	 https://www.sciartmagazine.com/straight-talk-justus-harris.html}{ worked with 3D-scanners}\cite{wexhibition} 
+	  until we realized they failed with people of color. The community on twitter suggested that it was an illumination issue, we claim that deciding that the algorithm is ready after testing it only on white people while not caring about the results on people of color is a choice that makes the algorithm biased. After all, that scanner was used on toys and the toy producer was not expecting kids to have special illumination while using the toys.
 	 
-	 An important lesson here is that \href{ https://www.quora.com/In-machine-learning-is-more-data-always-better-than-better-algorithms}{data quality} is a priority. 
-	 You should avoid working on data that was collected for a different experiment. Since data is collected by humans, you should always look for mistakes by cleaning the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by ``Higher Dimensions'' which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. 
+	 An important lesson here is that \href{ https://www.quora.com/In-machine-learning-is-more-data-always-better-than-better-algorithms}{data quality}\cite{wdata} is a priority. 
+	 Since data is collected by humans, you should always look for mistakes by cleaning the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by ``Higher Dimensions'' which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. 
 	  
 	  % As preprocessing we consider the problem of finding a good representation of our data that helps with the classification process. We will use Taylor series to Build such a map, we know that for a convex function the Hessian is positive definite. So one strategy would be to add any positive definite quadratic form as the non linear part of our map, in ``Information Geometry and Dynamic Entropy'' we review the implications of this process for information theory.
 	  %
@@ -150,7 +153,7 @@
  	
  	
 	\subsection{SVC}
-	Imagine that you are designing a new material. First you create it in vitro, and then you have a team that will materialize those designs. The task is to determine when something goes wrong before investing in the realization of the material;  perhaps the atomic configuration is unstable or the material is below quality. It is relatively easy to gather training data of successful attempts. But on the other side, collection example data of a faulty system  can be expensive, or just impossible. There is no way to describe a priory all the possible defects on the material. SVM can be use to attack this kind of problems as explained in the notebooks ``Support Vector Machine".
+	Imagine that you are designing a new material. First you create it in vitro, and then you have a team that will materialize those designs. The task is to determine when something goes wrong before investing in the realization of the material; it is fairly easy to determine what are good properties but it is a complex task to imagine what could be bad specially on a multi scale process, perhaps the atomic configuration is unstable, the material is below quality, or there is a similar  material in properties and quality  with a lower price.  Since collection of example data of a faulty system  can be expensive, or just impossible,  there is no way to describe a priory all the possible defects on the material. SVM can be use to attack this kind of problems as explained in the notebooks ``Support Vector Machine".
 	
 	The general idea is explained as follows:
 	\begin{figure}[h!]
@@ -171,7 +174,7 @@
 	
  Most real life cases are not linearly separable, but sometimes we can transform the features hoping that the new features can be separated  with hyper planes. On the image \ref{fig:kernel} we add a third coordinate to the data, the distance to the origin. Then in $R^3$ it is easy to find a plane $z=.6$ that classifies our data. SVM performs better if we pre-process the data following the rules on the notebook ``Cleaning data''. 
  
-How can we use this algorithm to find anomalies in new products? we can assume that good products have label 1 and products that are outliers have label 0. By training the SVC this way, it will learn to classify products are regular or outliers. It will recognize when a new product is far from the standard as in fig \ref{fig:novelty}. This idea is explained in the notebook ``SVC II''. 
+How can we use this algorithm to find anomalies in new products? we can assume that good products have label 1 and products that are outliers have label 0. By training the SVC this way, it will learn to classify products in regular or outliers. It will recognize when a new product is far from the standard as in fig \ref{fig:novelty}. This idea is explained in the notebook ``SVC II''. 
 	
 	\begin{figure}[h!]
 		\centering
@@ -210,7 +213,7 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	\href{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture?utm_source=keyword-blog&utm_medium=blog&utm_campaign=mle-outreach&utm_term=&utm_content=mlcc-fairness}{identify the objects and restock the items}.
 	Chinese government used face recognition to \href{http://fortune.com/2018/10/28/in-china-facial-recognition-tech-is-watching-you/}{identify fugitives in a music concert}.
 	
-	In order to work with images, we need to solve a problem, images are represented by pixels and a small image has too many pixels. Go to your favorite browser and look for images with exactly  $500\times500$ pixels. That is $250000\times3$ numbers and Feed Forward Neural Networks will require you to find multiples of that many coefficients. Besides that, we are not working any more on the case $R^b\rightarrow_{ M_{a,b}} R^a$ as the pixels are related with the pixels in their neighborhood.
+	In order to work with images, we need to solve a problem, images are represented by pixels and a small image has too many pixels. Go to your favorite browser and look for images with exactly  $500\times500$ pixels. That is $250000\times3$ numbers, since we have to select Red Green and Blue for every pixel, and Feed Forward Neural Networks will require you to find multiples of that many coefficients. Besides that, we are not working any more with vectors as the pixels are related with the pixels in their neighborhood.
 	
 	We need to change the vectors input to matrices input,  and the vectors output to matrix output. You can think of a matrix as a vector with vector entries.  So now the matrices are not only operations but the elements we work on.
 	The good thing of image processing is that we have visual help to understand the process. We are going to learn smaller matrices called filters, they may learn geometric concepts as a curve, or a square, see fig \ref{fig:filter}.  
@@ -222,8 +225,8 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 		\label{fig:filter}
 	\end{figure} 	
 
-	
-	In the guest post ``CNN'' we explain in more detail how CNN work. In lecture ``Deep Dreams" we ask the neural network if it recognizes a pattern and then we modify images to show that pattern. In `` Style transfer'' we learn images styles and impose them to other images, for example  in \ref{fig:botero} we used a picture of our team and we added the style of a paint of Botero. %Lecture "L 25" is TBD.
+    We have a guest post ``CNN'' (in English) from the \href{https://aiacademy.tw}{AI Academy}\cite{wai} where
+	 we explain in more detail how CNN work. In lecture ``Deep Dreams" we ask the neural network if it recognizes a pattern on an image and then we modify that image to show the pattern. In `` Style transfer'' we learn images styles and impose them to other images, for example  in \ref{fig:botero} we used a picture of our team and we added the style of a paint of the painter Fernando Botero. %Lecture "L 25" is TBD.
 	
 	
 	\begin{figure}[h!]
@@ -235,13 +238,13 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	
 	
 	``Generative Adversarial Networks'' describes a generative method. Suppose that we have a set of examples and we want to generate more images which look like the previous examples. For example, we might have the data set of
-	\href{https://github.com/zalandoresearch/fashion-mnist}{fashion-mnist}, a set of  clothes' pictures and we want to generate artificial images as in this \href{https://github.com/spaceLenny/FashionDCGANExample}{ghost wardrobe}. While it is hard to train a GAN, it produces interesting results as in this \href{ https://twitter.com/henddkn/status/1067431379804262400?s=19 } {GAN-paint} or this 
+	\href{https://github.com/zalandoresearch/fashion-mnist}{fashion-mnist}\cite{wfashion}, a set of  clothes' pictures and we want to generate artificial images as in this \href{https://github.com/spaceLenny/FashionDCGANExample}{ghost wardrobe}\cite{wghost}. While it is hard to train a GAN, it produces interesting results as in this \href{ https://twitter.com/henddkn/status/1067431379804262400?s=19 } {GAN-paint}\cite{wtwitter} or this 
 	\href{    https://towardsdatascience.com/password-cracker-generating-passwords-with-recurrent-neural-networks-lstms-9583714a3310 
-	}{password cracking} tool.
+	}{password cracking}\cite{wpassword} tool.
 	
 	
 	We recommend to read 	\href{    https://arxiv.org/abs/1608.08225 
-	}{Why does deep and cheap learning work so well?}.  The authors use physics to train to explain the way neural networks are capable to make classifications. 
+	}{Why does deep and cheap learning work so well?}\cite{Lin2017}.  The authors use physics to train to explain the way neural networks are capable to make classifications. 
 \subsection{Bayesian methods}
 In ``Frequentist vs Bayes''
  we introduce Bayesian methods and show how do they differ from the frequetist perspective. 
@@ -257,7 +260,7 @@ The integral on the bottom is generally not analytic. And for higher dimensional
 \subsection{SOM}
 Self Organizing Maps is a method that allow us to do dimensional reduction. The main idea is to place randomly points and let those points get attracted to the data points, in such a way that clusters will pull the points harder. We expect the points to end up placed in the center of the clusters. We will make this precise on the lecture ``SOM". 
 In the following picture we can see an \href{https://github.com/ANNetGPGPU/ANNetGPGPU}{ image
-	generated using Self Organizing Maps}.
+	generated using Self Organizing Maps}\cite{wsom}.
 
 \begin{figure}[h!]
 	\centering
