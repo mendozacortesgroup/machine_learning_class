@@ -341,13 +341,12 @@ Non negative matrix factorization is a process to find two matrices with non neg
  
  
 
-Imagine that for every patient you have a matrix of diagnosis and medications. We can put the column of medications and the rows of diagnosis. So the entries will be mostly zeroes, except when the patient was diagnosed with the $i$-sickness and received the $k$-medication. If we consider a third dimension given by the patient, then we have a 3-dimensional matrix or a vector.
- There is a higher dimensional version of tensor factorization  where we substitute  matrices by tensors. 
- The main yoga was that the non negativity constrain allow us to recover the initial object from juxtaposition of it's parts. 
- When we  replaced matrices by tensors we substitute the factorization into matrix multiplication by tensor decomposition into rank one tensors. 
+Imagine that for every patient you have a matrix of diagnosis and medications. We can put the column of medications and the rows of diagnosis. So the entries will be mostly zeroes, except when the patient was diagnosed with the $i$-sickness and received the $k$-medication. If we stack this matrices on each other, then we have a 3-dimensional matrix or a vector where we consider the third dimension given by the patients. There is a higher dimensional version of tensor factorization  where we substitute  matrices by tensors (higher dimensional matrices). 
+ 
+The main yoga was that the non negativity constrain allow us to recover the initial object from juxtaposition of it's parts. When we  replaced matrices by tensors we substitute the factorization into matrix multiplication by tensor decomposition into rank one tensors. 
  
  
-In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure / function, invasive hemodynamics, and outcomes' \cite{Shah2015}.
+In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping\cite{Ho}.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure / function, invasive hemodynamics, and outcomes' \cite{Shah2015}.
  
  
 
@@ -356,7 +355,7 @@ In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosi
 		
 
 \section{Comparisons among methods}	
-HERE WE CAN ADD A DIAGRAM THAT EXPLAINS WHEN TO USE WHICH METHOD WITH WHICH DATA
+%Perhaps to add a diagram that helps with the classification
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Begin Appendix Bibliography Document %%%%%%%%%%%%%%%%%%%%%

@@ -104,6 +104,14 @@ Daniel~D. Lee and H.~Sebastian Seung.
 \newblock {Learning the parts of objects by non-negative matrix factorization}.
 \newblock {\em Nature}, 401(6755):788--791, 1999.
 
+\bibitem{Ho}
+Joyce~C. Ho, Joydeep Ghosh, and Jimeng Sun.
+\newblock Marble: High-throughput phenotyping from electronic health records
+  via sparse nonnegative tensor factorization.
+\newblock In {\em Proceedings of the 20th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, KDD '14, pages 115--124, New York,
+  NY, USA, 2014. ACM.
+
 \bibitem{Shah2015}
 Sanjiv~J. Shah, Daniel~H. Katz, Senthil Selvaraj, Michael~A. Burke, Clyde~W.
   Yancy, Mihai Gheorghiade, Robert~O. Bonow, Chiang~Ching Huang, and Rahul~C.
