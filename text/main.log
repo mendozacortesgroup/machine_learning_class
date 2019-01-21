@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  21 JAN 2019 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  21 JAN 2019 12:10
 entering extended mode
 **./main.tex
 (main.tex
@@ -1230,14 +1230,21 @@ ent-[]neural-[]networks-[]lstms-[]9583714a3310$[][]\OT1/cmr/m/n/10.95 .
  []
 
 ) [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 368.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 368.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 369.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 369.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 368.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 368.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D8AC24C5099DE53E7BC4F24BAD97017B;953.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 368.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 369.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 369.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: D8AC24C5099DE53E7BC4F24BAD97017B;953
+(rerunfilecheck)             After:  EC4AAE015C40EA525A95C0A6FCC831E9;947.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 369.
  ) 
 Here is how much of TeX's memory you used:
  28270 strings out of 493305
@@ -1262,7 +1269,7 @@ lic/amsfonts/cm/cmsl10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/FSU/AppData/Local/Pr
 ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (13 pages, 3329271 bytes).
+Output written on main.pdf (13 pages, 3330248 bytes).
 PDF statistics:
  306 PDF objects out of 1000 (max. 8388607)
  60 named destinations out of 1000 (max. 500000)
