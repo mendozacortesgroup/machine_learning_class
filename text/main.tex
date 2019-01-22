@@ -377,14 +377,21 @@ They scale well to hight dimensional data.
 By designing carefully the kernels it can be used on data not on vector form as graphs, sequences, relational data, etc. It needs the parameters kernel, and how much 'slack' is allowed.
 
 
-Artificial Neural Networks are a hierachical (or deep) method. While it is very popular, most problems can be solved with simpler machine learning methods\cite{Gron}. Neural networks can represent logic functions (and, or, nand) and therefore are generalizable to any complicated computer function (given enough blocks). We use CNN to work with images. It's recommended to do data-augmentation.
-
+Artificial Neural Networks are a hierachical (or deep) method. While it is very popular, most problems can be solved with simpler machine learning methods\cite{Gron}. Neural networks can represent logic functions (and, or, nand) and therefore are generalizable to any complicated computer function (given enough blocks). We use CNN to work with images, with CNN it's recommended to do data-augmentation. We use RNN to analyze time series, for example in Natural Language Processing.
 It is still not clear what architecture\cite{Lin2017} to use for a particular problem,   the deepness of the ANN, etc. In that direction the suggested architecture to try when dealing with images will be dilated residual networks\cite{DRN}. As for other data types, the current status of the theory says to find on research papers the architectures that other people have tried for similar problems.
 
 
 Bayes methods. In this methods parameters and data are random variables. It learns the full distribution, everything about the data. With a well chosen prior, bias and over fitting is often of little concern. In practice it is computationally intractable. Must use approximation methods such as variational inference and Monte Carlo techniques.
 
 Monte-Carlo Markov Chain.
+
+Non negative matrix factorization can be use for topic modeling and finding eigenfaces. It has the advantage of having meaningful outputs.
+
+Non netative tensor factorization is a fuzzy clustering algorithm, it can handle  Sparse data\cite{ho}. The input data should be in tensor form.
+
+Generative Adversarial Networks and Variational Autoencoders are very popular generative methods. GAN's are difficult to train and after each iteration the optimization problem changes, so it is also hard to predict the time required for the algorithms to converge. 
+
+
 \section{Experimental topics}We also described topics whose application to science may take some time but are definitely promising: an introduction to quantum computing with DWave, IBM Q and qiskit as well a notebook on reaction networks.
 %Perhaps to add a diagram that helps with the classification
 	
