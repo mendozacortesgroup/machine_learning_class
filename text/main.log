@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  22 JAN 2019 12:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  22 JAN 2019 16:29
 entering extended mode
 **./main.tex
 (main.tex
@@ -1165,7 +1165,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [7 <./figures/Decision-Trees.png> <./figures/bokeh_plot0.png> <./figures/bokeh_
 plot.png> <./figures/bokeh_plot1.png>] [8 <./figures/image.png (PNG copy)>]
 
-LaTeX Warning: Citation `ho' on page 9 undefined on input line 390.
+LaTeX Warning: Citation `Ho2014a' on page 9 undefined on input line 390.
 
 (main.bbl [9]
 Underfull \hbox (badness 10000) in paragraph at lines 39--42
@@ -1208,7 +1208,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
  ) 
 Here is how much of TeX's memory you used:
  28275 strings out of 493305
- 550431 string characters out of 3130672
+ 550436 string characters out of 3130672
  614216 words of memory out of 3000000
  31408 multiletter control sequences out of 15000+200000
  537814 words of font info for 48 fonts, out of 3000000 for 9000
@@ -1229,9 +1229,9 @@ lic/amsfonts/cm/cmsl10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/FSU/AppData/Local/Pr
 ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (13 pages, 3337111 bytes).
+Output written on main.pdf (13 pages, 3337320 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
+ 315 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)
  198 words of extra memory for PDF output out of 10000 (max. 10000000)
 
