@@ -249,7 +249,7 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 In ``Frequentist vs Bayes''
  we introduce Bayesian methods and show how do they differ from the frequetist perspective. 
  
-Frequently we want to quantify the accuracy of our predictions. In the ``Markov'' lectures we find a Bayesian approach--one where we consider the values of the parameters as random variables is a popular method.
+Frequently we want to quantify the accuracy of our predictions. In the ``Markov'' lectures we find a Bayesian approach--one where we consider the values of the parameters as random variables.
 
 Recall Bayes' theorem for training parameters
 \begin{equation}
@@ -383,11 +383,9 @@ It is still not clear what architecture\cite{Lin2017} to use for a particular pr
 
 Bayes methods. In this methods parameters and data are random variables. It learns the full distribution, everything about the data. With a well chosen prior, bias and over fitting is often of little concern. In practice it is computationally intractable. Must use approximation methods such as variational inference and Monte Carlo techniques.
 
-Monte-Carlo Markov Chain.(needs explanantion)
+ Monte Carlo methods began as a way to estimate high dimensional integrals using probabilistic methods. "Typically, Markov chain Monte Carlo sampling can only approximate the target distribution, as there is always some residual effect of the starting position."\cite{wmcmc}.
 
-Non negative matrix factorization can be use for topic modeling and finding eigenfaces. It has the advantage of having meaningful outputs\cite{Lee1999}.
-
-Non netative tensor factorization is a fuzzy clustering algorithm, it can handle  Sparse data\cite{Ho2014a}. The input data should be in tensor form.
+Non negative matrix factorization can be use for topic modeling and finding eigenfaces. It has the advantage of having meaningful outputs\cite{Lee1999}. Non negative tensor factorization is a fuzzy clustering algorithm, it is possible to use it with   Sparse data\cite{Ho2014a}. The input data should be in tensor form.
 
 Generative Adversarial Networks and Variational Autoencoders are very popular generative methods. GAN's are difficult to train and after each iteration the optimization problem changes, so it is also hard to predict the time required for the algorithms to converge. 
 

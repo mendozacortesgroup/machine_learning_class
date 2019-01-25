@@ -130,4 +130,16 @@ Fisher Yu, Vladlen Koltun, and Thomas Funkhouser.
 \newblock Dilated residual networks.
 \newblock 05 2017.
 
+\bibitem{wmcmc}
+{{Markov chain Monte Carlo}}, howpublished =
+  "\url{https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo}", note =
+  "[online; accessed 25-january-2019]".
+
+\bibitem{Ho2014a}
+Joyce Ho, Joydeep Ghosh, and Jimeng Sun.
+\newblock {Marble : High-throughput Phenotyping from Electronic Health Records
+  via Sparse Nonnegative Tensor Factorization}.
+\newblock {\em Proceedings of the 20th ACM SIGKDD international conference on
+  Knowledge discovery and data mining - KDD '14}, pages 115--124, 2014.
+
 \end{thebibliography}
