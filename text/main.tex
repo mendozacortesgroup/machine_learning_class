@@ -190,11 +190,11 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	
 	 A neural network is a composition of  functions of the form:
 	$x\rightarrow \sigma(W\cdot x+b)$ where $x,b,$ are vectors, $W$ is a matrix, and $\sigma$ stands for a non linear function applied entry wise to the coordinates of the vector  $W\cdot x+b$.
-	It is standard notation to represent matrices  $W$ as arrows from the domain of $x$ to the domain of $w\cdot x + b$ as in \ref{fig:nn}. For details see the notebook 'Neural Network'.
-	 Finding the coefficients of those matrices requires multivariable calculus and the chain rule. In ``Neural Networks'' you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
+	It is standard notation to represent matrices  $W$ as arrows from the domain of $x$ to the domain of $w\cdot x + b$ as in \ref{fig:nn}. For details see the notebook \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L8_Neural_Networks/Artificial\%20Neural\%20Networks.ipynb}{Neural Network.}
+	 Finding the coefficients of those matrices requires multivariable calculus and the chain rule. In \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L8_Neural_Networks/Keras.ipynb}{Keras} you can find an introduction to Keras, which we consider the most friendly language to use Neural Networks, and a deeper explanation of how Neural Networks work and can be trained.	
 	
 	
-	An application of Neural Networks to chemistry is contained in the note ``Poterntial Energy Surface ANN'' where we describe the work of The Roitberg group in University of Florida, a transferable deep learning potential: ANAKIN-ME (Accurate NeurAl networK engINe for Molecular Energies) or ANI for short.
+	An application of Neural Networks to chemistry is contained in the note \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L21_PotentialEnergySurface_ANN/L21_PotentialEnergySurface.ipynb}{Poterntial Energy Surface ANN} where we describe the work of The Roitberg group in University of Florida, a transferable deep learning potential: ANAKIN-ME (Accurate NeurAl networK engINe for Molecular Energies) or ANI for short.
 	
     	\begin{figure}[h!]
     	\centering
@@ -203,9 +203,9 @@ How can we use this algorithm to find anomalies in new products? we can assume t
     	\label{fig:nn}
     \end{figure} 	
     
-    Supposed that you are given  input in different steps, like if the input are letters of a name and you want to predict the nationality of the name. To deal with this kind of data, we need to modify our algorithms. Using time just as another variable will result in classification based on when did the event/measurement happened. But perhaps we want to find a classification based on classifications previous made on the partial data already registered. The lecture ``Recurrent Neural Networks'' deals with networks designed for modeling this sequential data.  
+    Supposed that you are given  input in different steps, like if the input are letters of a name and you want to predict the nationality of the name. To deal with this kind of data, we need to modify our algorithms. Using time just as another variable will result in classification based on when did the event/measurement happened. But perhaps we want to find a classification based on classifications previous made on the partial data already registered. The lecture \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L17_RNN/Recurrent\%20Neural\%20Networks.ipynb}{Recurrent Neural Networks} deals with networks designed for modeling this sequential data.  
     
-    This can be use to make numerical simulations of partial differential equations and ordinary differential equations, and we include an example with pytorch of Character-Level classification of names in ``RNN II''.
+    This can be use to make numerical simulations of partial differential equations and ordinary differential equations, and we include an example with pytorch of Character-Level classification of names in \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L17_RNN/L17_RNN_II.ipynb}{Recurrent Neural Networks II}.
 
 	\subsection{CNN}
 	
@@ -225,8 +225,8 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 		\label{fig:filter}
 	\end{figure} 	
 
-    We have a guest post ``CNN'' (in English) from the \href{https://aiacademy.tw}{AI Academy}\cite{wai} where
-	 we explain in more detail how CNN work. In lecture ``Deep Dreams" we ask the neural network if it recognizes a pattern on an image and then we modify that image to show the pattern. In `` Style transfer'' we learn images styles and impose them to other images, for example  in \ref{fig:botero} we used a picture of our team and we added the style of a paint of the painter Fernando Botero. %Lecture "L 25" is TBD.
+    We have a guest post \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L9_CNN/CNN.ipynb} (CNN) from the \href{https://aiacademy.tw}{AI Academy}\cite{wai} where
+	 we explain in more detail how CNN work. In lecture \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L18_DeepDreams/DeepDream.ipynb} (Deep Dreams) we ask the neural network if it recognizes a pattern on an image and then we modify that image to show the pattern. In \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L19_StyleTransfer/Art_Machine_Learning.ipynb} (Style transfer)  we learn images styles and impose them to other images, for example  in \ref{fig:botero} we used a picture of our team and we added the style of a paint of the painter Fernando Botero. %Lecture "L 25" is TBD.
 	
 	
 	\begin{figure}[h!]
@@ -237,7 +237,7 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	\end{figure} 	
 	
 	
-	``Generative Adversarial Networks'' describes a generative method. Suppose that we have a set of examples and we want to generate more images which look like the previous examples. For example, we might have the data set of
+	\href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L22_GAN/Generative\%20Adversarial\%20Networks.ipynb} {Generative Adversarial Networks}  describes a generative method. Suppose that we have a set of examples and we want to generate more images which look like the previous examples. For example, we might have the data set of
 	\href{https://github.com/zalandoresearch/fashion-mnist}{fashion-mnist}\cite{wfashion}, a set of  clothes' pictures and we want to generate artificial images as in this \href{https://github.com/spaceLenny/FashionDCGANExample}{ghost wardrobe}\cite{wghost}. While it is hard to train a GAN, it produces interesting results as in this \href{ https://twitter.com/henddkn/status/1067431379804262400?s=19 } {GAN-paint}\cite{wtwitter} or this 
 	\href{    https://towardsdatascience.com/password-cracker-generating-passwords-with-recurrent-neural-networks-lstms-9583714a3310 
 	}{password cracking}\cite{wpassword} tool.
@@ -246,20 +246,20 @@ How can we use this algorithm to find anomalies in new products? we can assume t
 	We recommend to read 	\href{    https://arxiv.org/abs/1608.08225 
 	}{Why does deep and cheap learning work so well?}\cite{Lin2017}.  The authors use physics to train to explain the way neural networks are capable to make classifications. 
 \subsection{Bayesian methods}
-In ``Frequentist vs Bayes''
+In 	\href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L10_Naive_Bayes/Frequentist_vs_Bayes.ipynb} {Frequentist vs Bayes}
  we introduce Bayesian methods and show how do they differ from the frequetist perspective. 
  
-Frequently we want to quantify the accuracy of our predictions. In the ``Markov'' lectures we find a Bayesian approach--one where we consider the values of the parameters as random variables.
+Frequently we want to quantify the accuracy of our predictions. In the \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L11_Markov/MonteCarloIntroduction.ipynb} {MCMC}  lectures we find a Bayesian approach--one where we consider the values of the parameters as random variables.
 
 Recall Bayes' theorem for training parameters
 \begin{equation}
 P(\theta|X_{train}, T_{train}) = \frac{P(T_{train}, \theta|X_{train})}{\int P(T_{train}, \theta|X_{train})\;\mathrm{d}\theta} 
 \end{equation}
 
-The integral on the bottom is generally not analytic. And for higher dimensional problems, infeasible to calculate. By using Monte Carlo Markov Chain algorithm, it is possible to make estimations.  This is also useful to study   the Ising model, which was created to describe Magnetic and ferromagnetic materials. We also introduce Simulated Annealing and Uncertainty Quantification.
+The integral on the bottom is generally not analytic. And for higher dimensional problems, infeasible to calculate. By using Monte Carlo Markov Chain algorithm, it is possible to make estimations.  This is also useful to study   the Ising model, which was created to describe Magnetic and ferromagnetic materials. We also introduce , \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L11_Markov/Simulated\%20Annealing.ipynb} {Simulated Annealing} and \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L11_Markov/Uncertainty\%20Quantification.ipynb} {uncertainty quantification}.
 \subsection{SOM}
-Self Organizing Maps is a method that allow us to do dimensional reduction. The main idea is to place randomly points and let those points get attracted to the data points, in such a way that clusters will pull the points harder. We expect the points to end up placed in the center of the clusters. We will make this precise on the lecture ``SOM". 
-In the following picture we can see an \href{https://github.com/ANNetGPGPU/ANNetGPGPU}{ image
+Self Organizing Maps is a method that allow us to do dimensional reduction. The main idea is to place randomly points and let those points get attracted to the data points, in such a way that clusters will pull the points harder. We expect the points to end up placed in the center of the clusters. We will make this precise on the lecture \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L6_SOM/SOM.ipynb} {SOM}. 
+In the figure \ref{fig:som} we can see an \href{https://github.com/ANNetGPGPU/ANNetGPGPU}{ image
 	generated using Self Organizing Maps}\cite{wsom}.
 
 \begin{figure}[h!]
@@ -292,7 +292,7 @@ The process of natural selection starts with the selection of fittest individual
 By doing this process several times, the maximum value obtained by the fitness function on the population cannot  decrease as every new generation has the fittest individuals of the previous generation, while the mutations and foreigners help us avoid fixed points that are not minimums. 
 
 		
-For more details see the notebook ``Genetic Algorithm'' and the notebook ``GARFfield'' where an application to reactive force fields is explained.
+For more details see the notebook \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L4_Genetic_Algorithms/Genetic\%20Algorithms.ipynb}{ Genetic Algorithms} and the notebook \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L4_Genetic_Algorithms/GARFfield.ipynb}{GARFfield} where an application to reactive force fields is explained.
  
 	 \subsection{Decision Trees}
  
@@ -304,11 +304,11 @@ Look at the following example:
  	\label{fig:Trees}
  \end{figure} 	
  
- we asked several questions to determine an algorithm that will tell us if a person is fit or not based on their replies. The questions are not necessarily the optimal ones, but this illustrates the general methods:  we split data points into subsets based on the values on certain features. The order in which we choose the features give us different algorithms. You can find an algorithm in the notebook ``Decision Trees'' where we aim to find the best features to consider in the decision.
+ we asked several questions to determine an algorithm that will tell us if a person is fit or not based on their replies. The questions are not necessarily the optimal ones, but this illustrates the general methods:  we split data points into subsets based on the values on certain features. The order in which we choose the features give us different algorithms. You can find an algorithm in the notebook \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L3_Decisions_Trees/L3_Decision_Trees.ipynb}{Decision Trees} where we aim to find the best features to consider in the decision.
 
 
  \subsection{KNN}
- In K-Nearest-Neighbors, we make a prediction or classify an element by  only analyzing  a neighborhood of the element an assigning to it a function of this neighborhood values, for example  given a new point $x$ and the closest $k$ points to $x$, you can assign to $x$ the average of $x$'s neighbors values.
+ In \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L5_KNN/KNN.ipynb}{K-Nearest-Neighbors}, we make a prediction or classify an element by  only analyzing  a neighborhood of the element an assigning to it a function of this neighborhood values, for example  given a new point $x$ and the closest $k$ points to $x$, you can assign to $x$ the average of $x$'s neighbors values.
  $K$ stands for how many points nearby do you consider to make your choice. The results depend on a good selection of the parameter $K$.  If the boundary is a concern,  Kernel Regression assigns different weights to the nearby points so that points that are closer matter most. Locally weighted polynomial  regression is a local version of polynomial regression where we find the best line or curve that approximate the local nbh.
   The possibility to write a model that deals with the local picture is important in applications, in fig:\ref{fig:knn} we see examples locally weighted polynomial regression.
  
@@ -346,7 +346,7 @@ Imagine that for every patient you have a matrix of diagnosis and medications. W
 The main yoga was that the non negativity constrain allow us to recover the initial object from juxtaposition of it's parts. When we  replaced matrices by tensors we substitute the factorization into matrix multiplication by tensor decomposition into rank one tensors. 
  
  
-In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping\cite{Ho}.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure / function, invasive hemodynamics, and outcomes' \cite{Shah2015}.
+In Medicine, Tensor decomposition into rank one tensor shows concurring diagnosis and medications, this process is known as phenotyping\cite{Ho}.  The study of tensors (phenotypes) using machine learning lead to the discovering of 3 distinct groups of Hearth Failure with preserved Ejection Fractions (HFpEF), those groups 'differed markedly in clinical characteristics, cardiac structure / function, invasive hemodynamics, and outcomes' \cite{Shah2015}. More details about no negative matrix factorization and non negative tensor factorization can be found on the notebook \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L12_Non_Negative_Tensor_Factorization/Non\%20negative\%20tensor\%20factorization.ipynb}{NNTF}.
  
  
 

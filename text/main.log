@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  25 JAN 2019 15:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.29)  25 JAN 2019 16:40
 entering extended mode
 **./main.tex
 (main.tex
@@ -1089,7 +1089,7 @@ File: figures/novelty.png Graphic file (type png)
 <use figures/novelty.png>
 Package pdftex.def Info: figures/novelty.png  used on input line 181.
 (pdftex.def)             Requested size: 211.38832pt x 149.91003pt.
-<figures/nn.jpg, id=132, 322.20375pt x 157.58875pt>
+<figures/nn.jpg, id=135, 322.20375pt x 157.58875pt>
 File: figures/nn.jpg Graphic file (type jpg)
 <use figures/nn.jpg>
 Package pdftex.def Info: figures/nn.jpg  used on input line 201.
@@ -1099,12 +1099,12 @@ Package pdftex.def Info: figures/nn.jpg  used on input line 201.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3 <./figures/novelty.png>]
-<figures/filter.png, id=146, 490.4724pt x 212.9556pt>
+<figures/filter.png, id=153, 490.4724pt x 212.9556pt>
 File: figures/filter.png Graphic file (type png)
 <use figures/filter.png>
 Package pdftex.def Info: figures/filter.png  used on input line 223.
 (pdftex.def)             Requested size: 211.38832pt x 91.78032pt.
-<figures/botero.png, id=150, 1204.5pt x 803.0pt>
+<figures/botero.png, id=160, 1204.5pt x 803.0pt>
 File: figures/botero.png Graphic file (type png)
 <use figures/botero.png>
 Package pdftex.def Info: figures/botero.png  used on input line 234.
@@ -1114,7 +1114,7 @@ Package pdftex.def Info: figures/botero.png  used on input line 234.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4 <./figures/nn.jpg> <./figures/filter.png>]
-<figures/ex.jpg, id=175, 840.96pt x 840.96pt>
+<figures/ex.jpg, id=192, 840.96pt x 840.96pt>
 File: figures/ex.jpg Graphic file (type jpg)
 <use figures/ex.jpg>
 Package pdftex.def Info: figures/ex.jpg  used on input line 267.
@@ -1127,33 +1127,33 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 [5 <./figures/botero.png (PNG copy)>]
-<figures/GAfigure1.png, id=188, 642.4pt x 481.8pt>
+<figures/GAfigure1.png, id=207, 642.4pt x 481.8pt>
 File: figures/GAfigure1.png Graphic file (type png)
 <use figures/GAfigure1.png>
 Package pdftex.def Info: figures/GAfigure1.png  used on input line 283.
 (pdftex.def)             Requested size: 211.38832pt x 158.53868pt.
-<figures/Decision-Trees.png, id=189, 308.65312pt x 192.72pt>
+<figures/Decision-Trees.png, id=210, 308.65312pt x 192.72pt>
 File: figures/Decision-Trees.png Graphic file (type png)
 <use figures/Decision-Trees.png>
 Package pdftex.def Info: figures/Decision-Trees.png  used on input line 302.
 (pdftex.def)             Requested size: 211.38832pt x 131.9918pt.
  [6 <./figures/ex.jpg> <./figures/GAfigure1.png (PNG copy)>]
-<figures/bokeh_plot0.png, id=197, 940.51375pt x 940.51375pt>
+<figures/bokeh_plot0.png, id=219, 940.51375pt x 940.51375pt>
 File: figures/bokeh_plot0.png Graphic file (type png)
 <use figures/bokeh_plot0.png>
 Package pdftex.def Info: figures/bokeh_plot0.png  used on input line 317.
 (pdftex.def)             Requested size: 117.43875pt x 117.43477pt.
-<figures/bokeh_plot.png, id=198, 940.51375pt x 940.51375pt>
+<figures/bokeh_plot.png, id=220, 940.51375pt x 940.51375pt>
 File: figures/bokeh_plot.png Graphic file (type png)
 <use figures/bokeh_plot.png>
 Package pdftex.def Info: figures/bokeh_plot.png  used on input line 318.
 (pdftex.def)             Requested size: 117.43875pt x 117.43477pt.
-<figures/bokeh_plot1.png, id=199, 940.51375pt x 940.51375pt>
+<figures/bokeh_plot1.png, id=221, 940.51375pt x 940.51375pt>
 File: figures/bokeh_plot1.png Graphic file (type png)
 <use figures/bokeh_plot1.png>
 Package pdftex.def Info: figures/bokeh_plot1.png  used on input line 319.
 (pdftex.def)             Requested size: 117.43875pt x 117.43477pt.
-<figures/image.png, id=201, 674.52pt x 215.80624pt>
+<figures/image.png, id=223, 674.52pt x 215.80624pt>
 File: figures/image.png Graphic file (type png)
 <use figures/image.png>
 Package pdftex.def Info: figures/image.png  used on input line 327.
@@ -1195,15 +1195,8 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 404.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 404.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 404.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 94C20A3DC09D672D72159B0AB532B0AF;987
-(rerunfilecheck)             After:  4DFEAC1B80F3DE7523C6B9BB25DB8FE6;987.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 4DFEAC1B80F3DE7523C6B9BB25DB8FE6;987.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 404.
  ) 
 Here is how much of TeX's memory you used:
@@ -1229,9 +1222,9 @@ lic/amsfonts/cm/cmsl10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/FSU/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/FSU/AppData/Local/Pr
 ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (13 pages, 3341577 bytes).
+Output written on main.pdf (13 pages, 3348677 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
+ 350 PDF objects out of 1000 (max. 8388607)
  65 named destinations out of 1000 (max. 500000)
  198 words of extra memory for PDF output out of 10000 (max. 10000000)
 
