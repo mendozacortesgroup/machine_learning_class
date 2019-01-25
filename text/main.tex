@@ -144,7 +144,7 @@
 	  until we realized they failed with people of color. The community on twitter suggested that it was an illumination issue, we claim that deciding that the algorithm is ready after testing it only on white people while not caring about the results on people of color is a choice that makes the algorithm biased. After all, that scanner was used on toys and the toy producer was not expecting kids to have special illumination while using the toys.
 	 
 	 An important lesson here is that \href{ https://www.quora.com/In-machine-learning-is-more-data-always-better-than-better-algorithms}{data quality}\cite{wdata} is a priority. 
-	 Since data is collected by humans, you should always look for mistakes by cleaning the data. The  notebook `` First Machine Learning Notebook'' is an excellent guide on data analysis followed by ``Higher Dimensions'' which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. 
+	 Since data is collected by humans, you should always look for mistakes by cleaning the data. The  notebook  \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L2_First_Machine_Learning_Notebook/First\%20Machine\%20Learning\%20Notebook.ipynb}{First Machine Learning Notebook} is an excellent guide on data analysis followed by \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L2_First_Machine_Learning_Notebook/First\%20Machine\%20Learning\%20Notebook.ipynb}{Higher Dimensions} which explains the curse of dimensionality and gives an introduction to higher dimensional geometry. 
 	  
 	  % As preprocessing we consider the problem of finding a good representation of our data that helps with the classification process. We will use Taylor series to Build such a map, we know that for a convex function the Hessian is positive definite. So one strategy would be to add any positive definite quadratic form as the non linear part of our map, in ``Information Geometry and Dynamic Entropy'' we review the implications of this process for information theory.
 	  %
@@ -152,8 +152,8 @@
  	
  	
  	
-	\subsection{SVC}
-	Imagine that you are designing a new material. First you create it in vitro, and then you have a team that will materialize those designs. The task is to determine when something goes wrong before investing in the realization of the material; it is fairly easy to determine what are good properties but it is a complex task to imagine what could be bad specially on a multi scale process, perhaps the atomic configuration is unstable, the material is below quality, or there is a similar  material in properties and quality  with a lower price.  Since collection of example data of a faulty system  can be expensive, or just impossible,  there is no way to describe a priory all the possible defects on the material. SVM can be use to attack this kind of problems as explained in the notebooks ``Support Vector Machine".
+	\subsection{SVM}
+	Imagine that you are designing a new material. First you create it in vitro, and then you have a team that will materialize those designs. The task is to determine when something goes wrong before investing in the realization of the material; it is fairly easy to determine what are good properties but it is a complex task to imagine what could be bad specially on a multi scale process, perhaps the atomic configuration is unstable, the material is below quality, or there is a similar  material in properties and quality  with a lower price.  Since collection of example data of a faulty system  can be expensive, or just impossible,  there is no way to describe a priory all the possible defects on the material. SVM can be use to attack this kind of problems as explained in the notebooks.
 	
 	The general idea is explained as follows:
 	\begin{figure}[h!]
@@ -163,7 +163,7 @@
 		\label{fig:lines}
 	\end{figure} 
 	
-	Assume we are dealing with classification of labeled data. We have data with information about in which class do they belong. We want an algorithm to classify new unseen data. In good cases it is possible to use lines to separate classes and then the question becomes, among all possible lines, which one is best to use? as in fig \ref{fig:lines}. Once we have decided how to evaluate quality, we will be able to select a line. A natural requirement is that the algorithm should be robust to new data and minimize the number of miss classifications. In the notebook ``SVM'' you can see how the algorithm SVC looks for  the coefficients of such a line.
+	Assume we are dealing with classification of labeled data. We have data with information about in which class do they belong. We want an algorithm to classify new unseen data. In good cases it is possible to use lines to separate classes and then the question becomes, among all possible lines, which one is best to use? as in fig \ref{fig:lines}. Once we have decided how to evaluate quality, we will be able to select a line. A natural requirement is that the algorithm should be robust to new data and minimize the number of miss classifications. In the notebook \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L7_Support_Vector_Machine/SVM.ipynb}{Support Vector Machine} you can see how the algorithm SVC looks for  the coefficients of such a line.
 
 \begin{figure}[h!]
 	\centering
@@ -172,9 +172,9 @@
 	\label{fig:kernel}
 \end{figure} 
 	
- Most real life cases are not linearly separable, but sometimes we can transform the features hoping that the new features can be separated  with hyper planes. On the image \ref{fig:kernel} we add a third coordinate to the data, the distance to the origin. Then in $R^3$ it is easy to find a plane $z=.6$ that classifies our data. SVM performs better if we pre-process the data following the rules on the notebook ``Cleaning data''. 
+ Most real life cases are not linearly separable, but sometimes we can transform the features hoping that the new features can be separated  with hyper planes. On the image \ref{fig:kernel} we add a third coordinate to the data, the distance to the origin. Then in $R^3$ it is easy to find a plane $z=.6$ that classifies our data. SVM performs better if we pre-process the data following the rules on the notebook \href{ http://nbviewer.jupyter.org/mendozacortesgroup/machine_learning_class/blob/master/Lectures_Jupyter/L7_Support_Vector_Machine/Cleaning\%20data.ipynb}{Cleaning data}. 
  
-How can we use this algorithm to find anomalies in new products? we can assume that good products have label 1 and products that are outliers have label 0. By training the SVC this way, it will learn to classify products in regular or outliers. It will recognize when a new product is far from the standard as in fig \ref{fig:novelty}. This idea is explained in the notebook ``SVC II''. 
+How can we use this algorithm to find anomalies in new products? we can assume that good products have label 1 and products that are outliers have label 0. By training the SVC this way, it will learn to classify products in regular or outliers. It will recognize when a new product is far from the standard as in fig \ref{fig:novelty}. This idea is explained in the notebook \href{ http://nbviewer.jupyter.org/machine_learning_class/blob/master/Lectures_Jupyter/L7_Support_Vector_Machine/SVM\%2BII.ipynb}{SVC II}. 
 	
 	\begin{figure}[h!]
 		\centering
