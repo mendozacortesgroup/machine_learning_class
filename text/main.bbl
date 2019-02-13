@@ -1,3 +1,145 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{Pedregosa2011}
+Fabian Pedregosa and G~Varoquaux.
+\newblock {Scikit-learn: Machine learning in Python}.
+\newblock {\em {\ldots} of Machine Learning {\ldots}}, 12:2825--2830, 2011.
+
+\bibitem{chollet2015keras}
+Fran\c{c}ois Chollet et~al.
+\newblock Keras.
+\newblock \url{https://keras.io}, 2015.
+
+\bibitem{paszke2017automatic}
+Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan, Edward Yang, Zachary
+  DeVito, Zeming Lin, Alban Desmaison, Luca Antiga, and Adam Lerer.
+\newblock Automatic differentiation in pytorch.
+\newblock 2017.
+
+\bibitem{tensorflow2015-whitepaper}
+Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
+  Craig Citro, Greg~S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin,
+  Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard,
+  Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh
+  Levenberg, Dandelion Man\'{e}, Rajat Monga, Sherry Moore, Derek Murray, Chris
+  Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal
+  Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Vi\'{e}gas,
+  Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and
+  Xiaoqiang Zheng.
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems,
+  2015.
+\newblock Software available from tensorflow.org.
+
+\bibitem{wcancer}
+{{Breast cancer Wisconsin (diagnostic) dataset}}, howpublished =
+  "\url{hhttps://scikit-learn.org/stable/datasets/index.html#breast-cancer-dataset}",
+  note = "[online; accessed 21-january-2019]".
+
+\bibitem{wpolice}
+{Citizens Police Data Project}.
+\newblock \url{https://data.cpdp.co/data/L5rG3q/citizens-police-data-project}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wfair}
+{Google Fairness training}.
+\newblock
+  \url{https://developers.google.com/machine-learning/crash-course/fairness/video-lecture}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wadaptation}
+{Art event Adaptation}.
+\newblock \url{http://agile-iot.eu/adaptation/}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wexhibition}
+{Sciart Magazine, Straight Talk with Justus Harris}.
+\newblock
+  \url{https://www.sciartmagazine.com/straight-talk-justus-harris.html}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wdata}
+{Quora: In machine learning is more data always better than better algorithms?}
+\newblock
+  \url{hhttps://www.quora.com/In-machine-learning-is-more-data-always-better-than-better-algorithms}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wai}
+{AI Academy}.
+\newblock \url{https://aiacademy.tw}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wfashion}
+{Fashion-mnist data set}.
+\newblock \url{https://github.com/zalandoresearch/fashion-mnist}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wghost}
+{Github: Ghost wardrobe}.
+\newblock \url{https://github.com/spaceLenny/FashionDCGANExample}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wtwitter}
+{Twitter: GAN-paint}.
+\newblock \url{https://twitter.com/henddkn/status/1067431379804262400?s=19 }.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{wpassword}
+{Password Cracking Tool}.
+\newblock \url{https://tinyurl.com/PasswordCrackerRNN}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{Lin2017}
+Henry~W. Lin, Max Tegmark, and David Rolnick.
+\newblock Why does deep and cheap learning work so well?
+\newblock {\em Journal of Statistical Physics}, 168(6):1223--1247, Sep 2017.
+
+\bibitem{wsom}
+{A GPU (CUDA) based Artificial Neural Network library}.
+\newblock \url{https://github.com/ANNetGPGPU/ANNetGPGPU}.
+\newblock [Online; accessed 21-January-2019].
+
+\bibitem{Lee1999}
+Daniel~D. Lee and H.~Sebastian Seung.
+\newblock {Learning the parts of objects by non-negative matrix factorization}.
+\newblock {\em Nature}, 401(6755):788--791, 1999.
+
+\bibitem{Ho}
+Joyce~C. Ho, Joydeep Ghosh, and Jimeng Sun.
+\newblock Marble: High-throughput phenotyping from electronic health records
+  via sparse nonnegative tensor factorization.
+\newblock In {\em Proceedings of the 20th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, KDD '14, pages 115--124, New York,
+  NY, USA, 2014. ACM.
+
+\bibitem{Shah2015}
+Sanjiv~J. Shah, Daniel~H. Katz, Senthil Selvaraj, Michael~A. Burke, Clyde~W.
+  Yancy, Mihai Gheorghiade, Robert~O. Bonow, Chiang~Ching Huang, and Rahul~C.
+  Deo.
+\newblock {Phenomapping for novel classification of heart failure with
+  preserved ejection fraction}.
+\newblock {\em Circulation}, 131(3):269--279, 2015.
+
+\bibitem{Gron}
+Aurlien Gron.
+\newblock {\em Hands-On Machine Learning with Scikit-Learn and TensorFlow:
+  Concepts, Tools, and Techniques to Build Intelligent Systems}.
+\newblock O'Reilly Media, Inc., 1st edition, 2017.
+
+\bibitem{DRN}
+Fisher Yu, Vladlen Koltun, and Thomas Funkhouser.
+\newblock Dilated residual networks.
+\newblock 05 2017.
+
+\bibitem{wmcmc}
+{{Markov chain Monte Carlo}}, howpublished =
+  "\url{https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo}", note =
+  "[online; accessed 25-january-2019]".
+
+\bibitem{Ho2014a}
+Joyce Ho, Joydeep Ghosh, and Jimeng Sun.
+\newblock {Marble : High-throughput Phenotyping from Electronic Health Records
+  via Sparse Nonnegative Tensor Factorization}.
+\newblock {\em Proceedings of the 20th ACM SIGKDD international conference on
+  Knowledge discovery and data mining - KDD '14}, pages 115--124, 2014.
 
 \end{thebibliography}

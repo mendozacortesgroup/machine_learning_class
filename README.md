@@ -12,64 +12,62 @@ Write your name on the notebook that you are working on, and once you finish, ad
 
 progress record:
 
-1
+1 Miguel(4,5) Eric(1,2)
 
-2
+2 Miguel(4,5) Eric(1,2)
 
-3
+3 Miguel(4,5) Eric(1,2)
 
-4
+4 Miguel(4,5) Eric(1,2)
 
-5
+5 Miguel(4,5) Eric(1,2)
 
-6
+6 Miguel(4,5) Eric(1,2)
 
-7 
+7 Miguel(4,5)
 
-8
+8 Miguel(4,5)
 
-9
+9 Miguel(4,5)
 
-10 Nathan Crock
+10 Nathan Crock, Miguel(4,5)
 
-11
+11 Miguel(4,5)
 
-12
+12 Miguel(4,5)
 
-13
+13 Miguel(4,5)
 
-14
+14 Miguel(4,5)
 
-15
+15 Miguel(4,5)
 
 16 Nathan Crock
 
-17
+17 Miguel(4,5)
 
-18
+18 Miguel(4,5)
 
-19
+19 Miguel(4,5)
 
-20
+20 Miguel(4,5)
 
-21
+21 Miguel(4,5)
 
-22
+22 Miguel(4,5)
 
-23
+23 Miguel(4,5)
 
-24 Eric
+24 Eric, Miguel(4,5)
 
 
 
 # machine_learning_class
 The following notebooks provide an introduction of Machine Learning for non CS majors.
 
-Basic concepts of python can be found in the following repository: mendozacortesgroup/hackaton_python
-
 
 Applications to physics:
 L4, L5, L6, L7, L8, L10, L13, L14, L20, L21, L23, L24.
 
-A guide for people with art background:
-L5, L6, L_14, L_16, L_18, L_19, L_22, L_25.
+A guide for people with art background: 
+Neural Networks and specially CNN will help them to do image manipulation, SOM has examples of image modification, NNTF has examples of eigenfaces, SVMII has examples of face recognition and deep dreams and style transfer have examples of image modification.
