@@ -1,0 +1,978 @@
+\documentclass[xcolor=dvipsnames,11pt]{beamer}
+
+%START To get MATLAB environment
+\usepackage[numbered,framed]{matlab-prettifier}
+%\usepackage{filecontents}
+
+\let\ph\mlplaceholder % shorter macro
+\lstMakeShortInline"
+
+\lstset{
+	style              = Matlab-editor,
+	basicstyle         = \tiny \ttfamily,
+	escapechar         = ",
+	mlshowsectionrules = true,
+}
+
+
+%\renewcommand{\lstlistingname}{Algorithm}% Listing -> Algorithm
+\renewcommand{\lstlistingname}{Code}% Listing -> Code
+%FINISH To get MATLAB environment
+
+%\graphicspath{{../}{../}}
+%\graphicspath{{../../figures/}}
+\graphicspath{{./figures/optimization/beamer/}}
+
+%\usepackage{standalone}
+%\setcounter{tocdepth}{1}
+
+\usepackage[english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+%\usepackage{tikz}
+%\usetikzlibrary{shapes.geometric, arrows}
+%\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1.7cm, minimum height=0.7cm,text centered, draw=black, fill=red!30]
+%\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1.7cm, minimum height=0.7cm, text centered, draw=black, fill=blue!30]
+%\tikzstyle{process} = [rectangle, minimum width=1.7cm, minimum height=0.7cm, text centered, draw=black, fill=orange!30]
+%\tikzstyle{decision} = [diamond, minimum width=1.7cm, minimum height=0.7cm, text centered, text width=1.7cm, draw=black, fill=green!30]
+%\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+\setbeamercovered{transparent}
+%\usepackage{enumitem}
+%\setlist[itemize]{leftmargin=*}
+
+%\usepackage{mhchem}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\numberwithin{equation}{section}
+
+
+
+\author[Jose Mendoza-Cortes]{Prof. Jose L. Mendoza-Cortes}
+\title[Machine Learning]{Machine Learning}
+%\subtitle{Spring '18}
+\institute[]
+{\scriptsize  
+	Scientific Computing Department, Dirac Science Building \\
+	Materials Science and Engineering, High Performance Materials Institute\\
+	Florida State University\\
+	\href{mailto:jmendozacortes@fsu.edu}{jmendozacortes@fsu.edu}\\[3mm]
+	
+	Condensed Matter Theory, National High Magnetic Field Laboratory\\%[3mm]
+	Florida State University\\	
+	\href{mailto:mendoza@magnet.fsu.edu}{mendoza@magnet.fsu.edu}\\[3mm]	
+	
+	Chemical and Biomedical Engineering \\
+	Florida State University | Florida A\&M University | College of Engineering \\
+	\href{mailto:mendoza@eng.famu.fsu.edu}{mendoza@eng.famu.fsu.edu}\\[3mm]
+	Web: \href{http://mendoza.eng.fsu.edu/}{http://mendoza.eng.fsu.edu/}\\%[1mm]
+}  
+
+\date{}
+\subject{Theory and Computations in Materials, Chemistry and Physics}
+
+%\usetheme{Berkeley}
+%\logo{\includegraphics[scale=0.213]{figures/fsu_logo.png}}
+%\addtobeamertemplate{navigation symbols}{}{%
+%    \usebeamerfont{footline}%
+%    \usebeamercolor[fg]{footline}%
+%    \hspace{1em}%
+%    \insertframenumber/\inserttotalframenumber
+%}
+
+\usetheme{Madrid}
+%\usecolortheme{beaver}
+%\usecolortheme{orchid}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+\logo{\ifplacelogo
+	\includegraphics[width=0.1\linewidth]{figures/fsu_logo.png}
+	\includegraphics[width=0.1\linewidth]{figures/famu_logo.png}
+	\includegraphics[width=0.1\linewidth]{figures/maglab_logo.png}
+	\fi} % replace with your own command
+
+\definecolor{mycustom}{RGB}{0,0,102}       %102,38,38 %128,0,0
+%\definecolor{mycustom}{RGB}{128,0,0}       %102,38,38 %128,0,0
+%
+%\setbeamercolor{structure}{bg=white, fg=custom}
+%\setbeamercolor{caption}{fg=custom}
+
+\definecolor{custom}{cmyk}{1,0.5,0,0.47}       %102,38,38 %128,0,0
+
+\setbeamercolor{structure}{bg=white, fg=custom}
+\setbeamercolor{caption}{fg=custom}
+
+\setbeamertemplate{navigation symbols}{} %To remove the navigation symbols
+
+%\setbeamercolor{frametitle}{fg=custom}
+%\setbeamercolor{framesubtitle}{fg=custom}
+\setbeamercolor{titlelike}{parent=structure,bg=gray!20!white}
+
+\setlength\abovecaptionskip{-3pt}
+\setbeamertemplate{caption}{%
+	\insertcaptionname\,\insertcaptionnumber:\,\insertcaption
+}
+
+
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=mycustom,
+	urlcolor=mycustom}
+
+\newcommand{\highlight}[1]{\textcolor{BrickRed}{#1}}
+
+\abovedisplayskip=0pt
+\belowdisplayskip=0pt
+
+	\usepackage{pgfpages}
+	\pgfpagesuselayout{2 on 1}[letterpaper,%landscape,
+	border shrink=5mm]
+	
+    %\usepackage{pdfpages}	
+
+	\begin{document}
+		
+		\placelogotrue 
+		% turn the logo off \usetheme{Madrid}
+		%--- the titlepage frame -------------------------%
+		\begin{frame}%[plain]
+			\maketitle
+		\end{frame}
+		
+		\placelogofalse % turn the logo off
+
+
+%*******************************************
+%*******************************************
+\section{Multidimensional Optimization}
+%\subsection{The master script}
+
+
+
+%*******************************************
+%*******************************************
+\section{Contents}
+
+\begin{frame}{Contents}
+	\begin{itemize}
+		\item Basics and Background
+		\item Optimization: Single variable
+		\begin{itemize}
+			\item Golden Section
+			\item Newton's Method
+			\item Quadratic Interpolation (Not Evaluated in this course)			
+		\end{itemize} 
+		\item \highlight{Multidimensional Optimization}\footnote{In this class ``multi'' = 2, although we will sometimes use more general language}
+		
+		\begin{itemize}
+			\item \highlight{Steepest Descent}
+			\item \highlight{Newton's Method}
+			\item \highlight{BFGS Method: Quasi-Newton}
+			\item \highlight{Conjugate Gradient (Not Evaluated in this course)}
+		\end{itemize}
+		\item Miscellaneous
+	\end{itemize}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\section{Multidimensional functions}
+
+\begin{frame}{Multidimensional functions}
+	\begin{itemize}
+		\item Instead of just $f(x)$, we will now consider finding the \textit{minima} of functions $f(\mathbf{x}) = f(x_1, x_2, ..., x_n)$
+		%\pause
+		\item Example: Consider the 2D function
+		$$f(x_1, x_2) = 0.5 x_1^2 + 2.5 x_2^2$$
+		\begin{center}
+			\includegraphics[scale=0.45]{figs/2dplot}
+		\end{center}
+		
+	\end{itemize}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\begin{frame}[fragile]
+	\frametitle{Multidimensional functions}
+	
+%In class we explore the MATLAB's functions for optimization:
+\vspace{-9pt}
+\lstinputlisting[caption={MATLAB's functions for optimization}]{N5_Codes_Optimization_Multi/plotting_script.m}
+
+\vspace{-9pt}
+\begin{alertblock}{}
+Remember that is always recommended to start with a graphical representation of the function to optimize.
+\end{alertblock}
+	
+\end{frame}
+
+%*******************************************
+%*******************************************
+
+\begin{frame}{Multidimensional functions}
+\begin{itemize}
+	\item We considered the 2D function
+	$$Z = 2+x_1-x_2+2*x_1^2+2*x_1*x_2+x_2^2;$$	
+	$$Z = 2+X-Y+2*X^2+2*X*Y+Y^2$$
+	\begin{center}
+		\includegraphics[scale=0.45]{figures/multidimensional.pdf}
+	\end{center}
+	
+\end{itemize}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\section{2D Function}
+
+\begin{frame}{2D Function}
+	\begin{itemize}
+		\item We can also construct a contour plot
+		\begin{center}
+			%    \includegraphics[scale=0.4,bb=89 231 491 545]{figs/2dcont}
+			\includegraphics[scale=0.45]{figs/2dcont}
+		\end{center}
+		%\pause
+		\item An important concept in multidimensional optimization is the gradient of $f(\mathbf{x})$. For a 2D function such as the one here:
+		$$\nabla f(\mathbf{x}) = \frac{\partial f}{\partial x_1} \mathbf{e}_1 + \frac{\partial f}{\partial x_2} \mathbf{e}_2$$
+	\end{itemize}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\begin{frame}{Gradient}
+	\begin{itemize}
+		\item The gradient generalizes the concept of derivative to multiple dimensions
+		%\pause
+		\item Note that it is a vector, and has a ``direction'' in addition to a magnitude. This direction is important in optimization.
+		%\pause
+		\item We can also write it as a vector 
+		$$\nabla f(\mathbf{x}) = \begin{bmatrix} \frac{\partial f}{\partial x_1} \vspace{0.2cm}\\  \frac{\partial f}{\partial x_2}\end{bmatrix},~~~\text{ assuming } \mathbf{e}_1 = \begin{bmatrix} 1 \\ 0  \end{bmatrix},  \mathbf{e}_2 = \begin{bmatrix} 0 \\ 1  \end{bmatrix}$$
+		\vspace*{-\baselineskip}%\pause
+		\item We can evaluate the gradient of this particular function:
+		$$\nabla f(\mathbf{x}) = \begin{bmatrix} x_1 \\ 5x_2 \end{bmatrix} = x_1 \mathbf{e}_1 + 5 x_2 \mathbf{e}_2$$
+	\end{itemize}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\begin{frame}{Gradient}
+	\begin{itemize}
+		\item I plotted the direction of the gradient vector at a few different points on the contour map
+		\begin{center}
+			\includegraphics[scale=0.3]{figs/gradient1}
+		\end{center}
+		\item The three points and the corresponding normalized gradients are $(\mathbf{x}, \nabla f(\mathbf{x})/||\nabla f(\mathbf{x})  ||)$
+		$$\left( \begin{bmatrix} 0.0 \\ 2.0 \end{bmatrix}, \begin{bmatrix} 0.0 \\ 1.0 \end{bmatrix} \right),~~~\left(\begin{bmatrix} 3.0 \\ 1.5 \end{bmatrix}, \begin{bmatrix} 0.37  \\  0.93 \end{bmatrix} \right), ~~~ \left( \begin{bmatrix} -3.8 \\ 1.0 \end{bmatrix}, \begin{bmatrix}     -0.61 \\  -0.80 \end{bmatrix} \right) $$
+	\end{itemize}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\begin{frame}
+	\frametitle{Plotting Gradients: Matlab Code}
+	
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=1,lastline=32,caption={}]{N5_Codes_Optimization_Multi/plotting_gradients.m}
+	
+\end{frame}
+
+%*******************************************
+%*******************************************
+\begin{frame}{Gradient}
+	\begin{itemize}
+		\item Note that the gradient is perpendicular to contour lines
+		%\pause
+		\item The direction of $\nabla f$ tells us which way to travel in to gain elevation as quickly as possible
+		%\pause
+		\item The magnitude of $\nabla f$ tell us how much we gain by travelling in that direction
+		\item This is similar to derivative of a single variable $f(x)$ where $df/dx$ measures the ``rate'' at which $f(x)$ changes with $x$.
+		%\pause
+		\item Next we are going to consider a method called ``steepest descent'' to find the \textit{minima} of a function $f(\mathbf{x})$ by travelling in the direction of $-\nabla f(\mathbf{x})$
+		%\pause
+		\item There is completely analogous method called ``steepest ascent'' to find the maxima by travelling in the direction of $\nabla f(\mathbf{x})$
+	\end{itemize}
+\end{frame}
+
+
+
+
+%*******************************************
+%*******************************************
+\subsection{Steepest Descent}
+
+\begin{frame}[fragile]
+	\frametitle{Steepest Descent: Algorithm (Pseudocode)}
+	
+	\begin{enumerate}
+		\item $k$ = 0; $\mathbf{x}_0$ = initial guess
+		%\pause
+		\item Compute the -ve gradient $\mathbf{s}_k$ = $-\nabla f(\mathbf{x}_k)$
+		%\pause
+		\item Choose $\alpha_k$ to minimize $f(\mathbf{x}_k + \alpha \mathbf{s}_k)$. Note that this is a 1D problem, for which we have devised methods before. This is called a \textit{line} search.
+		%\pause
+		\item Update the solution: $\mathbf{x}_{k+1} = \mathbf{x}_k + \alpha_k \mathbf{s}_k$
+		%\pause
+		\item Set $k = k + 1$, and go back to step 2, and repeat until convergence.    
+	\end{enumerate}
+	
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Example}
+	\highlight{Problem}: Use steepest descent to minimize the function\footnote{Problem from Heath, chapter 6.}   $$f(\mathbf{x}) = 0.5 x_1^2 + 2.5 x_2^2,$$
+	where $\mathbf{x} = [x_1,~x_2]^T$, and whose gradient is:
+	$$\nabla f(\mathbf{x}) = \begin{bmatrix} x_1 \\ 5x_2 \end{bmatrix}$$
+	Start with an initial guess of $\mathbf{x}_0 = [5,~ 1]^T$.
+	%\pause
+	
+	\medskip
+	\highlight{Solution}:
+	$$\mathbf{x}_0 = [5,~ 1]^T, ~~~ \mathbf{s}_0 = -\nabla f(\mathbf{x}_0) = -[5,~5]^T$$
+	\vspace*{-\baselineskip}%\pause
+	Therefore, $$f(\mathbf{x}_0 + \alpha \mathbf{s}_0) = f\left(\begin{bmatrix} 5 \\ 1 \end{bmatrix} - \alpha \begin{bmatrix} 5 \\ 5 \end{bmatrix} \right) = f\left(\begin{bmatrix} 5 - 5\alpha \\ 1 - 5\alpha \end{bmatrix}\right)$$
+\end{frame}			
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Example}
+	Thus,
+	\begin{align*}
+		f(\mathbf{x}_0 + \alpha \mathbf{s}_0) & = 0.5 (5 - 5\alpha)^2 + 2.5 (1 - 5\alpha)^2\\
+		& = 75 \alpha^2 - 50 \alpha + 15
+	\end{align*}
+	%\pause
+	One can easily find the minima of this function by taking the derivative with respect to $\alpha$ which gives us $150 \alpha_0 - 50 = 0$, or $\alpha_0 = 1/3$.
+	%\pause
+	
+	\medskip
+	
+	Thus, $$\mathbf{x}_1 = \mathbf{x}_0 + (1/3) \mathbf{s}_0 = \begin{bmatrix} 3.333 \\ -0.667 \end{bmatrix}$$
+	
+	%\pause
+	We can now repeat the process until we are happy!
+	
+	\medskip
+	
+	Or we can write the following matlab code.
+	
+\end{frame}
+
+
+%%*******************************************
+%%*******************************************
+%\begin{frame}[fragile]
+%	\frametitle{Steepest Descent: Matlab Code}
+%\vspace{-7pt}	
+%\begin{lstlisting}[caption={SteepestDescent2D.m}]
+%% Steepest Descent Demo: use [x f n] = steepDescent([5;1], 1e-3)
+%	
+%function [xopt fopt nopt] = steepDescent(x0, tol)
+%	
+%  x = x0;
+%  k = 0;
+%	
+%  while(norm(gradf(x)) > tol)      % Need to make gradf ~ 0
+%	
+%    s      = -gradf(x);
+%    falpha = @(alpha) f(x + alpha*s);
+%    alpha  = fminsearch(falpha,0.1);
+%    x      = x + alpha * s;
+%    k      = k + 1;
+%	
+%  end
+%	
+%  xopt = x;   fopt = f(x); nopt = k;
+%	
+%end
+%	
+%function Z = f(x)
+%  Z = 0.5*x(1)^2 + 2.5*x(2)^2;
+%end
+%	
+%function Z = gradf(x)
+%  Z = [x(1);5*x(2)];
+%end
+%\end{lstlisting}
+%	
+%\end{frame}
+
+
+%*******************************************
+%*******************************************
+\subsubsection{Steepest Descent: Matlab Code}
+
+\begin{frame}
+\frametitle{\subsubsecname}
+
+\vspace{-3pt}	
+\lstinputlisting[firstline=1,lastline=32,caption={SteepDescent.m}]{N5_Codes_Optimization_Multi/SteepDescent.m}
+
+\end{frame}
+
+%*******************************************
+%*******************************************
+\begin{frame}{Example}
+From Heath pg 278. 	What is the geometrical interpretation?
+\vspace{-3pt}
+	\begin{center}
+		\includegraphics[scale=0.61]{figs/steep1}
+	\end{center}
+
+\end{frame}
+
+
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Hessian}
+	\begin{itemize}
+		\item The Hessian of a multidimensional scalar function $f(\mathbf{x})$ is given by the symmetric square matrix
+		
+		$$\mathbf{H}_f(\mathbf{x}) = \begin{bmatrix}
+		\dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial^2 f}{\partial x_1\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_1\,\partial x_n} \\[2.2ex]
+		\dfrac{\partial^2 f}{\partial x_2\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_2^2} & \cdots & \dfrac{\partial^2 f}{\partial x_2\,\partial x_n} \\[2.2ex]
+		\vdots & \vdots & \ddots & \vdots \\[2.2ex]
+		\dfrac{\partial^2 f}{\partial x_n\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_n\,\partial x_2} & \cdots & \dfrac{\partial^2 f}{\partial x_n^2}
+		\end{bmatrix}$$
+		
+		%\pause
+		
+		\item Just as the gradient generalizes $df/dx$, the Hessian generalizes $d^2f/dx^2$.
+	\end{itemize}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\begin{frame}{Hessian}
+	\begin{itemize}
+		\item In 2D, the Hessian is:
+		$$\mathbf{H}_f(\mathbf{x}) = \begin{bmatrix}
+		\dfrac{\partial^2 f}{\partial x_1^2} & \dfrac{\partial^2 f}{\partial x_1\,\partial x_2} \\
+		\dfrac{\partial^2 f}{\partial x_2\,\partial x_1} & \dfrac{\partial^2 f}{\partial x_2^2}
+		\end{bmatrix}$$
+		\medskip
+		
+		\item Recall how $d^2f(x^*)/dx^2$ told us whether $x^*$ (obtained by solving $df/dx = 0$) was a maxima, minima or a saddle point
+		%\pause
+		\item The Hessian does the same job. If $\mathbf{x}^*$ is a solution to $\nabla f(\mathbf{x}) = \mathbf{0}$, then if $\mathbf{H}_f(\mathbf{x^*})$ is
+		\begin{center}
+			\begin{tabular}{ll}
+				+ve definite & $\implies x^*$ is a minima \\
+				-ve definite & $\implies x^*$ is a maxima \\
+				indefinite & $\implies  x^*$ is a saddle point \\
+			\end{tabular}
+		\end{center}
+		
+	\end{itemize}
+\end{frame}
+
+
+
+%*******************************************
+%*******************************************
+\subsection{Newton's Method}
+
+\begin{frame}{Newton's Method}
+	\begin{itemize}
+		\item Recall 1D Newton's Method for optimization:
+		$$x_{i+1} = x_{i} - \frac{f'(x_i)}{f^{\prime \prime}(x_i)}$$
+		\vspace*{-\baselineskip}%\pause
+		\item We could rewrite this expression as:
+		$$(x_{i+1} - x_{i})f^{\prime \prime}(x_i) = -f'(x_i)$$
+		\vspace*{-\baselineskip}%\pause
+		\item We are going to generalize this method for multiple dimensions
+		%\pause
+		\item It is useful to visualize Newton's method as a quadratic approximation to a Taylor's series
+	\end{itemize}
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Newton's Method}
+	\begin{itemize}
+		\item That is consider
+		$$f(x+s) \approx f(x) + \dfrac{df}{dx} s + \dfrac{1}{2} \dfrac{d^2f}{dx^2} s^2.$$
+		\vspace*{-\baselineskip}%\pause
+		\item We can think of the RHS as a quadratic function in $s$ which can be minimized
+		$$\dfrac{df(x+s)}{ds} = 0 \implies 0 + \dfrac{df}{dx} + \dfrac{d^2f}{dx^2} s = 0$$
+		\vspace*{-\baselineskip}%\pause
+		\item Leading to $$s \dfrac{d^2f}{dx^2} = - \dfrac{df}{dx}$$
+		which is the same as Newton's method for optimization
+	\end{itemize}
+\end{frame}
+
+%%*******************************************
+%%*******************************************
+
+\begin{frame}{Newton: Multidimensional case}
+	\begin{itemize}
+		\item We can repeat the Taylor series expansion for $f(\mathbf{x})$. 
+		$$f(\mathbf{x}+\mathbf{s}) \approx f(\mathbf{x}) + \nabla f(\mathbf{x})^T \mathbf{s} + \dfrac{1}{2} \mathbf{s}^T \mathbf{H}_f(\mathbf{x}) \mathbf{s}$$
+		Note that for 1D this collapses to the previous expression.
+		%\pause
+		\item Taking the derivative, leads us to:
+		$$\mathbf{H}_f(\mathbf{x}) \mathbf{s} = -\nabla f(\mathbf{x})$$
+		Compare with the 1D case:
+		$$s \dfrac{d^2f}{dx^2} = - \dfrac{df}{dx}$$
+		\vspace*{-\baselineskip}%\pause
+		\item This allows us to write an algorithm for Newton's method
+	\end{itemize}
+\end{frame}
+
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Newton's Method: Algorithm}
+	\begin{enumerate}
+		\item $k$ = 0; $\mathbf{x}_0$ = initial guess
+		\item Compute the gradient $\nabla f(\mathbf{x}_k)$ and the Hessian $\mathbf{H}_f(\mathbf{x}_k)$
+		\item Solve $\mathbf{H}_f(\mathbf{x}_k) \mathbf{s}_k = -\nabla f(\mathbf{x}_k)$ for $\mathbf{s}_k$
+		\item Update the solution: $\mathbf{x}_{k+1} = \mathbf{x}_k + \mathbf{s}_k$
+		\item Set $k = k + 1$, and go back to step 2, and repeat until convergence.
+	\end{enumerate}
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Example}
+	\highlight{Problem}: Solve the previous example again, this time using Newton's method
+	$$f(\mathbf{x}) = 0.5 x_1^2 + 2.5 x_2^2,$$
+	
+	%\pause
+	
+	\highlight{Solution}:
+	
+	The gradient and Hessian are given by:
+	$$\nabla f(\mathbf{x}) = \begin{bmatrix} x_1 \\ 5x_2 \end{bmatrix}, ~~~\mathbf{H}_f(\mathbf{x}_k) = \begin{bmatrix} 1 & 0 \\ 0 & 5 \end{bmatrix}$$
+	
+	%\pause
+	
+	We solve the system (with $\mathbf{x}_0 = [5,~1]^T$)
+	
+	$$\begin{bmatrix} 1 & 0 \\ 0 & 5 \end{bmatrix} \mathbf{s}_0 = - \begin{bmatrix} 5 \\ 5 \end{bmatrix} \implies \mathbf{s}_0 = \begin{bmatrix} -5 \\ -1\end{bmatrix}$$
+	
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Example}
+	\begin{itemize}
+		\item This implies $$\mathbf{x}_1 = \mathbf{x}_0 + \mathbf{s}_0 = \begin{bmatrix}
+		0 \\ 0 \end{bmatrix}$$which is the true solution
+		%\pause
+		\item It is not surprising that Newton's method converged in 1 iteration since the $f(\mathbf{x})$ was quadratic
+		%\pause
+		\item In general the convergence rate is quadratic, but the method can veer off unless we start close enough to the solution
+		%\pause
+		\item Note: No line search required, but we had to determine a Hessian matrix and solve a linear system at each iteration
+		%\pause
+		\item In damped Newton methods, a line search is added to make the method more robust.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Quasi-Newton Methods}
+	\begin{itemize}
+		\item Newton's method converges rapidly once you are close to the solution. But it doesn't come cheap.
+		%\pause
+		\item For a $n$-dimensional problem, each iteration requires $\mathcal{O}(n^2)$ function evaluations to form the gradient and the Hessian, and $\mathcal{O}(n^3)$ operations to solve the linear system.
+		%\pause
+		\item To reduce overhead, quasi-Newton methods have been developed which seek to replace the step:
+		$$\mathbf{H}_f(\mathbf{x}_k) (\mathbf{x}_{k+1} - \mathbf{x}_k) = -\nabla f(\mathbf{x}_k)$$
+		with
+		$$\mathbf{B}_k (\mathbf{x}_{k+1} - \mathbf{x}_k) = - \alpha_k \nabla f(\mathbf{x}_i)$$
+		where $\mathbf{B}$ is an approximation to the Hessian matrix, and may be obtained by secant updating and $\alpha_k$ is a line-search parameter.
+	\end{itemize}
+\end{frame}
+
+
+
+%*******************************************
+%*******************************************
+\subsection{BFGS Method}
+
+\begin{frame}{BFGS Method}
+	\begin{itemize}
+		\item A popular secant updating method named after its co-inventors: Broyden, Fletcher, Goldfarb and Shanno.
+		%\pause
+		\item Initially set $\mathbf{B}_0 = \mathbf{I}$, which means the first step is in the negative gradient direction (like steepest descent).
+		%\pause
+		\item Unlike Newton's method, the second derivatives (Hessian) do not have to be pre-computed.
+		\item It is built up over time.
+		%\pause
+		\item Convergence is superlinear.
+		\item We consider a simple algorithm (better implementations update a factorization of the matrix $\mathbf{B}$ rather than the matrix itself)
+	\end{itemize}
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{BFGS Algorithm}
+	\begin{enumerate}
+		\item $k$ = 0; $\mathbf{x}_0$ = initial guess
+		\item Set $\mathbf{B}_0 = \mathbf{I}$ as the initial Hessian approximation
+		\item Compute the gradient $\nabla f(\mathbf{x}_k)$
+		\item Solve $\mathbf{B}_k \mathbf{s}_k = -\nabla f(\mathbf{x}_k)$ for $\mathbf{s}_k$
+		\item Update the solution: $\mathbf{x}_{k+1} = \mathbf{x}_k + \mathbf{s}_k$
+		\item Set $\mathbf{y}_k = \nabla f(\mathbf{x}_{k+1}) - \nabla f(\mathbf{x}_k)$
+		\item Update the Hessian
+		$$\mathbf{B}_{k+1} = \mathbf{B}_k + \frac{\mathbf{y}_k \mathbf{y}_k^T}{\mathbf{y}_k^T \mathbf{s}_k} - \frac{\mathbf{B}_k \mathbf{s}_k  \mathbf{s}_k^T  \mathbf{B}_k}{ \mathbf{s}_k^T  \mathbf{B}_k \mathbf{s}_k} $$
+		\item Set $k = k + 1$, and go back to step 3, and repeat until convergence.
+	\end{enumerate}
+\end{frame}
+		
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Example}
+	\highlight{Problem}: Solve the previous example again, this time using BFGS method
+	$$f(\mathbf{x}) = 0.5 x_1^2 + 2.5 x_2^2,$$
+	%\pause
+	\highlight{Solution}:
+	
+	The gradient and approximate Hessian are given by:
+	$$\nabla f(\mathbf{x}) = \begin{bmatrix} x_1 \\ 5x_2 \end{bmatrix}, ~~~\mathbf{B}_0 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$
+	
+	We solve the system (with $\mathbf{x}_0 = [5,~1]^T$).
+	
+	The first step is simply: $\mathbf{I s}_0 = -\nabla f(\mathbf{x}_0) = -[5,~5]^T$ 
+	
+	$\implies \mathbf{x}_1 = [5,~1]^T + [-5,~-5]^T = [0,~-4]^T$
+	
+	We can update the approximate Hessian to 
+	$$\mathbf{B}_1 = \begin{bmatrix} 0.667 & 0.333 \\ 0.333 & 0.667 \end{bmatrix}$$
+	
+	%$$\begin{bmatrix} 1 & 0 \\ 0 & 5 \end{bmatrix} \mathbf{s}_0 = - \begin{bmatrix} 5 \\ 5 \end{bmatrix} \implies \mathbf{s}_0 = \begin{bmatrix} -5 \\ -1\end{bmatrix}$$
+	
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Example}
+	We can continue to get the sequence:
+	
+	\begin{center}
+		\begin{tabular}{|c|cc|c|}
+			\hline
+			$k$ & $x_1$ & $x_2$ & $f(\mathbf{x})$ \\
+			\hline
+			0 &    5.0000 &    1.0000 &   15.0000 \\ 
+			1 &    0.0000 &   -4.0000 &   40.0000 \\ 
+			2 &   -2.2222 &    0.4444 &    2.9630 \\ 
+			3 &    0.8163 &    0.0816 &    0.3499 \\ 
+			4 &   -0.0092 &   -0.0153 &    0.0006 \\ 
+			5 &   -0.0005 &    0.0009 &    0.0000 \\ 
+			\hline
+		\end{tabular}
+		
+	\end{center}
+	using the following Matlab code:
+\end{frame}
+
+%*******************************************
+%*******************************************
+
+\subsection{BFGS method: Matlab Code}
+
+%\begin{frame}[fragile]
+%	\frametitle{BFGS method: Matlab Code}
+%\vspace{-3pt}	
+%\begin{lstlisting}
+%% BFGS Demo: use as [x f n] = bfgs([5;1], 1e-3);
+%	
+%function [xopt fopt nopt] = bfgs(x0, tol)
+%	
+%  x = x0;
+%  n = length(x);
+%  B = eye(n);
+%  k = 0;
+%	
+%  while(norm(gradf(x)) > tol)            % Need to make gradf ~ 0
+%    df     = gradf(x);
+%    s      = B\(-df);
+%    x      = x + s;
+%    y      = gradf(x) - df;
+%    B      = B + (y*y')/(y'*s) - (B*s*s'*B)/(s'*B*s);
+%    k      = k + 1;  
+%  end
+%	
+%  xopt = x;
+%  fopt = f(x);
+%  nopt = k;
+%	
+%end
+%	
+%function Z = f(x)
+%  Z = 0.5*x(1)^2 + 2.5*x(2)^2;
+%end
+%	
+%function Z = gradf(x)
+%  Z = [x(1);5*x(2)];
+%end
+%\end{lstlisting}
+%\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{\subsecname}
+\vspace{-3pt}	
+\lstinputlisting[%firstline=1,lastline=32,
+caption={Master Script that calls the function BFGS}]{N5_Codes_Optimization_Multi/master_script_BFGS.m}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\subsecname}
+\vspace{-3pt}	
+\lstinputlisting[%firstline=1,lastline=32,
+caption={Function BFGS to find critical points}]{N5_Codes_Optimization_Multi/BFGS.m}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\subsecname}
+\vspace{-3pt}	
+\lstinputlisting[%firstline=1,lastline=32,
+caption={Function BFGS (alternative) to find critical points}]{N5_Codes_Optimization_Multi/BFGS_Alt.m}
+\end{frame}
+
+
+\subsection{Summary}
+
+\begin{frame}{Summary}
+	\begin{itemize}
+		\item Methods for optimization in 1D have ``counterparts'' in methods for the solution of nonlinear equations:
+		
+		\begin{center}
+			\begin{tabular}{rcl}
+				Golden Search & $\rightarrow$ & Bisection \\
+				Parabolic Interpolation & $\rightarrow$ & Regula Falsi \\
+				Newton ($f(x)=0$)  & $\rightarrow$ & Newton ($f'(x)=0$) \\
+			\end{tabular}
+		\end{center}
+		and resemble many of their properties (linear/quadratic convergence etc.).
+		%\pause
+		\item Multidimensional optimization requires knowledge of gradients and sometimes Hessians, which generalize first and second order derivatives.
+		%\pause
+		\item Steepest descent moves in the direction of negative gradient - results in zig-zag moves, which are ``fixed'' in the conjugate-gradient method.
+	\end{itemize}
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Summary}
+	\begin{itemize}
+		\item Multidimensional Newton's method generalizes Newton's method for optimization in 1D. It is fast, but requires significant work (deriving the Hessian, and solving a linear system).
+		%\pause
+		\item BFGS is an extremely popular secant-updating method which works with an approximate Hessian.
+	\end{itemize}
+\end{frame}
+
+
+
+
+
+%*******************************************
+%*******************************************
+%\subsection{Appendix}
+\appendix
+
+\section{Extra Material: Not evaluated}
+
+\begin{frame}{\secname}
+\Large 
+\highlight{Not evaluated in Exams}\\
+\highlight{Not evaluated in Quizzes}\\
+\highlight{Not evaluated in Homeworks}\\[11pt]
+This is just extra material in case you want to know more about related topics. 
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix (not evaluated in exams or quizzes)}
+
+\vspace{-7pt}
+\lstinputlisting[caption={Random Search Method for Optimization}]{N5_Codes_Optimization_Multi/random_search_method.m}
+
+\vspace{-7pt}
+\begin{exampleblock}{}
+	This will not be evaluated in exams or quizzes but I thought it is a very interesting thing to know. This is the essence of Monte Carlo Algorithms used in the financial and other industries.  
+\end{exampleblock}
+\end{frame}		
+
+
+
+%*******************************************
+%*******************************************
+\subsection{Conjugate Gradient}
+
+\begin{frame}{Conjugate Gradient}
+\begin{itemize}
+	\item Another alternative to Newton's method, that doesn't require explicitly require the calculation of the Hessian
+	%\pause
+	\item In fact, unlike secant-updating methods like BFGS, it doesn't even require the storage of an approximate Hessian. This makes it suitable for very large problems.
+	%\pause
+	\item  It resembles the method of steepest descent, but avoids the zig-zag pattern (repeated alternate searching in directions previously explored) by removing components from previous directions.
+	%\pause
+	\item The algorithm for a particular version of the CG-algorithm due to Fletcher and Reeves is described next.
+\end{itemize}
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Conjugate-Gradient Algorithm}
+\begin{enumerate}
+\item $k$ = 0; $\mathbf{x}_0$ = initial guess
+\item Compute the gradient $\mathbf{g}_0 = \nabla f(\mathbf{x}_k)$
+\item Set $\mathbf{s}_0 = -\mathbf{g}_0$
+\item Perform a line search. Choose $\alpha_k$ to minimize $f(\mathbf{x}_k + \alpha_k \mathbf{s}_k)$.
+\item Update the solution: $\mathbf{x}_{k+1} = \mathbf{x}_k + \alpha_k \mathbf{s}_k$
+\item Set $\mathbf{g}_{k+1} = \nabla f(\mathbf{x}_{k+1})$
+\item Set $\beta_{k+1} = (\mathbf{g}_{k+1}^T \mathbf{g}_{k+1})/(\mathbf{g}_{k}^T \mathbf{g}_{k})$
+\item Set $\mathbf{s}_{k+1} = -\mathbf{g}_{k+1} + \beta_{k+1} \mathbf{s}_k$
+\item Set $k = k + 1$, and go back to step 4, and repeat until convergence.
+\end{enumerate}
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}{Example}
+\highlight{Problem}: Solve the previous example again, this time using conjugate-gradient method
+$$f(\mathbf{x}) = 0.5 x_1^2 + 2.5 x_2^2,$$
+%\pause
+\highlight{Solution}: We can easily repurpose our old code for steepest descent for this problem.
+
+\medskip
+
+Note that this method requires a line search, which is carried out by using the intrinsic matlab function \texttt{fminsearch}.
+
+\medskip
+
+%This function is not available in GNU Octave.
+
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\begin{frame}[fragile]
+\frametitle{Conjugate Gradient: Matlab Code}
+\vspace{-3pt}
+\begin{lstlisting}
+% Conjugate-Gradient Demo: [x f n] = conjGrad([5;1],1e-3)
+
+function [xopt fopt nopt] = conjGrad(x0, tol)
+
+x = x0;
+k = 0;
+g = gradf(x);
+s = -g;
+
+while(norm(gradf(x)) > tol)	
+falpha = @(alpha) f(x + alpha*s);
+alpha  = fminsearch(falpha,0.1);
+x      = x + alpha * s
+beta   = (g'*g);
+g      = gradf(x);
+beta   = (g'*g)/beta;
+s      = -g + beta * s;
+k      = k + 1;
+end
+
+xopt = x;   fopt = f(x);   nopt = k;
+
+end
+
+function Z = f(x)
+Z = 0.5*x(1)^2 + 2.5*x(2)^2;
+end
+
+function Z = gradf(x)
+Z = [x(1);5*x(2)];
+end
+\end{lstlisting}
+\end{frame}
+
+%*******************************************
+%*******************************************
+%*****************
+%\placelogotrue
+%
+%\begin{frame}
+%\frametitle{See you next class}
+%\vspace{-25pt}
+%
+%\textbf{\textit{``Just as there is not royal road to geometry, there is no royal road to programming''}}.- Euclid and J. V. Guttag
+%\vspace{7pt}
+%
+%\textit{The computer will do what you TELL them to do NOT what you WANT them to do}.- Someone in the Internet (Perhaps)
+%\vspace{7pt}	
+%
+%\textit{Think twice, code once}.- Anonymous
+%\vspace{7pt}
+%
+%\textit{The sooner you start to code, the longer the program will take}.- R. Carlson\vspace{7pt}
+%
+%\textit{Any fool can write code that a computer can understand. Good programmers write code that humans can understand}.- M. Fowler
+%\vspace{7pt}
+%
+%\textit{Simplicity is the soul of efficiency}.- A. Freeman
+%\vspace{7pt}
+%
+%\textit{If you cannot grok the overall structure of a program while taking a shower, you are not ready to code it}.- R. Pattis
+%
+%\end{frame}
+%
+%\placelogofalse
+
+
+\section{Appendix: Scripts included}
+
+%\subsection{}
+
+\begin{frame}
+\frametitle{\secname}
+
+\vspace{-7pt}
+\begin{exampleblock}{}
+	Try these commands in your own workstation, i.e. have the lectures on one half side of your screen and Matlab/Octave-GUI on the other half. %This is the best approach to learning this.   
+\end{exampleblock}
+
+\begin{alertblock}{}
+	Check the scripts/functions under the directory for this note number (X): \newline
+	/NX\_Notes\_directory
+\end{alertblock}
+
+\end{frame}	
+
+		
+\end{document}

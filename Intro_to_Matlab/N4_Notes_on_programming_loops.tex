@@ -1,0 +1,316 @@
+\documentclass[11pt]{beamer}
+
+%START To get MATLAB environment
+\usepackage[numbered,framed]{matlab-prettifier}
+%\usepackage{filecontents}
+
+\let\ph\mlplaceholder % shorter macro
+\lstMakeShortInline"
+
+\lstset{
+	style              = Matlab-editor,
+	basicstyle         = \tiny \ttfamily,
+	escapechar         = ",
+	mlshowsectionrules = true,
+}
+
+%\renewcommand{\lstlistingname}{Algorithm}% Listing -> Algorithm
+\renewcommand{\lstlistingname}{Code}% Listing -> Code
+%FINISH To get MATLAB environment
+
+%\usepackage{standalone}
+%\graphicspath{{../}{../}}
+%\graphicspath{{../../figures/}}
+
+\setcounter{tocdepth}{1}
+
+\usepackage[english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1.7cm, minimum height=0.7cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1.7cm, minimum height=0.7cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=1.7cm, minimum height=0.7cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=1.7cm, minimum height=0.7cm, text centered, text width=1.7cm, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+\setbeamercovered{transparent}
+%\usepackage{enumitem}
+%\setlist[itemize]{leftmargin=*}
+
+%\usepackage{mhchem}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\numberwithin{equation}{section}
+
+
+
+\author[Jose Mendoza-Cortes]{Prof. Jose L. Mendoza-Cortes}
+\title[Machine Learning]{Machine Learning}
+%\subtitle{Spring '18}
+\institute[]
+{\scriptsize  
+	Scientific Computing Department, Dirac Science Building \\
+	Materials Science and Engineering, High Performance Materials Institute\\
+	Florida State University\\
+	\href{mailto:jmendozacortes@fsu.edu}{jmendozacortes@fsu.edu}\\[3mm]
+	
+	Condensed Matter Theory, National High Magnetic Field Laboratory\\%[3mm]
+	Florida State University\\	
+	\href{mailto:mendoza@magnet.fsu.edu}{mendoza@magnet.fsu.edu}\\[3mm]	
+	
+	Chemical and Biomedical Engineering \\
+	Florida State University | Florida A\&M University | College of Engineering \\
+	\href{mailto:mendoza@eng.famu.fsu.edu}{mendoza@eng.famu.fsu.edu}\\[3mm]
+	Web: \href{http://mendoza.eng.fsu.edu/}{http://mendoza.eng.fsu.edu/}\\%[1mm]
+}  
+
+\date{}
+\subject{Theory and Computations in Materials, Chemistry and Physics}
+
+%\usetheme{Berkeley}
+%\logo{\includegraphics[scale=0.213]{figures/fsu_logo.png}}
+%\addtobeamertemplate{navigation symbols}{}{%
+%    \usebeamerfont{footline}%
+%    \usebeamercolor[fg]{footline}%
+%    \hspace{1em}%
+%    \insertframenumber/\inserttotalframenumber
+%}
+
+\usetheme{Madrid}
+%\usecolortheme{beaver}
+%\usecolortheme{orchid}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+\logo{\ifplacelogo
+	\includegraphics[width=0.1\linewidth]{figures/fsu_logo.png}
+	\includegraphics[width=0.1\linewidth]{figures/famu_logo.png}
+	\includegraphics[width=0.1\linewidth]{figures/maglab_logo.png}
+	\fi} % replace with your own command
+
+\definecolor{mycustom}{RGB}{0,0,102}       %102,38,38 %128,0,0
+%\definecolor{mycustom}{RGB}{128,0,0}       %102,38,38 %128,0,0
+%
+%\setbeamercolor{structure}{bg=white, fg=custom}
+%\setbeamercolor{caption}{fg=custom}
+
+\definecolor{custom}{cmyk}{1,0.5,0,0.47}       %102,38,38 %128,0,0
+
+\setbeamercolor{structure}{bg=white, fg=custom}
+\setbeamercolor{caption}{fg=custom}
+
+\setbeamertemplate{navigation symbols}{} %To remove the navigation symbols
+
+%\setbeamercolor{frametitle}{fg=custom}
+%\setbeamercolor{framesubtitle}{fg=custom}
+\setbeamercolor{titlelike}{parent=structure,bg=gray!20!white}
+
+\setlength\abovecaptionskip{-3pt}
+\setbeamertemplate{caption}{%
+	\insertcaptionname\,\insertcaptionnumber:\,\insertcaption
+}
+
+
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=mycustom,
+	urlcolor=mycustom}
+
+\abovedisplayskip=0pt
+\belowdisplayskip=0pt
+
+
+\usepackage{pgfpages}
+\pgfpagesuselayout{2 on 1}[letterpaper,%landscape,
+border shrink=5mm]
+
+
+	\begin{document}
+		
+		\placelogotrue % turn the logo off \usetheme{Madrid}
+		\maketitle
+		
+		\placelogofalse % turn the logo off
+
+
+%*******************************************
+%*******************************************
+\section{Review on vectorization}
+\subsection{Example}
+
+\begin{frame}[fragile]
+	\frametitle{\secname: \subsecname}
+	\vspace{-2mm}
+	\lstinputlisting[caption={Form 1}]{N4_Notes_on_programming_loops/vectorization.m}
+
+	\lstinputlisting[caption={Form 2}]{N4_Notes_on_programming_loops/vectorizationalt.m}	
+\end{frame}
+
+%*******************************************
+%*******************************************
+\section{Review on Anonymous Functions}
+%\subsection{Example 1}
+
+\begin{frame}[fragile]
+	\frametitle{\secname}
+	\vspace{-2mm}
+	\lstinputlisting{N4_Notes_on_programming_loops/reviewAnonyFunctions.m}
+	\begin{exampleblock}{}
+		Notice how we can define two variables in the anonymous function and compare this to the regular way we declare explicit function (where another file is created)
+	\end{exampleblock}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\section{Review on `For' Loops}
+\subsection{Example 1}
+
+\begin{frame}
+	\frametitle{\secname: \subsecname}
+	\vspace{-2mm}
+	\lstinputlisting{N4_Notes_on_programming_loops/forLoopBasic.m}
+	\begin{exampleblock}{}
+		The loop can `increase' in negative increments or positive increments. The second example of the code above explore the negative increment. 
+	\end{exampleblock}
+\end{frame}
+
+%*******************************************
+%*******************************************
+%\section{Review on Loops}
+\subsection{Example 2}
+
+\begin{frame}[fragile]
+	\frametitle{\secname: \subsecname}
+	\vspace{-2mm}
+	\lstinputlisting{N4_Notes_on_programming_loops/Myfactorial.m}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\section{Review on `While' Loops}
+\subsection{Typical While}
+
+\begin{frame}[fragile]
+	\frametitle{\secname: \subsecname}
+	\vspace{-2mm}
+	\lstinputlisting{N4_Notes_on_programming_loops/whileLoopUse1.m}
+	
+	\begin{alertblock}{}
+		Notice the way this is written \verb|while condition|. This is the simplest way to do a while loop. Remember that this type of loop will repeat indefinitely if not used with care. 
+	\end{alertblock}
+\end{frame}
+
+%*******************************************
+%*******************************************
+%\section{Review on `While' Loops}
+\subsection{Alternative While}
+
+\begin{frame}[fragile]
+	\frametitle{\secname: \subsecname}
+	\vspace{-2mm}
+	\lstinputlisting{N4_Notes_on_programming_loops/whileLoopUse2.m}
+	\vspace{-2.7mm}	
+	\begin{alertblock}{Warning}
+	This type of \verb|while(1)| loop will not stop until there is a condition to break it. Thus there must be a \verb|break| command inside the loop. 
+	\end{alertblock}	
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+\section{Using `Pause' command}
+%\subsection{Example 1}
+
+\begin{frame}[fragile]
+	\frametitle{\secname}
+	\vspace{-2mm}
+	\lstinputlisting{N4_Notes_on_programming_loops/usingPauseCommand.m}
+	\begin{block}{}
+		In class we tried different variation of \verb|pause| versus \verb|pause(3)|. Remember that if no number is used in parenthesis, the code will stop indefinitely while if a number is place there, it will wait that number of seconds.
+	\end{block}
+\end{frame}
+
+%*******************************************
+%*******************************************
+\section{Using `Animation'}
+%\subsection{Example 1}
+
+\begin{frame}[fragile]
+	\frametitle{\secname}
+	\vspace{-2mm}
+	\lstinputlisting[firstline=1, lastline=14]{N4_Notes_on_programming_loops/animationForm2.m}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{\secname (continuation)}
+	\vspace{-2mm}
+	\lstinputlisting[firstline=15, lastline=46]{N4_Notes_on_programming_loops/animationForm2.m}
+	\begin{exampleblock}{Exercise}
+		In class we tried different variation for animation, can you reproduce the ones that we tried in class?
+	\end{exampleblock}
+\end{frame}
+
+
+
+%*****************
+\placelogotrue
+
+\begin{frame}
+\frametitle{See you next class}
+\vspace{-25pt}
+
+\textbf{\textit{``Just as there is not royal road to geometry, there is no royal road to programming''}}.- Euclid and J. V. Guttag
+\vspace{7pt}
+
+\textit{The computer will do what you TELL them to do NOT what you WANT them to do}.- Someone in the Internet (Perhaps)
+\vspace{7pt}	
+
+\textit{Think twice, code once}.- Anonymous
+\vspace{7pt}
+
+\textit{The sooner you start to code, the longer the program will take}.- R. Carlson\vspace{7pt}
+
+\textit{Any fool can write code that a computer can understand. Good programmers write code that humans can understand}.- M. Fowler
+\vspace{7pt}
+
+\textit{Simplicity is the soul of efficiency}.- A. Freeman
+\vspace{7pt}
+
+\textit{If you cannot grok the overall structure of a program while taking a shower, you are not ready to code it}.- R. Pattis
+
+\end{frame}
+
+\placelogofalse
+
+\section{Appendix: Scripts included}
+
+%\subsection{}
+
+\begin{frame}
+\frametitle{\secname}
+
+\vspace{-7pt}
+\lstinputlisting[caption={SumIniFin.m}]{N4_Notes_on_programming_loops/SumIniFin.m}
+
+\vspace{-7pt}
+\begin{exampleblock}{}
+	Try these commands in your own workstation, i.e. have the lectures on one half side of your screen and Matlab/Octave-GUI on the other half. %This is the best approach to learning this.   
+\end{exampleblock}
+
+\begin{alertblock}{}
+	Check the scripts/functions under the directory for this note number (X): \newline
+	/NX\_Notes\_directory
+\end{alertblock}
+
+\end{frame}	
+
+
+\end{document}

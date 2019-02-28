@@ -1,0 +1,973 @@
+\documentclass[xcolor=dvipsnames,11pt]{beamer}
+
+%START To get MATLAB environment
+\usepackage[numbered,framed]{matlab-prettifier}
+%\usepackage{filecontents}
+
+\let\ph\mlplaceholder % shorter macro
+\lstMakeShortInline"
+
+\lstset{
+	style              = Matlab-editor,
+	basicstyle         = \tiny \ttfamily,
+	escapechar         = ",
+	mlshowsectionrules = true,
+}
+
+
+%\renewcommand{\lstlistingname}{Algorithm}% Listing -> Algorithm
+\renewcommand{\lstlistingname}{Code}% Listing -> Code
+%FINISH To get MATLAB environment
+
+%\graphicspath{{../}{../}}
+%\graphicspath{{../../figures/}}
+\graphicspath{{./figures/approximation/beamer/}}
+
+
+%\setcounter{tocdepth}{1}
+
+\usepackage[english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\setbeamercovered{transparent}
+
+
+\author[Jose Mendoza-Cortes]{Prof. Jose L. Mendoza-Cortes}
+\title[Machine Learning]{Machine Learning}
+%\subtitle{Spring '18}
+\institute[]
+{\scriptsize  
+	Scientific Computing Department, Dirac Science Building \\
+	Materials Science and Engineering, High Performance Materials Institute\\
+	Florida State University\\
+	\href{mailto:jmendozacortes@fsu.edu}{jmendozacortes@fsu.edu}\\[3mm]
+	
+	Condensed Matter Theory, National High Magnetic Field Laboratory\\%[3mm]
+	Florida State University\\	
+	\href{mailto:mendoza@magnet.fsu.edu}{mendoza@magnet.fsu.edu}\\[3mm]	
+	
+	Chemical and Biomedical Engineering \\
+	Florida State University | Florida A\&M University | College of Engineering \\
+	\href{mailto:mendoza@eng.famu.fsu.edu}{mendoza@eng.famu.fsu.edu}\\[3mm]
+	Web: \href{http://mendoza.eng.fsu.edu/}{http://mendoza.eng.fsu.edu/}\\%[1mm]
+}  
+
+\date{}
+\subject{Theory and Computations in Materials, Chemistry and Physics}
+
+\usetheme{Madrid}
+%\usecolortheme{beaver}
+%\usecolortheme{orchid}
+
+\newif\ifplacelogo % create a new conditional
+\placelogotrue % set it to true
+\logo{\ifplacelogo
+	\includegraphics[width=0.1\linewidth]{figures/fsu_logo.png}
+	\includegraphics[width=0.1\linewidth]{figures/famu_logo.png}
+	\includegraphics[width=0.1\linewidth]{figures/maglab_logo.png}
+	\fi} % replace with your own command
+
+\definecolor{mycustom}{RGB}{0,0,102}       %102,38,38 %128,0,0
+%\definecolor{mycustom}{RGB}{128,0,0}       %102,38,38 %128,0,0
+%
+%\setbeamercolor{structure}{bg=white, fg=custom}
+%\setbeamercolor{caption}{fg=custom}
+
+\definecolor{custom}{cmyk}{1,0.5,0,0.47}       %102,38,38 %128,0,0
+
+\setbeamercolor{structure}{bg=white, fg=custom}
+\setbeamercolor{caption}{fg=custom}
+
+\setbeamertemplate{navigation symbols}{} %To remove the navigation symbols
+
+%\setbeamercolor{frametitle}{fg=custom}
+%\setbeamercolor{framesubtitle}{fg=custom}
+\setbeamercolor{titlelike}{parent=structure,bg=gray!20!white}
+
+\setlength\abovecaptionskip{-3pt}
+\setbeamertemplate{caption}{%
+	\insertcaptionname\,\insertcaptionnumber:\,\insertcaption
+}
+
+
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=mycustom,
+	urlcolor=mycustom}
+
+\newcommand{\highlight}[1]{\textcolor{BrickRed}{#1}}
+
+\abovedisplayskip=0pt
+\belowdisplayskip=0pt
+
+	\usepackage{pgfpages}
+	\pgfpagesuselayout{2 on 1}[letterpaper,%landscape,
+	border shrink=5mm]
+
+%\usepackage{pdfpages}	
+
+\begin{document}
+	
+	\placelogotrue 
+	% turn the logo off \usetheme{Madrid}
+	%--- the titlepage frame -------------------------%
+	\begin{frame}%[plain]
+		\maketitle
+	\end{frame}
+	
+	\placelogofalse % turn the logo off
+	
+
+
+%*******************************************
+%*******************************************
+%*******************************************
+\section{Linear Regression}
+
+\subsection{Matlab Code}
+\subsubsection{Linear Fitting}
+
+\begin{frame}	
+	\frametitle{\subsecname: \subsubsecname}
+\vspace{-7pt}
+\begin{alertblock}{}
+	\textbf{You do not have to use my code. If you do, it is not recommended to copy-paste it. Instead type it all line by line, it will help you understand it. Alternatively, you can create your own code.}
+\end{alertblock}
+	\vspace{-7pt}	
+	\lstinputlisting[firstline=1,lastline=22,caption={Code used in class}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+	
+\end{frame}
+
+\begin{frame}
+	
+	\frametitle{\subsecname: \subsubsecname}
+	
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=23,lastline=47,caption={Code used in class (cont.)}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+
+\begin{exampleblock}{}
+	\centering
+Can you calculate the $R^2$ for this fitting? What is the value?
+\end{exampleblock}
+	
+\end{frame}
+
+\begin{frame}[fragile]
+	
+	\frametitle{\subsecname: \subsubsecname}
+	
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=1,lastline=47,caption={forcevsvelocity.txt}]{N6_Notes_Lectures_Regression/forcevsvelocity.txt}
+
+\begin{block}{}
+This is the data file called forcevsvelocity.txt what is needed for the first part of the code. \\
+Look for the line of the code: 
+\verb|`datafromfile = importdata('forcevsvelocity.txt')'|
+\end{block}
+
+\begin{block}{}
+Up to here we have been using the formulas from page 338 of textbook
+\end{block}
+
+	
+\end{frame}
+
+
+\subsubsection{Polynomial Regression}
+
+\begin{frame}
+	
+	\frametitle{\subsecname: \subsubsecname}
+
+
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=48,lastline=76,caption={Code used in class (cont.)}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+	
+\end{frame}
+
+\begin{frame}
+	
+	\frametitle{\subsecname: \subsubsecname}
+	
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=77,lastline=103,caption={Code used in class (cont.)}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+	
+\end{frame}
+
+\begin{frame}
+	
+	\frametitle{\subsecname: \subsubsecname}
+	
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=104,lastline=116,caption={Code used in class (cont.)}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+
+\begin{block}{}
+Up to here we have been using the formulas from page 362 of textbook
+\end{block}
+
+\begin{alertblock}{}
+	\textbf{You do not have to use my code. If you do, it is not recommended to copy-paste it. Instead type it all line by line, it will help you understand it. Alternatively, you can create your own code.}
+\end{alertblock}
+	
+\end{frame}
+
+\subsubsection{Multiple Linear Regression}
+
+\begin{frame}
+	
+	\frametitle{\subsecname: \subsubsecname}
+	
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=119,lastline=147,caption={Code used in class (cont.)}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+	
+\end{frame}
+
+\begin{frame}
+	
+	\frametitle{\subsecname: \subsubsecname}
+	
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=148,lastline=175,caption={Code used in class (cont.)}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+	
+\end{frame}
+
+\begin{frame}
+	
+	\frametitle{\subsecname: \subsubsecname}
+	
+	\vspace{-3pt}	
+	\lstinputlisting[firstline=176,lastline=197,caption={Code used in class (cont.)}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+
+\begin{block}{}
+Up to here we have been using the formulas from page 366 of textbook
+\end{block}
+	
+\end{frame}
+	
+
+%*******************************************
+%*******************************************
+%*******************************************
+\begin{frame}{Contents}
+\begin{itemize}
+	
+	\item Least Squares Approximation
+	\begin{itemize}
+		\item Interpolation versus Approximation
+		\item The Least-Squares Formulation
+		\item Discrete Polynomial Approximation
+	\end{itemize}
+	%\pause
+	%\item Principal Components Analysis
+	%\pause
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Motivation}
+
+\begin{center}
+\includegraphics[width=1.5in]{figs/exupery}
+\end{center}
+
+\begin{block}{Antoine de Saint-Exupery}
+Perfection is achieved, not when there is nothing left to add, but when there is nothing left to take away
+\end{block}
+
+\end{frame}
+
+
+\begin{frame}{Least Squares}
+%\begin{itemize}
+%\item 
+Recall, for polynomial interpolation, given
+$$x_0, x_1, \cdots, x_i, \cdots x_n$$
+
+and the ``values'' at those points
+$$f_0, f_1, \cdots, f_i, \cdots f_n$$
+
+%\pause
+
+%\item
+we sought an order $n$ polynomial, which passed exactly though all the $\{x_i, f_i\}$
+$$f_i = \sum\limits_{j=0}^{n} a_j x_i^j$$
+
+%\end{itemize}
+\end{frame}
+
+\begin{frame}{Least Squares}
+\begin{itemize}
+\item Written in full, we wanted a polynomial $p_n(x)$ to pass through the $n+1$ points by solving the linear system
+\begin{eqnarray}
+p_n(x_0) = & a_0 + a_1 x_0 + \cdots + a_n x_0^n = & f_0 \nonumber \\
+p_n(x_1) = & a_0 + a_1 x_1 + \cdots + a_n x_1^n  = & f_1  \nonumber \\
+& \vdots & \nonumber \\
+p_n(x_n) = & a_0 + a_1 x_n + \cdots + a_n x_n^n  = & f_n \nonumber
+\end{eqnarray}
+\vspace*{-\baselineskip}%\pause
+\item In all, $n + 1$ equations, $n + 1$ unknowns (the $a_i$)
+%\pause
+$${\color{blue}{\mathbf{X a = f}}}$$
+where $\mathbf{X}$ was the (square) Vandermonde matrix.
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Least Squares: Motivation}
+\begin{itemize}
+\item As $n$ increases, the interpolating function becomes more complex
+
+%\pause
+
+\begin{itemize}
+\item often picks up undesirable features
+\item oscillations (Runge's phenomenon)
+\item begins fitting noise, instead of the signal
+\end{itemize}
+
+%\pause
+
+\item In least squares approximation
+\begin{itemize}
+\item we do not require the approximating function to pass through points
+\item we require it to lie as close as possible to the data ``in some sense''
+\item the approximating function is ``coarser'' than the data
+\end{itemize}
+
+%%%\pause
+
+%\item To understand the general idea of LS, we first try to understand the idea of projection
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Coarser Object}
+
+Suppose we wanted to fit a lower order polynomial $p_{m}$ through $n+1$ points such that $m < n$.
+
+\medskip
+%%\pause
+
+Written in full, we seek a polynomial $p_m(x)$ that ``passes'' through the $n+1$ points by solving the linear system
+\begin{eqnarray}
+a_0 + a_1 x_0 + \cdots + a_m x_0^n & = & f_0 \nonumber \\
+a_0 + a_1 x_1 + \cdots + a_m x_1^n & = & f_1  \nonumber \\
+& \vdots & \nonumber \\
+a_0 + a_1 x_n + \cdots + a_m x_n^n & = & f_n \nonumber
+\end{eqnarray}
+%\pause
+In all, $n + 1$ equations, $m+1$ unknowns (the $a_i$)
+$${\color{blue}{\mathbf{A a = f}}}.$$
+
+%\pause
+\highlight{Q}: If $n+1 = 100$ and $m + 1= 2$, what is the size of $\mathbf{A}$?
+\end{frame}
+
+\begin{frame}{Least Squared Error}
+\begin{itemize}
+\item In this case, we have too many equations, and too few unknowns.
+
+\begin{center}
+\includegraphics[scale=0.35]{figs/overdetermined}
+\end{center}
+%
+%\pause
+\item We can't ``pass'' or interpolate a straight-line through the 100 points!
+\medskip
+%\pause
+\item We can, however, try to ``minimize'' the distance between the straight line and the scatter of points.
+\end{itemize}
+\end{frame}
+
+%*******************************************
+\subsubsection{Matlab code used}
+
+\begin{frame}	
+\frametitle{\subsubsecname}
+
+\vspace{-3pt}	
+\lstinputlisting[firstline=1,lastline=22,caption={One way of doingthe fitting and obtain the plot above}]{./figures/approximation/code/linregex.m}	
+\end{frame}
+
+\begin{frame}{Least Squared Error}
+
+For any line (defined by $\mathbf{a}$), we define the squared-error as:
+$$\epsilon^2 =  ||\mathbf{A a} - \mathbf{f}||_{2}^2$$
+
+%\pause
+
+Written out more explicitly,
+%
+\begin{eqnarray*}
+\epsilon^2 & = & (\mathbf{A a} - \mathbf{f})^{T} (\mathbf{A a} - \mathbf{f})\\
+& = & \mathbf{a}^T  \mathbf{A}^T \mathbf{A  a} - 2 {\bf f}^T \mathbf{A  a} + {\bf f}^T {\bf f}
+\end{eqnarray*}
+
+%\pause
+
+We want to minimize the squared error, so we set:
+%
+$$\frac{\partial \epsilon^2}{\partial \mathbf{a}} = 0.$$
+%
+This yields:
+$$2 \mathbf{A}^T \mathbf{A  a} - 2 {\bf A}^T \mathbf{f} = {\bf 0}$$
+
+\end{frame}
+
+\begin{frame}{Least Squared Error}
+The least-squares solution $\hat{\mathbf{a}}$ can be obtained by solving the so-called ``normal equations'':
+
+$$\boxed{\mathbf{A}^T \mathbf{A  \hat{a}} = {\bf A}^T \mathbf{f}}$$
+
+%\pause
+
+\highlight{Question}:
+
+If $n + 1 = 100$ and $m = 2$ as before, what is the size of:
+
+\begin{itemize}
+\item  $\mathbf{A}^T \mathbf{A}$?
+\item $\mathbf{A}^T \mathbf{f}$?
+\end{itemize}
+
+%\pause
+
+Are the normal equations over-determined?
+
+\end{frame}
+
+
+
+\begin{frame}{Summary: Discrete Polynomial Approximation}
+\begin{itemize}
+\item Given an over-determined system,
+\[
+\left[ \begin{array}{ccccc}
+1 & x_0 & x_0^2 &... & x_0^m \\
+1 & x_1 & x_1^2 & ... & x_1^m \\
+... & ... & ... & ... & ... \\
+1 & x_{n} & x_{n}^2 & ... & x_{n}^m \\
+\end{array} \right]
+\left[ \begin{array}{c} a_0 \\ a_1\\ ... \\ a_m \end{array} \right]
+=
+\left[ \begin{array}{c} f_0 \\ f_1 \\ ... \\ f_{n} \end{array} \right]
+\]
+%\pause
+$$\boxed{\mathbf{A}_{(n+1) \times (m+1)} \mathbf{a}_{(m+1) \times 1} = \mathbf{f}_{(n+1) \times 1}}$$
+\item In typical regression problems, $n \gg m$, and hence the matrix $\mathbf{A}$ is tall.
+%\pause
+\item In the usual sense, this corresponds to a case with too many equations ($n+1$), and too few unknowns ($m+1 < n+1$)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Discrete Polynomial Approximation}
+\begin{itemize}
+\item The normal equations balance this mismatch by seeking to minimize the squared-error:
+$$\mathbf{A}^T \mathbf{A  \hat{a}} = {\bf A}^T \mathbf{f}$$
+\item Essentially, by pre-multiplying both sides of the original equation by $\mathbf{A}^T$, we get a ``square'' linear system, where the number of equations is $m + 1$
+\item This can be solved using methods from linear algebra.
+\item Let us consider a simple example.
+\end{itemize}
+\end{frame}
+
+%\begin{frame}{Application: Discrete Polynomial Approximation}
+%\begin{itemize}
+%
+%%\pause
+%\item Given $\mathbf{y}$, we want to find $\mathbf{a}$ corresponding to the least
+%$$||\mathbf{y} - \mathbf{f} ||^2 =  || \mathbf{y} - \mathbf{Aa} ||^2$$
+%
+%%\pause
+%\item Projecting $\mathbf{y}$ onto the column space of $\bf{A}$,
+%$$\mathbf{f} = \mathbf{A a} = \mathbf{A} ( \mathbf{A}^T \mathbf{A})^{-1} \mathbf{A}^T \mathbf{y}  = \mathbf{P} \mathbf{y} $$
+%
+%%\pause
+%where we have used the fact that the regressed polynomial is obtained by solving the linear system:
+%$$\mathbf{A}^T \mathbf{A} \mathbf{a} = \mathbf{A}^T \mathbf{y}$$ 
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}{Application: Linear Regression}
+%\begin{itemize}
+%\item Linear regression is a special case of this
+%%\pause
+%\item The highest order of the polynomial is 1
+%\[
+%\begin{bmatrix}
+%1 & x_0 \\
+%1 & x_1 \\
+%... &   \\
+%1 & x_{m} \\
+%\end{bmatrix} 
+%\left[ \begin{array}{c} a_0 \\ a_1 \end{array} \right]
+%= \bf{A a} =
+%\left[ \begin{array}{c} y_0 \\ y_1 \\ ... \\ y_{m} \end{array} \right]
+% \]
+%\item Therefore
+%$$\mathbf{A}^T \mathbf{A} \mathbf{a} = \mathbf{A}^T \mathbf{y}$$
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}{Example}
+
+\highlight{Problem}: Consider the following data generated by adding ``white noise'' according to the equation $$f = 5x + 1 + 2.5 N(0,1)$$
+
+\begin{center}
+
+\begin{tabular}{|c|c|}
+\hline 
+$x$ & $f$ \\
+\hline 
+1.00 &   3.97 \\ 
+2.00 &   9.66 \\ 
+3.00 &  14.41 \\ 
+4.00 &  19.38 \\ 
+5.00 &  22.10 \\ 
+6.00 &  31.00 \\ 
+7.00 &  38.70 \\ 
+8.00 &  35.53 \\ 
+9.00 &  44.99 \\ 
+10.00 &  54.54 \\ 
+\hline 
+\end{tabular} 
+
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code}
+\begin{lstlisting}
+n = 9;
+x = (1:1:n+1)';
+f = 5*x + 1 + 2.5 * randn(n+1,1); % adds white noise
+\end{lstlisting}
+
+We want to set the matrix $\mathbf{A}$ as
+
+$$\mathbf{A} = \begin{bmatrix}
+1 & x_0 \\
+1 & x_1 \\
+... &   \\
+1 & x_{n} \\
+\end{bmatrix}$$
+
+and solve the linear system  $\mathbf{A}^T \mathbf{A \hat{a}} = \mathbf{A}^T \mathbf{f}$.
+
+\begin{lstlisting}
+A = [ones(n+1,1) x];
+ahat = (A'*A)\(A'*f)
+fhat = A * ahat;
+\end{lstlisting}
+
+where we have also finally set $\mathbf{\hat{f}} = \mathbf{A \hat{a}}$
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{center}
+\includegraphics[scale=0.4]{figs/linregex}
+
+Best fit  $f = 5.30 x - 1.74$
+\end{center}
+\end{frame}
+
+%*******************************************
+\subsubsection{Matlab code used (alternative)}
+
+\begin{frame}	
+\frametitle{\subsubsecname}
+
+\vspace{-3pt}	
+\lstinputlisting[firstline=23,lastline=52,caption={Another way of doing the fitting and obtain the plot above}]{./figures/approximation/code/linregex.m}	
+\end{frame}
+
+%*******************************************
+%*******************************************
+%*******************************************
+\section{Normal Equation (Polynomial)}
+
+\subsection{Matlab Code}
+
+\begin{frame}	
+\frametitle{\secname: \subsecname}
+\vspace{-7pt}
+%\begin{alertblock}{}
+%	\textbf{You do not have to use my code. If you do, it is not recommended to copy-paste it. Instead type it all line by line, it will help you understand it. Alternatively, you can create your own code.}
+%\end{alertblock}
+\vspace{-7pt}	
+\lstinputlisting[firstline=209,lastline=233,caption={Most important Code of this class}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+
+\end{frame}
+
+
+%*******************************************
+%*******************************************
+%*******************************************
+\section{Normal Equation (Multiple Linear)}
+
+\subsection{Matlab Code}
+
+\begin{frame}	
+\frametitle{\secname: \subsecname}
+%\vspace{-7pt}
+%\begin{alertblock}{}
+%	\textbf{You do not have to use my code. If you do, it is not recommended to copy-paste it. Instead type it all line by line, it will help you understand it. Alternatively, you can create your own code.}
+%\end{alertblock}
+\vspace{-7pt}	
+\lstinputlisting[firstline=236,lastline=265,caption={Most important Code of this class}]{N6_Notes_Lectures_Regression/regression_interpol.m}
+
+\end{frame}
+
+%\begin{frame}{Example: Lorenz Function}
+%	\begin{itemize}
+%		\item Given a function of the type
+%		$$f(x) = \frac{a}{1+x^2} + \epsilon N(0,1), \quad \quad (\epsilon = 0.01)$$
+%		where $N(0, 1)$ is the standard normal distribution.
+%		%\pause
+%		
+%		\item Given $(x_i, f_i)$, where $f_i = f(x_i)$, how can we get a smooth fit $f(x)$ of the noisy data?
+%		%\pause
+%		\item In other words, can we use the machinery we just learned to find the (scalar) parameter $a$?
+%		%\pause
+%		\item We want to minimize $||\mathbf{Aa} - \mathbf{f}||^2$. 
+%		%\pause
+%		\item Let's ponder over the shape of the problem a bit.
+%	\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{Application: Lorenz Function}
+%	\begin{itemize}
+%		
+%		\item The original system: $$\mathbf{A a = f}$$ written out it full:
+%		$$\begin{bmatrix}
+%		\frac{1}{1+x_1^2} \\ \frac{1}{1+x_2^2} \\ \vdots \\ \frac{1}{1+x_n^2} \end{bmatrix} [a] = \begin{bmatrix}
+%		f_1 \\ f_2 \\ \vdots \\ f_n \\
+%		\end{bmatrix}$$
+%		
+%		%\pause
+%		
+%		\item Again, we have too many equations, so we try to form the normal equations:
+%		
+%		$$\mathbf{A}^T \mathbf{A} \hat{a} = \mathbf{A}^T {\bf f}$$
+%		
+%		%\pause
+%		
+%		\highlight{Q}: What is the size of the problem?
+%	\end{itemize}
+%\end{frame}
+%
+%\begin{frame}[fragile]
+%	\frametitle{Example}
+%	Consider the following data which we would like to fit to a Lorenz function:
+%	$$f(x) = \frac{a}{1+x^2}$$
+%	
+%	\begin{center}
+%		{\small
+%			\begin{tabular}{|r|r||r|r|}
+%				\hline 
+%				$\mathbf{x}$ & $\mathbf{f}$ & $\mathbf{x}$ & $\mathbf{f}$\\
+%				\hline 
+%				-4.00 &   0.29191 &   0.10 &   5.15839 \\ 
+%				-2.00 &   1.02558 &   0.25 &   4.71492 \\ 
+%				-1.00 &   2.53256 &   0.50 &   3.86039 \\ 
+%				-0.50 &   3.79663 &   1.00 &   2.44546 \\ 
+%				-0.25 &   4.71709 &   2.00 &   0.99122 \\ 
+%				-0.10 &   4.87615 &   4.00 &   0.29183 \\ 
+%				0.00 &   4.71467 &    &    \\ 
+%				\hline 
+%			\end{tabular} 
+%		}
+%	\end{center}
+%	
+%	Alternatively generate data using the code:
+%	
+%	\begin{lstlisting}
+%	x1 = [-4 -2 -1 -0.5 -0.25 -0.1]';
+%	x  = [x1;0;-flipud(x1)]
+%	f = 5./(1+x.^2) + 0.05*5./(1+x.^2).*randn(length(x),1);
+%	\end{lstlisting}
+%	
+%\end{frame}
+%
+%
+%\begin{frame}{Solution}
+%	\begin{center}
+%		\includegraphics[scale=0.4]{figs/lorenzex}
+%		
+%		Best fit  $$\hat{f} = \frac{5.0339}{1+x^2}$$
+%	\end{center}
+%\end{frame}
+	
+	
+	
+%*******************************************
+%*******************************************
+%*******************************************
+%\section{Motivation}
+%
+%\begin{frame}{Contents}
+%\begin{itemize}
+%
+%\item Least Squares Approximation
+%\begin{itemize}
+%\item Projection
+%\item Generalized Inverse
+%\item Discrete Polynomial Approximation
+%\end{itemize}
+%
+%\item \textcolor{blue}{Principal Components Analysis}
+%\item Regularization
+%\item Approximation of functions
+%
+%\item Orthogonal Polynomials
+%
+%\begin{itemize}
+%\item Legendre polynomials
+%\item Chebyshev polynomials
+%\end{itemize}
+%
+%\end{itemize}
+%
+%
+%\end{frame}
+%
+%
+%\begin{frame}{Motivation}
+%\begin{itemize}
+%\item So far, we fitted a function $y_{fit}(x)$ to a set of points $(x_i, y_i)$ by
+%minimizing the norm of the error committed on $y$.
+%\item However, there are other approaches.
+%\item Consider fitting a line to a set of points. Instead of minimizing
+%the error on y, minimize the errors measured by ``orthogonal'' projection onto the line!
+%\item This is the basis of Principal Component Analysis (PCA).
+%
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{LS v/s PCA}
+%\begin{itemize}
+%\item Comparing least-squares with PCA, schematically.
+%\begin{center}
+%\includegraphics[scale=0.4]{figs/pca1}
+%\end{center}
+%%\pause
+%\item It is also commonly used as an exploratory analysis technique to find important patterns/relationships in high-dimensional data
+%%\pause
+%\item Applications include image compression, face recognition etc.
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{PCA: technique}
+%\begin{itemize}
+%\item For simplicity and ease of exposition, let us consider a concrete 2D example\footnote{ \url{http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf}}
+%
+%%\pause
+%
+%\item \textbf{Step 1}: Get some data 
+%\item \textbf{Step 2}: We adjust the data, by subtracting the mean from each of the dimensions. 
+%
+%%\pause
+%
+%\begin{center}
+%\includegraphics[scale=0.5]{figs/pcat1}
+%\end{center}
+%\item 
+%
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{PCA: technique}
+%\begin{itemize}
+%\item The original data looks like this
+%\begin{center}
+%\includegraphics[scale=0.5]{figs/pcat2}
+%\end{center}
+%
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{Covariance}
+%\begin{itemize}
+%\item \textbf{Step 3}: We compute the Covariance Matrix of the adjusted data
+%%\pause
+%\item The covariance of two variables $x$ and $y$ is given by
+%$$\text{cov}(x,y) = \frac{(x_i - \bar{x})(y_i - \bar{y})}{n-1}$$
+%where $\bar{x}$ and $\bar{y}$ are the means.
+%%\pause
+%\item Note that covariance generalizes the idea of variance, i.e, $\text{cov}(x,x) = \text{var}(x)$.
+%%\pause
+%\item The sign of $\text{cov}(x,y)$ tells us how $x$ and $y$ vary together.
+%%\pause
+%\item For example, if $x$=hours studied, and $y$=points scored on an exam, we may expect a positive relationship ($\text{cov}(x,y) > 0$).
+% 
+%\end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}{Covariance}
+%\begin{itemize}
+%\item Since we already adjusted the data by subtracting the means, the covariance for the adjusted data simplifies to:
+%$$\text{cov}(x,y) = \frac{x_i y_i}{n-1}$$
+%%\pause
+%\item If we had more than two variables, say $x_1, x_2, ... x_n$, then we can define a covariance matrix $C$.
+%%\pause
+%\item Covariance Matrix
+%$$C = \begin{bmatrix}
+%\text{cov}(x_1,x_1) & \text{cov}(x_1,x_2) & ... & \text{cov}(x_1,x_n) \\
+%\text{cov}(x_2,x_1) & \text{cov}(x_2,x_2) & ... & \text{cov}(x_2,x_n) \\
+%\vdots & \vdots & ... & \vdots \\
+%\text{cov}(x_n,x_1) & \text{cov}(x_n,x_2) & ... & \text{cov}(x_n,x_n) \\
+%\end{bmatrix}$$
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{Covariance Matrix}
+%\begin{itemize}
+%\item This is a symmetric $n \times n$ matrix
+%%\pause
+%\item For our particular 2D example this can be computed as
+%$$C = \begin{bmatrix}
+%0.6165 & 0.6154 \\
+%0.6154 & 0.7165 \\
+%\end{bmatrix}$$
+%%\pause
+%\item \textbf{Step 4}: Compute the eigenvalues and eigenvectors of $C$.
+%\item Note that since $C$ is symmetric, it is nondefective and its eigenvectors are orthonormal.
+%%\pause
+%\item The eigenvalues and eigenvectors are
+%$${\bf \lambda} = \begin{bmatrix}
+%0.4091\\
+%1.2840 \\
+%\end{bmatrix}, \quad {\bf v}_1 = \begin{bmatrix}
+%-0.7352\\
+%0.6779\\
+%\end{bmatrix}, \quad {\bf v}_2 = \begin{bmatrix}
+%-0.6779\\
+%-0.7352
+%\end{bmatrix}, 
+%$$
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{Eigenvectors}
+%\begin{itemize}
+%\item The eigenvectors are orthonormal as expected
+%\item Plot the eigenvectors along with the data
+%\begin{center}
+%\includegraphics[scale=0.5]{figs/pcat3}
+%\end{center}
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}{Eigenvectors}
+%\begin{itemize}
+%\item Order the eigenvalues from highest to lowest
+%%\pause
+%\item Eigenvector corresponding to the highest component is called the principal component
+%%\pause
+%\item If the idea is approximation, model reduction, or pattern recognition, we can choose to ignore the eigenvectors corresponding to the smallest eigenvalues.
+%\end{itemize}
+%\end{frame}
+
+
+%
+%\begin{frame}
+%	
+%	\frametitle{\secname: \subsecname}
+%	
+%\vspace{-3pt}	
+%\lstinputlisting[firstline=37,lastline=53,caption={Other ways to import data into Matlab for further manipulation}]{13_Lectures_codes/linear_regression_before_class.m}
+%	
+%\begin{exampleblock}{}
+%Notice how I have created a file called data.txt either inside Matlab Editor or in another text editor saving it with extension .txt
+%	\end{exampleblock}
+%	
+%\end{frame}
+%
+%\begin{frame}[fragile]
+%	\frametitle{\secname: \subsecname}
+%	
+%\begin{lstlisting}[caption={data2.txt}]
+%Data Varx Vary Varx Vary Varx Vary
+%1 10.0 8.04 9.14 7.46 8.0 6.58
+%2 8.0 6.95 8.14 6.77 8.0 5.76
+%3 13.0 7.58 8.74 12.74 8.0 7.71
+%4 9.0 8.81 8.77 7.11 8.0 8.84
+%5 11.0 8.33 9.26 7.81 8.0 8.47
+%6 14.0 9.96 8.10 8.84 8.0 7.04
+%7 6.0 7.24 6.13	6.08 8.0 5.25
+%8 4.0 4.26 3.10	5.39 19.0 12.50	
+%9 12.0 10.84 9.13 8.15 8.0 5.56
+%10 7.0 4.82 7.26 6.42 8.0 7.91
+%11 5.0 5.684.74 5.73 8.0 6.89
+%\end{lstlisting}
+%\end{frame}
+
+
+%*******************************************
+%*******************************************	
+%*******************************************
+\subsection{Appendix}
+
+
+\begin{frame}
+\frametitle{\secname: Daily Habits Are More Important Than Big, Infrequent Home Runs. - Nicolas Cole.}
+
+{\scriptsize 
+\begin{quotation}
+
+
+Anyone can talk the talk. Not many people can walk the walk.
+
+A terrible habit quite a few people fall into is believing that ``one day'' it'll all come together. What does that even mean, ``one day''? What are you going to do, wake up and find yourself in a \$5-million mansion with two Ferraris parked outside? What, is it just going to ``appear'' out of nowhere?
+
+``One day'' is today. ``One day'' is right now. You're not going to ``be patient one day.'' You're going to be patient NOW. You're not going to ``start'' doing things differently one day. ``You're going to start doing things differently NOW. You're not going to ``finally make it work one day.'' You're going to make it work right NOW.
+
+Big leaps happen by adding lots of tiny steps up over a long period of time. If you think you can skip that process, you're wrong. Whatever it is you want to become, become that to the best of your ability right now. Whatever it is you want to do, do that to the best of your ability right now. In weightlifting we would call this ``training until failure.''
+
+Every day, everything you do, train until failure.
+\end{quotation}}
+
+\vspace{-5pt}
+{\footnotesize 
+\textbf{Same goes for learning. Do not study for the exam or the quiz, study for learning and understand. Daily habits are more important than long days before the examination.} }
+
+
+\end{frame}
+
+
+\section{Appendix: Scripts included}
+
+%\subsection{}
+
+\begin{frame}
+\frametitle{\secname}
+
+\vspace{-7pt}
+\begin{exampleblock}{}
+	Try these commands in your own workstation, i.e. have the lectures on one half side of your screen and Matlab/Octave-GUI on the other half. %This is the best approach to learning this.   
+\end{exampleblock}
+
+\begin{alertblock}{}
+	Check the scripts/functions under the directory for this note number (X): \newline
+	/NX\_Notes\_directory
+\end{alertblock}
+
+\end{frame}	
+
+
+
+	
+\end{document}		
+	
+	
+
+
+		
